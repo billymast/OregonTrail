@@ -78,5 +78,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-
-// Billy Mast

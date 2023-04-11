@@ -4,107 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/roundedbutton"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/StatsBackground1"
+        android:layout_width="194dp"
+        android:layout_height="338dp"
+        app:srcCompat="@android:drawable/screen_background_dark"
+        tools:layout_editor_absoluteX="546dp"
+        tools:layout_editor_absoluteY="-6dp" />
+
+    <ImageView
+        android:id="@+id/StatsBackground2"
+        android:layout_width="185dp"
+        android:layout_height="331dp"
+        app:srcCompat="@android:drawable/screen_background_light"
+        tools:layout_editor_absoluteX="552dp"
+        tools:layout_editor_absoluteY="-6dp" />
+
+    <ImageView
+        android:id="@+id/OptionsBackground"
+        android:layout_width="778dp"
+        android:layout_height="88dp"
+        app:srcCompat="@android:drawable/screen_background_dark"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="331dp" />
+
+    <ImageView
+        android:id="@+id/MainScreen"
+        android:layout_width="612dp"
+        android:layout_height="183dp"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="-9dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/gamePlayText"
-        android:layout_width="0dp"
-        android:layout_height="345dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="15dp"
+        android:layout_width="543dp"
+        android:layout_height="108dp"
+        android:background="#FFFFFF"
         android:text="GamePlay Text"
         android:textAlignment="center"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="@+id/foodText"
-        app:layout_constraintEnd_toStartOf="@+id/dateText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodText" />
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="233dp" />
 
     <Button
         android:id="@+id/nextDay"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="177dp"
+        android:layout_height="78dp"
         android:text="Click to Continue"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="96dp" />
 
     <TextView
         android:id="@+id/dateText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="153dp"
+        android:layout_height="37dp"
         android:text="Today's Date:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/weatherText"
-        app:layout_constraintEnd_toStartOf="@+id/weatherText"
-        app:layout_constraintStart_toEndOf="@+id/gamePlayText"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/weatherText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="152dp"
+        android:layout_height="37dp"
         android:text="Weather:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/healthText"
-        app:layout_constraintEnd_toStartOf="@+id/distanceText"
-        app:layout_constraintStart_toEndOf="@+id/dateText"
-        app:layout_constraintTop_toBottomOf="@+id/dateText" />
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="53dp" />
 
     <TextView
         android:id="@+id/healthText"
-        android:layout_width="404dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="89dp"
+        android:layout_height="39dp"
         android:text="Health:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/foodText"
-        app:layout_constraintStart_toStartOf="@+id/weatherText"
-        app:layout_constraintTop_toBottomOf="@+id/weatherText" />
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="162dp" />
 
     <TextView
         android:id="@+id/foodText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="126dp"
+        android:layout_height="35dp"
         android:text="Food:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/distanceText"
-        app:layout_constraintEnd_toEndOf="@+id/healthText"
-        app:layout_constraintStart_toEndOf="@+id/gamePlayText"
-        app:layout_constraintTop_toBottomOf="@+id/healthText" />
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="127dp" />
 
     <TextView
         android:id="@+id/distanceText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="74dp"
+        android:layout_width="152dp"
+        android:layout_height="37dp"
         android:text="Distance:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/nextDay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/weatherText"
-        app:layout_constraintTop_toBottomOf="@+id/foodText" />
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="90dp" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="117dp"
-        app:layout_constraintEnd_toStartOf="@+id/nextDay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hattie" />
+        android:id="@+id/HattieCampbell"
+        android:layout_width="82dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/hattie"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="3dp" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="48dp"
+        android:layout_height="46dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/guideButton"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/statusButton"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/rationsButton"
+        android:layout_width="41dp"
+        android:layout_height="46dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <Button
+        android:id="@+id/buyButton"
+        android:layout_width="61dp"
+        android:layout_height="42dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/tradeButton"
+        android:layout_width="66dp"
+        android:layout_height="44dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <Button
+        android:id="@+id/talkButton"
+        android:layout_width="69dp"
+        android:layout_height="47dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="650dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <Button
+        android:id="@+id/restButton"
+        android:layout_width="63dp"
+        android:layout_height="44dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="576dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/paceButton"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="397dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <Button
+        android:id="@+id/huntButton"
+        android:layout_width="90dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="471dp"
+        tools:layout_editor_absoluteY="346dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
