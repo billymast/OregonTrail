@@ -41,14 +41,14 @@
 
     <TextView
         android:id="@+id/gamePlayText"
-        android:layout_width="543dp"
-        android:layout_height="108dp"
+        android:layout_width="552dp"
+        android:layout_height="107dp"
         android:background="#FFFFFF"
         android:text="GamePlay Text"
         android:textAlignment="center"
         android:textSize="60sp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="233dp" />
+        tools:layout_editor_absoluteX="-6dp"
+        tools:layout_editor_absoluteY="224dp" />
 
     <Button
         android:id="@+id/nextDay"
@@ -267,5 +267,24 @@
         android:text="Rations:"
         tools:layout_editor_absoluteX="560dp"
         tools:layout_editor_absoluteY="241dp" />
+
+    <ImageView
+        android:id="@+id/dateBackground"
+        android:layout_width="364dp"
+        android:layout_height="48dp"
+        app:srcCompat="@android:drawable/screen_background_dark"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="355dp"
+        android:layout_height="41dp"
+        android:background="#FFFFFF"
+        android:text="Independence, Missouri"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="177dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
