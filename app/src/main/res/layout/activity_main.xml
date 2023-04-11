@@ -61,48 +61,48 @@
 
     <TextView
         android:id="@+id/dateText"
-        android:layout_width="153dp"
-        android:layout_height="37dp"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
         android:text="Today's Date:"
-        android:textSize="24sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="561dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="3dp" />
 
     <TextView
         android:id="@+id/weatherText"
-        android:layout_width="152dp"
-        android:layout_height="37dp"
+        android:layout_width="66dp"
+        android:layout_height="22dp"
         android:text="Weather:"
-        android:textSize="24sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="561dp"
         tools:layout_editor_absoluteY="53dp" />
 
     <TextView
         android:id="@+id/healthText"
-        android:layout_width="89dp"
-        android:layout_height="39dp"
+        android:layout_width="48dp"
+        android:layout_height="19dp"
         android:text="Health:"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="561dp"
-        tools:layout_editor_absoluteY="162dp" />
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="277dp" />
 
     <TextView
         android:id="@+id/foodText"
-        android:layout_width="126dp"
-        android:layout_height="35dp"
-        android:text="Food:"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="561dp"
-        tools:layout_editor_absoluteY="127dp" />
+        android:layout_width="69dp"
+        android:layout_height="17dp"
+        android:text="Food Left:"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="260dp" />
 
     <TextView
         android:id="@+id/distanceText"
-        android:layout_width="152dp"
-        android:layout_height="37dp"
+        android:layout_width="71dp"
+        android:layout_height="20dp"
         android:text="Distance:"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="561dp"
-        tools:layout_editor_absoluteY="90dp" />
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="129dp" />
 
     <ImageView
         android:id="@+id/HattieCampbell"
@@ -201,5 +201,71 @@
         android:text="Button"
         tools:layout_editor_absoluteX="471dp"
         tools:layout_editor_absoluteY="346dp" />
+
+    <TextView
+        android:id="@+id/dateTextChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="January 1, 1900"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="562dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/weatherConditionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunny"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <TextView
+        android:id="@+id/weatherTempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Warm"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="95dp" />
+
+    <TextView
+        android:id="@+id/distanceLandmarkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Landmark:"
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/distanceTraveledText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Traveled:"
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <TextView
+        android:id="@+id/wagonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wagon:"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="561dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/paceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pace:"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <TextView
+        android:id="@+id/rationsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rations:"
+        tools:layout_editor_absoluteX="560dp"
+        tools:layout_editor_absoluteY="241dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
