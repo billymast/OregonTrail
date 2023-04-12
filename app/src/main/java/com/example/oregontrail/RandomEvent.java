@@ -6,28 +6,6 @@ package com.example.oregontrail;
 
 public class RandomEvent {
 
-    private boolean isBlizzard;
-    private boolean isHeavyFog;
-    private boolean isHailStorm;
-    private boolean isInjuredOx;
-    private boolean isInjuredPartyMember;
-    private boolean isSnakeBite;
-    private boolean isLoseTrail;
-    private boolean isThief;
-    private boolean isBadWater;
-    private boolean isVeryLittleWater;
-    private boolean isInadequateGrass;
-    private boolean isIllness;
-    private boolean isIndiansHelpFindFood;
-    private boolean isServeThunderstorm;
-    private boolean isWrongTrail;
-    private boolean isRoughTrail;
-    private boolean isImpassibleTrail;
-    private boolean isFindingWildFruit;
-    private boolean isFireInTheWagon;
-    private boolean isLostPartyMemeber;
-    private boolean isOxWondersOff;
-    private boolean isFindingAbandonedWagon;
 
     public void RandomEvent () {}
 
@@ -65,8 +43,21 @@ public class RandomEvent {
         }
     }
 
+    public boolean NativesHelp (Inventory inventory) {
+       int foodValue = inventory.getInventoryValue("food");
+        double value = randomValue();
+       if (foodValue == 0){
+           if (value < 0.05){
+               inventory.addInventory("Food", 30);
+               return true;
+           }
+       }
+       return false;
+    }
+
+
     /**
-     *
+
      * @return a boolean that either says weather the random event happens
      */
     public boolean RoughTrail () {
@@ -93,12 +84,36 @@ public class RandomEvent {
         }
     }
 
+    public boolean SevereBlizzard (Weather weather){
+        String currentWeather = weather.getTempType();
+        double value = randomValue();
+        if (currentWeather == "cold" || currentWeather == "very cold"){
+            if (value < .15){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean findWildFruit (Time time){
+        int month = time.getMonth();
+        double value = randomValue();
+        if (month >= 5 && month <= 9 ){
+            if (value < 0.04){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
     /**
      *
      * @return a string value indicating which random event happens or none
      */
 
-    public String Event () {
+    public String Event (Inventory inventory, Weather weather, Time time) {
         if (SnakeBite()){
             return "Snake Bite";
         }
@@ -110,6 +125,15 @@ public class RandomEvent {
         }
         if (RoughTrail()){
             return "Rough Trail";
+        }
+        if (NativesHelp(inventory)){
+            return "Natives help find food";
+        }
+        if (SevereBlizzard(weather)){
+            return "Severe Blizzard";
+        }
+        if (findWildFruit(time)){
+            return "You found wild fruit";
         }
         return "no random event";
     }
