@@ -187,6 +187,14 @@ public class Weather {
 
     // Helper Methods
 
+    public String weatherTypeString() {
+        if (this.weatherType == 0) { return "No Precipitation"; }
+        else if (this.weatherType == 1) { return "Light Rain"; }
+        else if (this.weatherType == 2) { return "Heavy Rain"; }
+        else if (this.weatherType == 3) { return "Light Snow"; }
+        else { return "Heavy Snow"; }
+    }
+
     // updateTempType - Takes number temp and updates category for temp
     public void updateTempType() {
         if (getTemp() < 10) { setTempType("very cold"); }

@@ -103,16 +103,19 @@ public class Time {
     // Other Methods
 
     // updateDay - progresses to the next day on the calendar
-    public void updateDay(){
-        if (this.day == monthDays[this.month - 1]) {
-            this.day = 1;
-            this.month++;
-            if (this.month > 12) {
-                this.month = 1;
-                year++;
+    public void updateDay(int numDays){
+
+        for (int i = 0; i < numDays; i++) {
+            if (this.day == monthDays[this.month - 1]) {
+                this.day = 1;
+                this.month++;
+                if (this.month > 12) {
+                    this.month = 1;
+                    year++;
+                }
             }
+            else { this.day++; }
         }
-        else { this.day++; }
     }
 
     // outputDate - outputs a string containing the current date in the game

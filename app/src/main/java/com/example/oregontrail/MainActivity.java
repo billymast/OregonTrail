@@ -27,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         // All objects of text boxes, images, or buttons
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
-        final TextView dateText = findViewById(R.id.dateText);
-        final TextView weatherText = findViewById(R.id.weatherText);
+        final TextView dateTextChange = findViewById(R.id.dateTextChange);
+        final TextView weatherTempText = findViewById(R.id.weatherTempText);
+        final TextView weatherConditionText = findViewById(R.id.weatherConditionText);
+        final TextView distanceLandmarkText = findViewById(R.id.distanceLandmarkText);
+        final TextView distanceTraveledText = findViewById(R.id.distanceTraveledText);
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
-        final TextView distanceText = findViewById(R.id.distanceText);
         final Button nextDayButton = findViewById(R.id.nextDay);
 
         // When next day button is clicked
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays changes to weather
                 weather.dailyWeather();
-                weatherText.setText("Weather: " + weather.getTempType());
+                weatherTempText.setText(weather.getTempType());
+                weatherConditionText.setText(weather.weatherTypeString());
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map);
@@ -48,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays location
                 map.updateLocation();
-                distanceText.setText("Distance: " + map.getLocation());
+                distanceTraveledText.setText("Traveled" + map.getLocation());
+                /** Update distance to landmark Text */
 
                 // Updates and displays food count
                 inventory.removeInventory("Food", 20);
@@ -68,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Update and Display the new date
-                time.updateDay();
-                dateText.setText("Date: " + time.outputDate());
+                time.updateDay(1);
+                dateTextChange.setText(time.outputDate());
             }
         });
 

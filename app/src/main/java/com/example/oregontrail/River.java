@@ -25,7 +25,7 @@ public class River {
 
     // Fording the River
 
-    public int riverFord(Time time, Weather weather, Health health){
+    public int riverFord(Time time, Weather weather, Health health) {
 
         // Depths less than 2.5
         if (this.depth < 2.5){
@@ -34,9 +34,9 @@ public class River {
             if (this.riverFloorType == "Muddy") {
                 //40% chance of getting stuck in mud
                 if(Math.random() < 0.4) {
-                    time.updateDay();
+                    time.updateDay(1);
                     // If cold health affected
-                    if (weather.getTempType() == "cold" || weather.getTempType() == "very cold") { health. /* Health class needs way to increase */ }
+                    if (weather.getTempType() == "cold" || weather.getTempType() == "very cold") { /** Health class needs way to increase */ }
                     // Stuck in mud, Lose a day
                     return 2;
                 }
@@ -46,7 +46,7 @@ public class River {
             if (this.riverFloorType == "Rocky") {
                 // 16% chance of overturning
                 if (Math.random() < 0.16) {
-                    /* 10-40% of supplies lost, each person has 10% chance of injury, and random parts break */ return 4;
+                    /** 10-40% of supplies lost, each person has 10% chance of injury, and random parts break */ return 4;
                 }
                 // Rough crossing, but you did not overturn
                 else { return 5; }
@@ -55,16 +55,25 @@ public class River {
 
         // Depths between 2.5 and 5
         // Wagon swamps
-        else if (this.depth < 5) { /* 50-90% of supplies is lost, each ox has a 30% chance of drowning - Could use a binomial dist for that */ return 6;}
+        else if (this.depth < 5) { /** 50-90% of supplies is lost, each ox has a 30% chance of drowning - Could use a binomial dist for that */ return 6; }
 
         // Depths greater than 5
-        else { /* Wagon and oxen are swept away, each person has 30% of drowning */ return 7;}
+        else { /** Wagon and oxen are swept away, each person has 30% of drowning */ return 7; }
     }
 
     // Float Across the River
+    public int riverFloat() {
+        // Slow current - No problem floating across the river
+        if (this.swiftness < 2.5) { return 1; }
+        else if (this.swiftness < 5) { /** 50-90% of supplies swept away */ return 2; }
+        else { /** Wagon and oxen are swept away, high chance of each person drowning */ return 3; }
+    }
 
     // Take Ferry Across the River
-
+    public int riverFerry(Time time) {
+        /** Take away $5  */
+        time.updateDay(3);
+    }
 
 
 }
