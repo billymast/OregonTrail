@@ -11,33 +11,38 @@
         android:id="@+id/StatsBackground1"
         android:layout_width="349dp"
         android:layout_height="660dp"
-        app:srcCompat="@android:drawable/screen_background_dark"
-        tools:layout_editor_absoluteX="997dp"
-        tools:layout_editor_absoluteY="-8dp" />
+        app:layout_constraintBottom_toTopOf="@+id/OptionsBackground"
+        app:layout_constraintStart_toEndOf="@+id/gamePlayText"
+        app:srcCompat="@android:drawable/screen_background_dark" />
 
     <ImageView
         android:id="@+id/StatsBackground2"
         android:layout_width="297dp"
         android:layout_height="637dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/StatsBackground1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_light"
-        tools:layout_editor_absoluteX="1015dp" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/screen_background_light" />
 
     <ImageView
         android:id="@+id/OptionsBackground"
         android:layout_width="1335dp"
         android:layout_height="152dp"
-        app:srcCompat="@android:drawable/screen_background_dark"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="649dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/screen_background_dark" />
 
     <ImageView
         android:id="@+id/MainScreen"
         android:layout_width="570dp"
         android:layout_height="200dp"
-        tools:layout_editor_absoluteX="427dp"
-        tools:layout_editor_absoluteY="129dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/dateBackground"
+        app:layout_constraintEnd_toStartOf="@+id/StatsBackground1"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
@@ -48,252 +53,294 @@
         android:text="GamePlay Text"
         android:textAlignment="center"
         android:textSize="60sp"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="416dp" />
+        app:layout_constraintBottom_toTopOf="@+id/OptionsBackground"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/nextDay"
         android:layout_width="405dp"
         android:layout_height="81dp"
-        android:layout_marginStart="16dp"
         android:text="Click to Continue"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/dateText"
         android:layout_width="173dp"
         android:layout_height="36dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="128dp"
         android:text="Today's Date:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/weatherText"
         android:layout_width="145dp"
         android:layout_height="31dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="172dp"
         android:text="Weather:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="129dp" />
+        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextChange" />
 
     <TextView
         android:id="@+id/healthText"
-        android:layout_width="98dp"
-        android:layout_height="30dp"
+        android:layout_width="273dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="130dp"
         android:text="Health:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1029dp"
-        tools:layout_editor_absoluteY="485dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/StatsBackground1"
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/foodText" />
 
     <TextView
         android:id="@+id/foodText"
-        android:layout_width="137dp"
-        android:layout_height="29dp"
+        android:layout_width="267dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="1dp"
         android:text="Food Left:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1029dp"
-        tools:layout_editor_absoluteY="456dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/rationsText" />
 
     <TextView
         android:id="@+id/distanceText"
         android:layout_width="141dp"
         android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="176dp"
         android:text="Distance:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
+        app:layout_constraintTop_toBottomOf="@+id/weatherTempText" />
 
     <ImageView
         android:id="@+id/HattieCampbell"
         android:layout_width="243dp"
         android:layout_height="332dp"
-        app:srcCompat="@drawable/hattie"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hattie" />
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="48dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="109dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="704dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/guideButton"
-        android:layout_width="49dp"
-        android:layout_height="47dp"
+        android:layout_width="108dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="704dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapButton" />
 
     <Button
         android:id="@+id/statusButton"
-        android:layout_width="47dp"
-        android:layout_height="45dp"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="706dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buyButton" />
 
     <Button
         android:id="@+id/rationsButton"
-        android:layout_width="41dp"
-        android:layout_height="46dp"
+        android:layout_width="105dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="706dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tradeButton" />
 
     <Button
         android:id="@+id/buyButton"
-        android:layout_width="61dp"
-        android:layout_height="42dp"
+        android:layout_width="106dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="371dp"
-        tools:layout_editor_absoluteY="704dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/huntButton" />
 
     <Button
         android:id="@+id/tradeButton"
-        android:layout_width="66dp"
-        android:layout_height="44dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="475dp"
-        tools:layout_editor_absoluteY="708dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statusButton" />
 
     <Button
         android:id="@+id/talkButton"
-        android:layout_width="69dp"
-        android:layout_height="47dp"
+        android:layout_width="103dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="1011dp"
-        tools:layout_editor_absoluteY="699dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/restButton" />
 
     <Button
         android:id="@+id/restButton"
-        android:layout_width="63dp"
-        android:layout_height="44dp"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="850dp"
-        tools:layout_editor_absoluteY="702dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideButton" />
 
     <Button
         android:id="@+id/paceButton"
-        android:layout_width="65dp"
-        android:layout_height="45dp"
+        android:layout_width="109dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="585dp"
-        tools:layout_editor_absoluteY="706dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rationsButton" />
 
     <Button
         android:id="@+id/huntButton"
-        android:layout_width="90dp"
-        android:layout_height="43dp"
+        android:layout_width="105dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
         android:text="Button"
-        tools:layout_editor_absoluteX="699dp"
-        tools:layout_editor_absoluteY="709dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/talkButton" />
 
     <TextView
         android:id="@+id/dateTextChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="256dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="19dp"
         android:text="January 1, 1900"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="67dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/dateText" />
 
     <TextView
         android:id="@+id/weatherConditionText"
-        android:layout_width="83dp"
+        android:layout_width="261dp"
         android:layout_height="29dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="1dp"
         android:text="Sunny"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="160dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/weatherText" />
 
     <TextView
         android:id="@+id/weatherTempText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:text="Warm"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1034dp"
-        tools:layout_editor_absoluteY="189dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/weatherConditionText" />
 
     <TextView
         android:id="@+id/distanceLandmarkText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
         android:text="To Landmark:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1032dp"
-        tools:layout_editor_absoluteY="288dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
 
     <TextView
         android:id="@+id/distanceTraveledText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="268dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="12dp"
         android:text="Traveled:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1031dp"
-        tools:layout_editor_absoluteY="312dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/distanceLandmarkText" />
 
     <TextView
         android:id="@+id/wagonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="237dp"
         android:text="Wagon:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="1031dp"
-        tools:layout_editor_absoluteY="369dp" />
+        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
+        app:layout_constraintTop_toBottomOf="@+id/distanceTraveledText" />
 
     <TextView
         android:id="@+id/paceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="268dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="11dp"
         android:text="Pace:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1031dp"
-        tools:layout_editor_absoluteY="402dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/wagonText" />
 
     <TextView
         android:id="@+id/rationsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="9dp"
         android:text="Rations:"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="1029dp"
-        tools:layout_editor_absoluteY="429dp" />
+        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
+        app:layout_constraintTop_toBottomOf="@+id/paceText" />
 
     <ImageView
         android:id="@+id/dateBackground"
         android:layout_width="574dp"
         android:layout_height="83dp"
-        app:srcCompat="@android:drawable/screen_background_dark"
-        tools:layout_editor_absoluteX="425dp"
-        tools:layout_editor_absoluteY="333dp" />
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
+        app:layout_constraintEnd_toStartOf="@+id/StatsBackground1"
+        app:srcCompat="@android:drawable/screen_background_dark" />
 
     <TextView
         android:id="@+id/locationText"
         android:layout_width="531dp"
         android:layout_height="53dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
         android:background="#FFFFFF"
         android:text="Independence, Missouri"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="448dp"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
+        app:layout_constraintEnd_toEndOf="@+id/dateBackground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

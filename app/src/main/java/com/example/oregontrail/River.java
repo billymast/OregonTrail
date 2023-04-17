@@ -59,6 +59,7 @@ public class River {
 
         // Depths greater than 5
         else { /** Wagon and oxen are swept away, each person has 30% of drowning */ return 7; }
+        return 8;
     }
 
     // Float Across the River
@@ -70,7 +71,8 @@ public class River {
     }
 
     // Take Ferry Across the River
-    public int riverFerry(Time time) {
+
+    public void riverFerry(Time time) {
         /** Take away $5  */
         time.updateDay(3);
     }

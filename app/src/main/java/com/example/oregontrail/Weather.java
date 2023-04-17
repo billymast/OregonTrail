@@ -206,19 +206,19 @@ public class Weather {
     }
 
     // adjustTemp - Randomly adds or subtracts up to 20 to or from the temperature
-    public void adjustTemp() {
-        int startTemp = temperatures[this.zone][Time.getMonth()];
-        int adjustment = ((int)Math.random() * 41) - 20;
-        setTemp(startTemp + adjustment);
+    public void adjustTemp(Time time) {
+        int startTemp = temperatures[this.zone][time.getMonth()];
+        int adjustment = ((int)(Math.random() * 41)) - 20;
+        this.temp = startTemp + adjustment;
     }
 
     // dailyPrecipitation - Determines whether no precipitation, light rain, heavy rain, light snow, or heavy snow
-    public void dailyPrecipitation() {
+    public void dailyPrecipitation(Time time) {
         // 50% chance for no change in weather
         if (Math.random() < 0.5) {
-            this.temp = 0;
+            this.weatherType = 0;
             // Chance for Precipitation
-            if (Math.random() < precipitationChances[zone][Time.getMonth()]) {
+            if (Math.random() < precipitationChances[zone][time.getMonth()]) {
                 this.weatherType += 1;
                 // Chance of Heavy Precipitation
                 if (Math.random() < 0.3) { this.weatherType += 1; }
@@ -282,15 +282,15 @@ public class Weather {
     // Daily Function
 
     // dailyWeather - simulates a daily cycle for weather in the game
-    public void dailyWeather(){
+    public void dailyWeather(Time time){
         // Randomly adjust Temperature
-        adjustTemp();
+        adjustTemp(time);
 
         // Updates Temp Classification
         updateTempType();
 
         // Random Precipitation for Day
-        dailyPrecipitation();
+        dailyPrecipitation(time);
 
         // Update rainfall and snowfall amounts
         updateRainfall();

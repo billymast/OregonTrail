@@ -78,7 +78,7 @@ public class Time {
 
     // getMonth - returns the current month
     // @return month - current month in game
-    public static int getMonth() {
+    public int getMonth() {
         return month;
     }
 

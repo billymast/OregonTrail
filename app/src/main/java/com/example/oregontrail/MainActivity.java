@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Updates and displays changes to weather
-                weather.dailyWeather();
-                weatherTempText.setText(weather.getTempType());
+                weather.dailyWeather(time);
                 weatherConditionText.setText(weather.weatherTypeString());
+                weatherTempText.setText(Integer.toString(weather.getTemp()));
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map);
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays location
                 map.updateLocation();
-                distanceTraveledText.setText("Traveled" + map.getLocation());
+                distanceTraveledText.setText("Traveled: " + map.getLocation());
                 /** Update distance to landmark Text */
 
                 // Updates and displays food count
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // Otherwise check for any random events that may occur
                 else {
-                    gamePlayText.setText(randomEvent.Event());
+                    gamePlayText.setText(randomEvent.Event(inventory, weather, time));
                 }
 
                 // Update and Display the new date
