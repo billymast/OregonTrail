@@ -3,6 +3,9 @@ package com.example.oregontrail;
 // Map class: Handles player progression and other checks
 // Author: Billy
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Map {
 
     private int zone;
@@ -11,18 +14,44 @@ public class Map {
     private int paceType;
 
     // Distance to Forts
-    private int fortKearney = 320;
-    private int fortLaramie = 750;
-    private int fortBridger = 1025;
-    private int fortHall = 1240;
-    private int fortBoise = 1480;
-    private int fortWallaWalla = 1730;
+    private int fortKearney = 302;
+    private int fortLaramie = 638;
+    private int fortBridger = 1055;
+    private int fortHall = 1274;
+    private int fortBoise = 1569;
+    private int fortWallaWalla = 1784;
 
     // Distance to Rivers
-    private int kansasRiver = 60;
-    private int bigBlueRiver = 100;
+    private int kansasRiver = 102;
+    private int bigBlueRiver = 184;
     private int greenRiver;
-    private int snakeRiver;
+    private int snakeRiver = 1456;
+
+    // Other Landmarks
+    private int chimneyRock = 552;
+    private int independenceRock = 828;
+    private int southPass = 930;
+    private int sodaSprings = 1217;
+    private int blueMountains = 1729;
+    private int theDalles = 1904;
+    private int willametteValley = 2004;
+
+    private Queue<Integer> distanceToLandmark = new LinkedList<>();
+    private Queue<String> currentLandmarkQueue = new LinkedList<>();
+
+    private String currentLandmark;
+
+    /**
+     * Other landmarks Used:
+     * Chimney Rock: 552
+     * Independence Rock: 828
+     * South Pass: 930 - Later can include option to go straight to Soda Springs, but must cross Green River
+     * Soda Springs: 1217
+     * Blue Mountains: 1729 - Later can include option to go through The Dalles
+     * The Dalles: 1904 - Gives option to take Barlow Road for $9.50 or float down a river
+     * Willamette Valley: 2004 - Final Destination
+     *
+     */
 
     // Number of Forts and Rivers
     private int numRivers = 4;
@@ -37,6 +66,44 @@ public class Map {
         this.zone = 1;
         this.location = 0;
         this.paceType = 2;
+
+        // Distance to Landmarks Queue
+        this.distanceToLandmark.add(kansasRiver);
+        this.distanceToLandmark.add(bigBlueRiver);
+        this.distanceToLandmark.add(fortKearney);
+        this.distanceToLandmark.add(chimneyRock);
+        this.distanceToLandmark.add(fortLaramie);
+        this.distanceToLandmark.add(independenceRock);
+        this.distanceToLandmark.add(southPass);
+        this.distanceToLandmark.add(fortBridger);
+        this.distanceToLandmark.add(sodaSprings);
+        this.distanceToLandmark.add(fortHall);
+        this.distanceToLandmark.add(snakeRiver);
+        this.distanceToLandmark.add(fortBoise);
+        this.distanceToLandmark.add(blueMountains);
+        this.distanceToLandmark.add(fortWallaWalla);
+        this.distanceToLandmark.add(theDalles);
+        this.distanceToLandmark.add(willametteValley);
+
+        // Landmark Names Queue
+        this.currentLandmarkQueue.add("Kansas River");
+        this.currentLandmarkQueue.add("Big Blue River");
+        this.currentLandmarkQueue.add("Fort Kearney");
+        this.currentLandmarkQueue.add("Chimney Rock");
+        this.currentLandmarkQueue.add("Fort Laramie");
+        this.currentLandmarkQueue.add("Independence Rock");
+        this.currentLandmarkQueue.add("South Pass");
+        this.currentLandmarkQueue.add("Fort Bridger");
+        this.currentLandmarkQueue.add("Soda Springs");
+        this.currentLandmarkQueue.add("Fort Hall");
+        this.currentLandmarkQueue.add("Snake River");
+        this.currentLandmarkQueue.add("Fort Boise");
+        this.currentLandmarkQueue.add("Blue Mountains");
+        this.currentLandmarkQueue.add("Fort Walla Walla");
+        this.currentLandmarkQueue.add("The Dalles");
+        this.currentLandmarkQueue.add("Willamette Valley");
+
+        this.currentLandmark = "None";
     }
 
     // Method getLocation returns location
@@ -51,9 +118,20 @@ public class Map {
         return paceType;
     }
 
+    public String getCurrentLandmark() {
+        return currentLandmark;
+    }
+
     // Method updateLocation updates location as a function of pace
-    public void updateLocation() {
+    // @return boolean returns true if at a landmark
+    public boolean updateLocation() {
         location += pace;
+        if (location >= distanceToLandmark.peek()){
+            location = distanceToLandmark.remove();
+            currentLandmark = currentLandmarkQueue.remove();
+            return true;
+        }
+        return false;
     }
 
     // Method isRiver checks if the location is an ID for a river
@@ -72,6 +150,10 @@ public class Map {
             if (fortsLoc[i] == location) { return true; }
         }
         return false;
+    }
+
+    public int distanceToNextLandmark(){
+        return distanceToLandmark.peek() - this.location;
     }
 
 }

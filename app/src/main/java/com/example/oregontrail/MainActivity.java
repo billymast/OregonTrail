@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
         final Button nextDayButton = findViewById(R.id.nextDay);
+        final TextView locationText = findViewById(R.id.locationText);
 
         // When next day button is clicked
         nextDayButton.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
                 healthText.setText("Health: " + health.getParty());
 
                 // Updates and displays location
-                map.updateLocation();
+                if(map.updateLocation()){
+                    locationText.setText(map.getCurrentLandmark());
+                }
                 distanceTraveledText.setText("Traveled: " + map.getLocation());
-                /** Update distance to landmark Text */
+                distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
 
                 // Updates and displays food count
                 inventory.removeInventory("Food", 20);
