@@ -422,7 +422,7 @@ public class Inventory {
                 break;
             case "Money":
                 tempArr = inventory.get(17);
-                value = Integer.parseInt(TempArr[1]);
+                value = Integer.parseInt(tempArr[1]);
                 break;
         }
 
