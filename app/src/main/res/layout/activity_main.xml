@@ -60,6 +60,7 @@
         android:id="@+id/nextDay"
         android:layout_width="405dp"
         android:layout_height="81dp"
+        android:background="#000000"
         android:text="Click to Continue"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
@@ -134,9 +135,9 @@
         android:layout_width="109dp"
         android:layout_height="99dp"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -147,7 +148,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Guide"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mapButton" />
 
@@ -158,7 +159,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buyButton" />
 
@@ -169,7 +170,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Rations"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tradeButton" />
 
@@ -180,7 +181,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Buy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/huntButton" />
 
@@ -191,7 +192,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Trade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/statusButton" />
 
@@ -202,7 +203,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Talk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/restButton" />
 
@@ -213,7 +214,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Rest"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideButton" />
 
@@ -224,7 +225,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Pace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/rationsButton" />
 
@@ -235,7 +236,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/roundedbutton"
-        android:text="Button"
+        android:text="Hunt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/talkButton" />
 
@@ -272,8 +273,8 @@
 
     <TextView
         android:id="@+id/distanceLandmarkText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="27dp"
         android:layout_marginStart="13dp"
         android:text="To Landmark:"
         android:textSize="20sp"

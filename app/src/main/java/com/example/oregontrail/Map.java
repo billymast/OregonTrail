@@ -11,12 +11,12 @@ public class Map {
     private int paceType;
 
     // Distance to Forts
-    private int fortKearney = 200;
-    private int fortLaramie = 400;
-    private int fortBridger = 600;
-    private int fortHall = 800;
-    private int fortBoise = 1000;
-    private int fortWallaWalla = 1200;
+    private int fortKearney = 320;
+    private int fortLaramie = 750;
+    private int fortBridger = 1025;
+    private int fortHall = 1240;
+    private int fortBoise = 1480;
+    private int fortWallaWalla = 1730;
 
     // Distance to Rivers
     private int kansasRiver = 60;

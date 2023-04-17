@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays changes to weather
                 weather.dailyWeather(time);
                 weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(Integer.toString(weather.getTemp()));
+                weatherTempText.setText(weather.getTempType());
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map);
