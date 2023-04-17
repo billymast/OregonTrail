@@ -30,6 +30,7 @@ public class Inventory {
     private String[] SeedPackages;
     private String[] Shovels;
     private String[] CookingItems;
+    private String[] Money;
 
 
     //default constructor
@@ -57,6 +58,8 @@ public class Inventory {
         SeedPackages = new String[] {"SeedPackages", "10"}; inventory.add(SeedPackages);
         Shovels = new String[] {"Shovels", "5"}; inventory.add(Shovels);
         CookingItems = new String[] {"CookingItems", "1"}; inventory.add(CookingItems);
+        Money = new String[] {"Money", "1600"}; inventory.add(Money);
+
     }
 
     /**
@@ -136,6 +139,10 @@ public class Inventory {
             case "CookingItems":
                 tempValue = Integer.parseInt (CookingItems[1]) + Value;
                 CookingItems[1] = Integer.toString(tempValue);
+                break;
+            case "Money" :
+                tempValue = Integer.parseInt (Money[1])+ Value;
+                Money[1] = Integer.toString (tempValue);
                 break;
 
         }
@@ -321,7 +328,16 @@ public class Inventory {
                 }
                 CookingItems[1] = Integer.toString(tempValue);
                 break;
-
+            case "Money" :
+                tempValue = Integer.parseInt (Money[1]);
+                if (tempValue > Value){
+                    tempValue = tempValue - Value;
+                }
+                else{
+                    tempValue = 0;
+                }
+                Money[1] = Integer.toString(tempValue);
+                break;
         }
     }
 
@@ -402,6 +418,10 @@ public class Inventory {
                 break;
             case "CookingItems" :
                 tempArr = inventory.get(16);
+                value = Integer.parseInt(tempArr[1]);
+                break;
+            case "Money":
+                tempArr = inventory.get(17);
                 value = Integer.parseInt(tempArr[1]);
                 break;
         }
