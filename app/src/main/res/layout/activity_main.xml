@@ -307,7 +307,7 @@
         android:layout_width="268dp"
         android:layout_height="27dp"
         android:layout_marginStart="11dp"
-        android:text="Pace:"
+        android:text="Pace: Normal"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
         app:layout_constraintTop_toBottomOf="@+id/wagonText" />
@@ -343,5 +343,72 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
         app:layout_constraintEnd_toEndOf="@+id/dateBackground" />
+
+    <ImageView
+        android:id="@+id/optionsBackground1"
+        android:layout_width="1008dp"
+        android:layout_height="648dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/screen_background_dark" />
+
+    <ImageView
+        android:id="@+id/optionsBackground2"
+        android:layout_width="984dp"
+        android:layout_height="625dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="21dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/optionsBackground1"
+        app:layout_constraintTop_toTopOf="@+id/optionsBackground1"
+        app:srcCompat="@android:drawable/screen_background_light" />
+
+    <Button
+        android:id="@+id/normalPaceButton"
+        android:layout_width="206dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="222dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Normal Pace"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/optionsBackground2"
+        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+
+    <Button
+        android:id="@+id/strenuousPaceButton"
+        android:layout_width="204dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Strenuous Pace"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/normalPaceButton"
+        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+
+    <Button
+        android:id="@+id/gruelingPaceButton"
+        android:layout_width="206dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Grueling Pace"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/strenuousPaceButton"
+        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+
+    <Button
+        android:id="@+id/exitOptionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="39dp"
+        android:text="Exit"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/optionsBackground2"
+        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

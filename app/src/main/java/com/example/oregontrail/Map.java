@@ -11,7 +11,7 @@ public class Map {
     private int zone;
     private int location;
     private int pace = 20;
-    private int paceType;
+    private String paceType;
 
     // Distance to Forts
     private int fortKearney = 302;
@@ -65,7 +65,7 @@ public class Map {
     {
         this.zone = 1;
         this.location = 0;
-        this.paceType = 2;
+        this.paceType = "Normal";
 
         // Distance to Landmarks Queue
         this.distanceToLandmark.add(kansasRiver);
@@ -112,12 +112,6 @@ public class Map {
         return location;
     }
 
-    // Method getPaceType gets the type of pace the user wants to use
-    // @return paceType returns chosen pace type from user
-    public int getPaceType() {
-        return paceType;
-    }
-
     public String getCurrentLandmark() {
         return currentLandmark;
     }
@@ -154,6 +148,22 @@ public class Map {
 
     public int distanceToNextLandmark(){
         return distanceToLandmark.peek() - this.location;
+    }
+
+    // Pace Functions
+
+    // Method getPaceType gets the type of pace the user wants to use
+    // @return paceType returns chosen pace type from user
+    public String getPaceType() {
+        return paceType;
+    }
+
+    public void setPaceType(String paceType) {
+        if (this.paceType == "Strenuous") { this.pace /= 1.5; }
+        if (this.paceType == "Grueling") { this.pace /= 2; }
+        this.paceType = paceType;
+        if (paceType == "Strenuous") { this.pace *= 1.5; }
+        if (paceType == "Grueling") { this.pace *= 2; }
     }
 
 }
