@@ -129,20 +129,20 @@ public class Health {
         }
         Party = Party + FreezeStarveFactor;
 
-        //Pace
-        //Check this getter with Map Code
-        //int Pace = Map.getselectedspeed();
-        //if (Pace == 1){
-        //    Party = Party + 2;
-        //}
-        //if (Pace == 2){
-        //    Party = Party + 4;
-        //}
-        //if (Pace == 3){
-        //    Party = Party + 6;
-        //}
+        Pace
+        Check this getter with Map Code
+        string Pace = Map.getselectedspeed();
+        if (Pace.equals(Normal)){
+            Party = Party + 2;
+        }
+        if (Pace.equals(Strenuous)){
+            Party = Party + 4;
+        }
+    	if (Pace.equals(Grueling)){
+            Party = Party + 6;
+        }
 
-        //Individual Illness (Implementing for final/not required for mvp)
+        //Individual Illness
         if (Party <= 34){
             //0% chance of getting sick (Impliment for Final)
         }
