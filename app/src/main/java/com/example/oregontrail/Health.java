@@ -129,16 +129,14 @@ public class Health {
         }
         Party = Party + FreezeStarveFactor;
 
-        Pace
-        Check this getter with Map Code
-        string Pace = Map.getselectedspeed();
-        if (Pace.equals(Normal)){
+        String Pace = map.getPaceType();
+        if (Pace.equals("Normal")){
             Party = Party + 2;
         }
-        if (Pace.equals(Strenuous)){
+        if (Pace.equals("Strenuous")){
             Party = Party + 4;
         }
-    	if (Pace.equals(Grueling)){
+    	if (Pace.equals("Grueling")){
             Party = Party + 6;
         }
 

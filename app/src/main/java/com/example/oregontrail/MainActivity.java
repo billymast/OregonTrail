@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
@@ -41,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
         final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
         final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
         final ImageView optionsBackground2 = findViewById(R.id.optionsBackground2);
+
+
+        // General Store Screen
+        final TextView storeFoodText = findViewById(R.id.storeFoodText);
+        final TextView storeFoodAmount = findViewById(R.id.storeFoodAmount);
+        final Button storeDecrementFood = findViewById(R.id.storeDecrementFood);
+        final Button storeIncrementFood = findViewById(R.id.storeIncrementFood);
+        final TextView storeFoodCost = findViewById(R.id.storeFoodCost);
+        final TextView storeYourAmount = findViewById(R.id.storeYourAmount);
 
 
         // When next day button is clicked
@@ -116,6 +127,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Buttons for General Store
+        storeDecrementFood.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        storeIncrementFood.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //storeFoodAmount.setText(String.valueOf(storeFoodAmount.getText()) + 1);
+            }
+        });
+
+        // Buttons for Pace Menu
         normalPaceButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 map.setPaceType("Normal");
