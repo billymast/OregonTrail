@@ -44,14 +44,24 @@ public class MainActivity extends AppCompatActivity {
         final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
         final ImageView optionsBackground2 = findViewById(R.id.optionsBackground2);
 
+        // Options Buttons
+        final Button buyButton = findViewById(R.id.buyButton);
+
 
         // General Store Screen
+        final TextView storeLabel1 = findViewById(R.id.storeLabel1);
+        final TextView storeLabel2 = findViewById(R.id.storeLabel2);
+        final TextView storeLabel3 = findViewById(R.id.storeLabel3);
+        final TextView storeLabel4 = findViewById(R.id.storeLabel4);
+        final TextView storeTotalCost = findViewById(R.id.storeTotalCost);
+        final TextView storeYourMoney = findViewById(R.id.storeYourMoney);
+        final Button storeBuyButton = findViewById(R.id.storeBuyButton);
         final TextView storeFoodText = findViewById(R.id.storeFoodText);
         final TextView storeFoodAmount = findViewById(R.id.storeFoodAmount);
         final Button storeDecrementFood = findViewById(R.id.storeDecrementFood);
         final Button storeIncrementFood = findViewById(R.id.storeIncrementFood);
         final TextView storeFoodCost = findViewById(R.id.storeFoodCost);
-        final TextView storeYourAmount = findViewById(R.id.storeYourAmount);
+        final TextView storeYourFood = findViewById(R.id.storeYourAmount);
 
 
         // When next day button is clicked
@@ -120,23 +130,65 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground2.setVisibility(View.GONE);
+                exitOptionsButton.setVisibility(View.GONE);
+                // General Store Items (Buy Button)
+                storeLabel1.setVisibility(View.GONE);
+                storeLabel2.setVisibility(View.GONE);
+                storeLabel3.setVisibility(View.GONE);
+                storeLabel4.setVisibility(View.GONE);
+                storeTotalCost.setVisibility(View.GONE);
+                storeYourMoney.setVisibility(View.GONE);
+                storeBuyButton.setVisibility(View.GONE);
+                storeFoodText.setVisibility(View.GONE);
+                storeDecrementFood.setVisibility(View.GONE);
+                storeIncrementFood.setVisibility(View.GONE);
+                storeFoodAmount.setVisibility(View.GONE);
+                storeFoodCost.setVisibility(View.GONE);
+                storeYourFood.setVisibility(View.GONE);
+                // Pace Button Items
                 normalPaceButton.setVisibility(View.GONE);
                 strenuousPaceButton.setVisibility(View.GONE);
                 gruelingPaceButton.setVisibility(View.GONE);
-                exitOptionsButton.setVisibility(View.GONE);
             }
         });
 
         // Buttons for General Store
+
+        // When Buy Button is Clicked
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nextDayButton.setVisibility(View.GONE);
+                optionsBackground2.setVisibility(View.VISIBLE);
+                exitOptionsButton.setVisibility(View.VISIBLE);
+                storeLabel1.setVisibility(View.VISIBLE);
+                storeLabel2.setVisibility(View.VISIBLE);
+                storeLabel3.setVisibility(View.VISIBLE);
+                storeLabel4.setVisibility(View.VISIBLE);
+                storeTotalCost.setVisibility(View.VISIBLE);
+                storeYourMoney.setVisibility(View.VISIBLE);
+                storeBuyButton.setVisibility(View.VISIBLE);
+                storeFoodText.setVisibility(View.VISIBLE);
+                storeDecrementFood.setVisibility(View.VISIBLE);
+                storeIncrementFood.setVisibility(View.VISIBLE);
+                storeFoodAmount.setVisibility(View.VISIBLE);
+                storeFoodCost.setVisibility(View.VISIBLE);
+                storeYourFood.setVisibility(View.VISIBLE);
+            }
+        });
+
         storeDecrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
+                if (orig_Value > 0) {
+                    storeFoodAmount.setText(Integer.toString(orig_Value - 25));
+                }
             }
         });
 
         storeIncrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //storeFoodAmount.setText(String.valueOf(storeFoodAmount.getText()) + 1);
+                int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
+                storeFoodAmount.setText(Integer.toString(orig_Value + 25));
             }
         });
 
