@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,407 +8,604 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/StatsBackground1"
-        android:layout_width="349dp"
-        android:layout_height="660dp"
-        app:layout_constraintBottom_toTopOf="@+id/OptionsBackground"
-        app:layout_constraintStart_toEndOf="@+id/gamePlayText"
-        app:srcCompat="@android:drawable/screen_background_dark" />
+        android:id="@+id/mainBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:srcCompat="@android:drawable/screen_background_dark"
+        tools:layout_editor_absoluteX="23dp" />
 
     <ImageView
         android:id="@+id/StatsBackground2"
-        android:layout_width="297dp"
-        android:layout_height="637dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/StatsBackground1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/screen_background_light" />
-
-    <ImageView
-        android:id="@+id/OptionsBackground"
-        android:layout_width="1335dp"
-        android:layout_height="152dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/screen_background_dark" />
+        android:layout_width="312dp"
+        android:layout_height="531dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@android:drawable/screen_background_light"
+        tools:layout_editor_absoluteX="1005dp"
+        tools:layout_editor_absoluteY="11dp" />
 
     <ImageView
         android:id="@+id/MainScreen"
-        android:layout_width="570dp"
-        android:layout_height="200dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/dateBackground"
-        app:layout_constraintEnd_toStartOf="@+id/StatsBackground1"
+        android:layout_width="757dp"
+        android:layout_height="272dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="237dp"
+        android:layout_marginTop="13dp"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="17dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/gamePlayText"
-        android:layout_width="1000dp"
-        android:layout_height="233dp"
+        android:layout_width="981dp"
+        android:layout_height="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="121dp"
         android:background="#FFFFFF"
         android:text="GamePlay Text"
         android:textAlignment="center"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/OptionsBackground"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="432dp" />
 
     <Button
         android:id="@+id/nextDay"
-        android:layout_width="405dp"
-        android:layout_height="81dp"
+        android:layout_width="310dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="283dp"
         android:background="#000000"
         android:text="Click to Continue"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="347dp"
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/dateText"
         android:layout_width="173dp"
         android:layout_height="36dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="128dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="138dp"
         android:text="Today's Date:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="27dp" />
 
     <TextView
         android:id="@+id/weatherText"
         android:layout_width="145dp"
         android:layout_height="31dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="172dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="165dp"
         android:text="Weather:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextChange" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="115dp" />
 
     <TextView
         android:id="@+id/healthText"
         android:layout_width="273dp"
         android:layout_height="28dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="181dp"
         android:text="Health:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/StatsBackground1"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/foodText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="413dp" />
 
     <TextView
         android:id="@+id/foodText"
         android:layout_width="267dp"
         android:layout_height="27dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="481dp"
+        android:layout_marginEnd="47dp"
         android:text="Food Left:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/rationsText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="441dp" />
 
     <TextView
         android:id="@+id/distanceText"
         android:layout_width="141dp"
         android:layout_height="31dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="176dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="172dp"
         android:text="Distance:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
-        app:layout_constraintTop_toBottomOf="@+id/weatherTempText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="219dp" />
 
     <ImageView
         android:id="@+id/HattieCampbell"
-        android:layout_width="243dp"
-        android:layout_height="332dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hattie" />
+        android:layout_width="211dp"
+        android:layout_height="264dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/hattie"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="109dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="685dp" />
 
     <Button
         android:id="@+id/guideButton"
-        android:layout_width="108dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Guide"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mapButton" />
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="682dp" />
 
     <Button
         android:id="@+id/statusButton"
-        android:layout_width="105dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="254dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Status"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buyButton" />
+        tools:layout_editor_absoluteX="814dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/rationsButton"
-        android:layout_width="105dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="380dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Rations"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tradeButton" />
+        tools:layout_editor_absoluteX="1059dp"
+        tools:layout_editor_absoluteY="678dp" />
 
     <Button
         android:id="@+id/buyButton"
-        android:layout_width="106dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="507dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Buy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/huntButton" />
+        tools:layout_editor_absoluteX="683dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/tradeButton"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="631dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Trade"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/statusButton" />
+        tools:layout_editor_absoluteX="933dp"
+        tools:layout_editor_absoluteY="677dp" />
 
     <Button
         android:id="@+id/talkButton"
-        android:layout_width="103dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="411dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Talk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/restButton" />
+        tools:layout_editor_absoluteX="430dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/restButton"
-        android:layout_width="105dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Rest"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideButton" />
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="681dp" />
 
     <Button
         android:id="@+id/paceButton"
-        android:layout_width="109dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Pace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rationsButton" />
+        tools:layout_editor_absoluteX="1183dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/huntButton"
-        android:layout_width="105dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Hunt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/talkButton" />
+        tools:layout_editor_absoluteX="557dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <TextView
         android:id="@+id/dateTextChange"
         android:layout_width="256dp"
         android:layout_height="31dp"
-        android:layout_marginStart="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="53dp"
         android:text="January 1, 1900"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/dateText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="63dp" />
 
     <TextView
         android:id="@+id/weatherConditionText"
         android:layout_width="261dp"
         android:layout_height="29dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="49dp"
         android:text="Sunny"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/weatherText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="146dp" />
 
     <TextView
         android:id="@+id/weatherTempText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="255dp"
         android:text="Warm"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/weatherConditionText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="175dp" />
 
     <TextView
         android:id="@+id/distanceLandmarkText"
         android:layout_width="263dp"
         android:layout_height="27dp"
-        android:layout_marginStart="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="51dp"
         android:text="To Landmark:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="250dp" />
 
     <TextView
         android:id="@+id/distanceTraveledText"
         android:layout_width="268dp"
         android:layout_height="28dp"
-        android:layout_marginStart="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="44dp"
         android:text="Traveled:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/distanceLandmarkText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="277dp" />
 
     <TextView
         android:id="@+id/wagonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="237dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="233dp"
+        android:layout_marginBottom="287dp"
         android:text="Wagon:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/StatsBackground1"
-        app:layout_constraintTop_toBottomOf="@+id/distanceTraveledText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="325dp" />
 
     <TextView
         android:id="@+id/paceText"
         android:layout_width="268dp"
         android:layout_height="27dp"
-        android:layout_marginStart="11dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="258dp"
         android:text="Pace: Normal"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/wagonText" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="358dp" />
 
     <TextView
         android:id="@+id/rationsText"
         android:layout_width="270dp"
         android:layout_height="27dp"
-        android:layout_marginStart="9dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="405dp"
+        android:layout_marginEnd="47dp"
         android:text="Rations:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StatsBackground2"
-        app:layout_constraintTop_toBottomOf="@+id/paceText" />
-
-    <ImageView
-        android:id="@+id/dateBackground"
-        android:layout_width="574dp"
-        android:layout_height="83dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
-        app:layout_constraintEnd_toStartOf="@+id/StatsBackground1"
-        app:srcCompat="@android:drawable/screen_background_dark" />
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="385dp" />
 
     <TextView
         android:id="@+id/locationText"
-        android:layout_width="531dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="666dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="294dp"
         android:background="#FFFFFF"
         android:text="Independence, Missouri"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/gamePlayText"
-        app:layout_constraintEnd_toEndOf="@+id/dateBackground" />
-
-    <ImageView
-        android:id="@+id/optionsBackground1"
-        android:layout_width="1008dp"
-        android:layout_height="648dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_dark" />
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="363dp" />
 
     <ImageView
         android:id="@+id/optionsBackground2"
-        android:layout_width="984dp"
-        android:layout_height="625dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="21dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/optionsBackground1"
-        app:layout_constraintTop_toTopOf="@+id/optionsBackground1"
-        app:srcCompat="@android:drawable/screen_background_light" />
+        android:layout_width="986dp"
+        android:layout_height="525dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:srcCompat="@android:drawable/screen_background_light"
+        tools:layout_editor_absoluteX="23dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/normalPaceButton"
         android:layout_width="206dp"
         android:layout_height="192dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="222dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/roundedbutton"
         android:text="Normal Pace"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/optionsBackground2"
-        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+        tools:layout_editor_absoluteX="23dp" />
 
     <Button
         android:id="@+id/strenuousPaceButton"
         android:layout_width="204dp"
         android:layout_height="192dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="220dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="401dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/roundedbutton"
         android:text="Strenuous Pace"
         android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/normalPaceButton"
-        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+        tools:layout_editor_absoluteX="23dp" />
 
     <Button
         android:id="@+id/gruelingPaceButton"
         android:layout_width="206dp"
         android:layout_height="194dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="220dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="445dp"
         android:background="@drawable/roundedbutton"
         android:text="Grueling Pace"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/strenuousPaceButton"
-        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/exitOptionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="348dp"
         android:text="Exit"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/optionsBackground2"
-        app:layout_constraintTop_toTopOf="@+id/optionsBackground2" />
+        tools:visibility="visible" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/storeFoodText"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="67dp"
+        android:text="Food  /  $1.00"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/storeDecrementFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="58dp"
+        android:drawableTint="#FF0000"
+        android:text="---" />
+
+    <Button
+        android:id="@+id/storeIncrementFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="58dp"
+        android:text="+++" />
+
+    <TextView
+        android:id="@+id/storeFoodAmount"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="64dp"
+        android:text="#"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Item   /   Price"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="309dp"
+        android:layout_marginTop="30dp"
+        android:text="Amount"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="30dp"
+        android:text="Cost"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeLabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="30dp"
+        android:text="Your Amount  /  Max Amount"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeFoodCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="498dp"
+        android:layout_marginTop="67dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourAmount"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="576dp"
+        android:layout_marginTop="67dp"
+        android:text="0   /   None"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="222dp"
+        android:text="Total Cost: $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="190dp"
+        android:text="Your Money: $0.00"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/storeBuyButton"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="136dp"
+        android:text="Buy"
+        android:textSize="24sp" />
+
+</RelativeLayout>

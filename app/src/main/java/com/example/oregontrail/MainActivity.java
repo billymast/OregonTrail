@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         final Button strenuousPaceButton = findViewById(R.id.strenuousPaceButton);
         final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
         final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
-        final ImageView optionsBackground1 = findViewById(R.id.optionsBackground1);
         final ImageView optionsBackground2 = findViewById(R.id.optionsBackground2);
 
 
@@ -99,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         paceButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nextDayButton.setVisibility(View.GONE);
-                optionsBackground1.setVisibility(View.VISIBLE);
                 optionsBackground2.setVisibility(View.VISIBLE);
                 normalPaceButton.setVisibility(View.VISIBLE);
                 strenuousPaceButton.setVisibility(View.VISIBLE);
@@ -112,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         exitOptionsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nextDayButton.setVisibility(View.VISIBLE);
-                optionsBackground1.setVisibility(View.GONE);
                 optionsBackground2.setVisibility(View.GONE);
                 normalPaceButton.setVisibility(View.GONE);
                 strenuousPaceButton.setVisibility(View.GONE);
