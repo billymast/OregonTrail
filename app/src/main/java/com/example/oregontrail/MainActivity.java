@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         final Button storeDecrementFood = findViewById(R.id.storeDecrementFood);
         final Button storeIncrementFood = findViewById(R.id.storeIncrementFood);
         final TextView storeFoodCost = findViewById(R.id.storeFoodCost);
-        final TextView storeYourFood = findViewById(R.id.storeYourAmount);
+        final TextView storeYourFood = findViewById(R.id.storeYourFood);
 
 
         // When next day button is clicked
@@ -113,18 +111,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        // When the Pace button is clicked
-        paceButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                nextDayButton.setVisibility(View.GONE);
-                optionsBackground2.setVisibility(View.VISIBLE);
-                normalPaceButton.setVisibility(View.VISIBLE);
-                strenuousPaceButton.setVisibility(View.VISIBLE);
-                gruelingPaceButton.setVisibility(View.VISIBLE);
-                exitOptionsButton.setVisibility(View.VISIBLE);
-            }
-        });
-
         // When Exit button is clicked in the options menu
         exitOptionsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -157,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
         // When Buy Button is Clicked
         buyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                // Displays Store Screen
                 nextDayButton.setVisibility(View.GONE);
                 optionsBackground2.setVisibility(View.VISIBLE);
                 exitOptionsButton.setVisibility(View.VISIBLE);
@@ -173,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
                 storeFoodAmount.setVisibility(View.VISIBLE);
                 storeFoodCost.setVisibility(View.VISIBLE);
                 storeYourFood.setVisibility(View.VISIBLE);
+
+                // Updates Variables (Also contains text for Max Amount)
+                storeYourFood.setText(Integer.toString(inventory.getInventoryValue("Food")) + "   /   None");
             }
         });
 
@@ -189,6 +180,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
                 storeFoodAmount.setText(Integer.toString(orig_Value + 25));
+            }
+        });
+
+        // When the Pace button is clicked
+        paceButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nextDayButton.setVisibility(View.GONE);
+                optionsBackground2.setVisibility(View.VISIBLE);
+                normalPaceButton.setVisibility(View.VISIBLE);
+                strenuousPaceButton.setVisibility(View.VISIBLE);
+                gruelingPaceButton.setVisibility(View.VISIBLE);
+                exitOptionsButton.setVisibility(View.VISIBLE);
             }
         });
 
