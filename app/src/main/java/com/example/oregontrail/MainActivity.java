@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
@@ -17,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
     Time time = new Time();
     Weather weather = new Weather();
     RandomEvent randomEvent = new RandomEvent();
+
+    River kansasRiver = new River(2,10,10,"Smooth");
+    River bigBlueRiver = new River(5,20,10,"Smooth");
+    River greenRiver = new River(3,15,10,"Smooth");
+    River snakeRiver = new River(10,35,10,"Smooth");
+
+    Queue<River> riverQueue = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         final Button strenuousPaceButton = findViewById(R.id.strenuousPaceButton);
         final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
         final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
-        final ImageView optionsBackground2 = findViewById(R.id.optionsBackground2);
+        final ImageView optionsBackground = findViewById(R.id.optionsBackground2);
 
         // Options Buttons
         final Button buyButton = findViewById(R.id.buyButton);
@@ -61,52 +71,101 @@ public class MainActivity extends AppCompatActivity {
         final TextView storeFoodCost = findViewById(R.id.storeFoodCost);
         final TextView storeYourFood = findViewById(R.id.storeYourFood);
 
+        // River Event Elements
+        final TextView riverDepth = findViewById(R.id.riverDepth);
+        final TextView riverWidth = findViewById(R.id.riverWidth);
+        final Button riverFordButton = findViewById(R.id.riverFordButton);
+        final Button riverFloatButton = findViewById(R.id.riverFloatButton);
+        final Button riverFerryButton = findViewById(R.id.riverFerryButton);
+        final Button riverWaitButton = findViewById(R.id.riverWaitButton);
+
 
         // When next day button is clicked
         nextDayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                String dailyOutput = time.outputDate() + "\n";
+                if (map.isRiver()) {
+                    nextDayButton.setVisibility(View.GONE);
+                    optionsBackground.setVisibility(View.VISIBLE);
+                    riverDepth.setVisibility(View.VISIBLE);
+                    riverWidth.setVisibility(View.VISIBLE);
+                    riverFordButton.setVisibility(View.VISIBLE);
+                    riverFloatButton.setVisibility(View.VISIBLE);
+                    riverFerryButton.setVisibility(View.VISIBLE);
+                    riverWaitButton.setVisibility(View.VISIBLE);
 
-                // Updates and displays changes to weather
-                weather.dailyWeather(time);
-                weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
+                    // Displays River Depth and Width Depending on Which River
+                    String currentLandmark = map.getCurrentLandmark();
+                    if (currentLandmark == "Kansas River"){
+                        String depth = Integer.toString(kansasRiver.getDepth());
+                        String width = Integer.toString(kansasRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else if (currentLandmark == "Big Blue River"){
+                        String depth = Integer.toString(bigBlueRiver.getDepth());
+                        String width = Integer.toString(bigBlueRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else if (currentLandmark == "Snake River"){
+                        String depth = Integer.toString(snakeRiver.getDepth());
+                        String width = Integer.toString(snakeRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else {
+                        String depth = Integer.toString(greenRiver.getDepth());
+                        String width = Integer.toString(greenRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
 
-                // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map);
-                healthText.setText("Health: " + health.getParty());
-
-                // Updates and displays location
-                if(map.updateLocation()){
-                    locationText.setText(map.getCurrentLandmark());
+                    map.updateLocation(20);
                 }
-                distanceTraveledText.setText("Traveled: " + map.getLocation());
-                distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
-
-                // Updates and displays food count
-                inventory.removeInventory("Food", 20);
-                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
-
-                // Checks whether a fort is reached
-                if (map.isFort()){
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Checks whether a river is reached
-                else if (map.isRiver()) {
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Otherwise check for any random events that may occur
                 else {
-                    dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
+                    String dailyOutput = time.outputDate() + "\n";
+
+                    // Updates and displays changes to weather
+                    weather.dailyWeather(time);
+                    weatherConditionText.setText(weather.weatherTypeString());
+                    weatherTempText.setText(weather.getTempType());
+
+                    // Updates and displays changes to party's health
+                    health.PartyUpdate(weather, inventory, map);
+                    healthText.setText("Health: " + health.getParty());
+
+                    // Updates and displays location
+                    if(map.updateLocation(map.getPace())){
+                        locationText.setText(map.getCurrentLandmark());
+                    }
+                    distanceTraveledText.setText("Traveled: " + map.getLocation());
+                    distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
+
+                    // Updates and displays food count
+                    inventory.removeInventory("Food", 20);
+                    foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                    // Checks whether a fort is reached
+                    if (map.isFort()){
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Checks whether a river is reached
+                    else if (map.isRiver()) {
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Otherwise check for any random events that may occur
+                    else {
+                        dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
+                    }
+
+                    // Displays Text explaining what happened during the day
+                    gamePlayText.setText(dailyOutput);
+
+                    // Update and Display the new date
+                    time.updateDay(1);
+                    dateTextChange.setText(time.outputDate());
                 }
-
-                // Displays Text explaining what happened during the day
-                gamePlayText.setText(dailyOutput);
-
-                // Update and Display the new date
-                time.updateDay(1);
-                dateTextChange.setText(time.outputDate());
             }
 
         });
@@ -115,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         exitOptionsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nextDayButton.setVisibility(View.VISIBLE);
-                optionsBackground2.setVisibility(View.GONE);
+                optionsBackground.setVisibility(View.GONE);
                 exitOptionsButton.setVisibility(View.GONE);
                 // General Store Items (Buy Button)
                 storeLabel1.setVisibility(View.GONE);
@@ -146,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Displays Store Screen
                 nextDayButton.setVisibility(View.GONE);
-                optionsBackground2.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.VISIBLE);
                 exitOptionsButton.setVisibility(View.VISIBLE);
                 storeLabel1.setVisibility(View.VISIBLE);
                 storeLabel2.setVisibility(View.VISIBLE);
@@ -169,17 +228,49 @@ public class MainActivity extends AppCompatActivity {
 
         storeDecrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                final int changeInQuant = 25;
+                double foodPrice = 1.00;
                 int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
                 if (orig_Value > 0) {
-                    storeFoodAmount.setText(Integer.toString(orig_Value - 25));
+                    storeFoodAmount.setText(Integer.toString(orig_Value - changeInQuant));
+                    storeFoodCost.setText(String.valueOf(Integer.parseInt(storeFoodAmount.getText().toString()) * foodPrice));
                 }
             }
         });
 
         storeIncrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                final int changeInQuant = 25;
+                double foodPrice = 1.00;
                 int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
-                storeFoodAmount.setText(Integer.toString(orig_Value + 25));
+                storeFoodAmount.setText(Integer.toString(orig_Value + changeInQuant));
+                storeFoodCost.setText(String.valueOf(Integer.parseInt(storeFoodAmount.getText().toString()) * foodPrice));
+            }
+        });
+
+        // Buttons For River Event
+
+        riverFordButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        riverFloatButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        riverFerryButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        riverWaitButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
             }
         });
 
@@ -187,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         paceButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nextDayButton.setVisibility(View.GONE);
-                optionsBackground2.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.VISIBLE);
                 normalPaceButton.setVisibility(View.VISIBLE);
                 strenuousPaceButton.setVisibility(View.VISIBLE);
                 gruelingPaceButton.setVisibility(View.VISIBLE);

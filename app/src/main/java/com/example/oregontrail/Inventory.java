@@ -159,7 +159,7 @@ public class Inventory {
         switch (type){
             case "Food" :
                 tempValue = Integer.parseInt(Food[1]) ;// converts from string to an int than adds the value
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {

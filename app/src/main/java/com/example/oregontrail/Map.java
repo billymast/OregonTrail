@@ -24,7 +24,7 @@ public class Map {
     // Distance to Rivers
     private int kansasRiver = 102;
     private int bigBlueRiver = 184;
-    private int greenRiver;
+    private int greenRiver = 100000000;
     private int snakeRiver = 1456;
 
     // Other Landmarks
@@ -116,9 +116,13 @@ public class Map {
         return currentLandmark;
     }
 
+    public int getPace() {
+        return pace;
+    }
+
     // Method updateLocation updates location as a function of pace
     // @return boolean returns true if at a landmark
-    public boolean updateLocation() {
+    public boolean updateLocation(int pace) {
         location += pace;
         if (location >= distanceToLandmark.peek()){
             location = distanceToLandmark.remove();

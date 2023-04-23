@@ -13,6 +13,12 @@ public class River {
     // Either Smooth, Muddy, or Rocky
     private String riverFloorType;
 
+    public River() {
+        this.depth = 0;
+        this.width = 0;
+        this.swiftness = 0;
+        this.riverFloorType = "Smooth";
+    }
     public River(int depth, int width, int swiftness, String riverFloorType) {
         this.depth = depth;
         this.width = width;
@@ -20,8 +26,17 @@ public class River {
         this.riverFloorType = riverFloorType;
     }
 
+    public int getDepth() {
+        return depth;
+    }
 
+    public int getWidth() {
+        return width;
+    }
 
+    public int getSwiftness() {
+        return swiftness;
+    }
 
     // Fording the River
 
