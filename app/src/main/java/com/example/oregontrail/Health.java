@@ -2,6 +2,7 @@
 // Calculates health of the party and executes actions according to values
 // Author: Gabe Virosteck
 
+
 package com.example.oregontrail;
 
 public class Health {
@@ -15,7 +16,7 @@ public class Health {
     private int Death;                       //Handles game over if party health too bad
     private double Party;                    //Party Health Value
     private String Rations;                  //How much food is being consumed (selected by player)
-    private double FreezeStarveFactor;       //Was in the document not really sure its 1:28am
+    private double FreezeStarveFactor;       //Variable that affects health
 
     //Constructors
     //Default Constructor
@@ -123,6 +124,7 @@ public class Health {
         else {
             FreezeCheck = 0;
         }
+        
         //All Okay, lower freeze/starve factor
         if(FoodCheck == 0 && FreezeCheck == 0){
             FreezeStarveFactor = FreezeStarveFactor / 2;
@@ -136,29 +138,9 @@ public class Health {
         if (Pace.equals("Strenuous")){
             Party = Party + 4;
         }
-    	if (Pace.equals("Grueling")){
+        if (Pace.equals("Grueling")){
             Party = Party + 6;
         }
-
-        //Individual Illness
-        if (Party <= 34){
-            //0% chance of getting sick (Impliment for Final)
-        }
-        else if (Party <= 65){
-            //15% chance (Impliment for Final)
-        }
-        else if (Party <= 104){
-            //30% chance (Impliment for Final)
-        }
-        else if (Party <= 139){
-            //40% Chance (Impliment for Final)
-        }
-        else if (Party > 139){
-            //Everyone dies in 5 days (Implimenting for final)
-        }
-
-        //Random Events (Will need to call from class - could be implimented for final)
-
 
         return Party;
     }// end of party

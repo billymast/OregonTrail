@@ -169,7 +169,7 @@ public class Inventory {
                 break;
             case "Clothes" :
                 tempValue = Integer.parseInt (Clothes[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -179,7 +179,7 @@ public class Inventory {
                 break;
             case "Rifle":
                 tempValue = Integer.parseInt (Rifle[1]) ;
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -189,7 +189,7 @@ public class Inventory {
                 break;
             case "Shotgun":
                 tempValue = Integer.parseInt (Shotgun[1]) ;
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -199,7 +199,7 @@ public class Inventory {
                 break;
             case "Shots":
                 tempValue = Integer.parseInt (Shots[1]) ;
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -209,7 +209,7 @@ public class Inventory {
                 break;
             case "Oxen":
                 tempValue = Integer.parseInt (Oxen[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -219,7 +219,7 @@ public class Inventory {
                 break;
             case "SpareWagonWheels":
                 tempValue = Integer.parseInt (SpareWagonWheels[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -229,7 +229,7 @@ public class Inventory {
                 break;
             case "SpareWagonAxel":
                 tempValue = Integer.parseInt (SpareWagonAxel[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -239,7 +239,7 @@ public class Inventory {
                 break;
             case "SpareWagonTongues":
                 tempValue = Integer.parseInt (SpareWagonTongues[1]) ;
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -249,7 +249,7 @@ public class Inventory {
                 break;
             case "MedicalSupplyBox":
                 tempValue = Integer.parseInt (MedicalSupplyBox[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -259,7 +259,7 @@ public class Inventory {
                 break;
             case "SewingKit":
                 tempValue = Integer.parseInt (SewingKit[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -269,7 +269,7 @@ public class Inventory {
                 break;
             case "FireStartingKit":
                 tempValue = Integer.parseInt (FireStartingKit[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -279,7 +279,7 @@ public class Inventory {
                 break;
             case "KidsToys":
                 tempValue = Integer.parseInt (KidsToys[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
@@ -289,7 +289,7 @@ public class Inventory {
                 break;
             case "FamilyKeepsakes":
                 tempValue = Integer.parseInt (FamilyKeepsakes[1]);
-                if (tempValue < Value){
+                if (tempValue > Value){
                     tempValue = tempValue - Value;
                 }
                 else {
