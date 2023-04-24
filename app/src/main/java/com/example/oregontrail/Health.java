@@ -16,7 +16,7 @@ public class Health {
     private int Death;                       //Handles game over if party health too bad
     private double Party;                    //Party Health Value
     private String Rations;                  //How much food is being consumed (selected by player)
-    private double FreezeStarveFactor;       //Was in the document not really sure its 1:28am
+    private double FreezeStarveFactor;       //Variable that affects health
 
     //Constructors
     //Default Constructor
