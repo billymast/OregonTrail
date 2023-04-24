@@ -163,8 +163,8 @@ public class MainActivity extends AppCompatActivity {
                     gamePlayText.setText(dailyOutput);
 
                     // Update and Display the new date
-                    time.updateDay(1);
                     dateTextChange.setText(time.outputDate());
+                    time.updateDay(1);
                 }
             }
 
@@ -253,24 +253,64 @@ public class MainActivity extends AppCompatActivity {
         riverFordButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                nextDayButton.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.GONE);
+                riverDepth.setVisibility(View.GONE);
+                riverWidth.setVisibility(View.GONE);
+                riverFordButton.setVisibility(View.GONE);
+                riverFloatButton.setVisibility(View.GONE);
+                riverFerryButton.setVisibility(View.GONE);
+                riverWaitButton.setVisibility(View.GONE);
             }
         });
 
         riverFloatButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                nextDayButton.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.GONE);
+                riverDepth.setVisibility(View.GONE);
+                riverWidth.setVisibility(View.GONE);
+                riverFordButton.setVisibility(View.GONE);
+                riverFloatButton.setVisibility(View.GONE);
+                riverFerryButton.setVisibility(View.GONE);
+                riverWaitButton.setVisibility(View.GONE);
             }
         });
 
         riverFerryButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                nextDayButton.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.GONE);
+                riverDepth.setVisibility(View.GONE);
+                riverWidth.setVisibility(View.GONE);
+                riverFordButton.setVisibility(View.GONE);
+                riverFloatButton.setVisibility(View.GONE);
+                riverFerryButton.setVisibility(View.GONE);
+                riverWaitButton.setVisibility(View.GONE);
             }
         });
 
         riverWaitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                // Updates and displays changes to weather
+                weather.dailyWeather(time);
+                weatherConditionText.setText(weather.weatherTypeString());
+                weatherTempText.setText(weather.getTempType());
+
+                // Updates and displays changes to party's health
+                health.PartyUpdate(weather, inventory, map);
+                healthText.setText("Health: " + health.getParty());
+
+                // Updates and displays food count
+                inventory.removeInventory("Food", 20);
+                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                // Update and Display the new date
+                dateTextChange.setText(time.outputDate());
+                time.updateDay(1);
             }
         });
 
