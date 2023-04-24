@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // All objects of text boxes, images, or buttons
+        // Elements for Main Game Screen
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
         final TextView weatherTempText = findViewById(R.id.weatherTempText);
@@ -47,13 +47,19 @@ public class MainActivity extends AppCompatActivity {
         final TextView locationText = findViewById(R.id.locationText);
 
         // Options Buttons
-        final Button buyButton = findViewById(R.id.buyButton);
+        final Button mapButton = findViewById(R.id.mapButton);
         final Button statusButton = findViewById(R.id.statusButton);
+        final Button rationsButton = findViewById(R.id.rationsButton);
+        final Button buyButton = findViewById(R.id.buyButton);
+        final Button tradeButton = findViewById(R.id.tradeButton);
+        final Button talkButton = findViewById(R.id.talkButton);
+        final Button restButton = findViewById(R.id.restButton);
         final Button paceButton = findViewById(R.id.paceButton);
+        final Button huntButton = findViewById(R.id.huntButton);
 
+        // Background for Different Options Screens
         final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
         final ImageView optionsBackground = findViewById(R.id.optionsBackground2);
-
 
         // General Store Screen
         final TextView storeLabel1 = findViewById(R.id.storeLabel1);
@@ -366,6 +372,28 @@ public class MainActivity extends AppCompatActivity {
                 inventoryWagonAxels.setVisibility(View.VISIBLE);
                 inventoryWagonTongues.setVisibility(View.VISIBLE);
                 inventoryMoney.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // When the Rest Button is Clicked
+        restButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Updates and displays changes to weather
+                weather.dailyWeather(time);
+                weatherConditionText.setText(weather.weatherTypeString());
+                weatherTempText.setText(weather.getTempType());
+
+                // Updates and displays changes to party's health
+                health.PartyUpdate(weather, inventory, map);
+                healthText.setText("Health: " + health.getParty());
+
+                // Updates and displays food count
+                inventory.removeInventory("Food", 20);
+                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                // Update and Display the new date
+                dateTextChange.setText(time.outputDate());
+                time.updateDay(1);
             }
         });
 
