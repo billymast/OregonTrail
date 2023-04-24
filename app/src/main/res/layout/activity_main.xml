@@ -48,8 +48,8 @@
         android:layout_marginBottom="121dp"
         android:background="#FFFFFF"
         android:text="GamePlay Text"
-        android:textAlignment="textStart"
-        android:textSize="34sp"
+        android:textAlignment="center"
+        android:textSize="60sp"
         tools:layout_editor_absoluteX="37dp"
         tools:layout_editor_absoluteY="432dp" />
 
@@ -67,7 +67,7 @@
         android:textSize="34sp"
         tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="347dp"
-        tools:visibility="gone" />
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/dateText"
@@ -157,8 +157,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Map"
         tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="685dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="685dp" />
 
     <Button
         android:id="@+id/guideButton"
@@ -171,8 +170,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Guide"
         tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="682dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="682dp" />
 
     <Button
         android:id="@+id/statusButton"
@@ -185,8 +183,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Status"
         tools:layout_editor_absoluteX="814dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/rationsButton"
@@ -199,8 +196,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Rations"
         tools:layout_editor_absoluteX="1059dp"
-        tools:layout_editor_absoluteY="678dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="678dp" />
 
     <Button
         android:id="@+id/buyButton"
@@ -213,8 +209,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Buy"
         tools:layout_editor_absoluteX="683dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/tradeButton"
@@ -227,8 +222,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Trade"
         tools:layout_editor_absoluteX="933dp"
-        tools:layout_editor_absoluteY="677dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="677dp" />
 
     <Button
         android:id="@+id/talkButton"
@@ -241,8 +235,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Talk"
         tools:layout_editor_absoluteX="430dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/restButton"
@@ -255,8 +248,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Rest"
         tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="681dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="681dp" />
 
     <Button
         android:id="@+id/paceButton"
@@ -269,8 +261,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Pace"
         tools:layout_editor_absoluteX="1183dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/huntButton"
@@ -283,8 +274,7 @@
         android:background="@drawable/roundedbutton"
         android:text="Hunt"
         tools:layout_editor_absoluteX="557dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <TextView
         android:id="@+id/dateTextChange"
@@ -466,7 +456,8 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="348dp"
         android:text="Exit"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodText"
@@ -478,7 +469,8 @@
         android:layout_marginTop="67dp"
         android:text="Food  /  $1.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeDecrementFood"
@@ -490,7 +482,8 @@
         android:layout_marginTop="58dp"
         android:drawableTint="#FF0000"
         android:text="---"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeIncrementFood"
@@ -501,7 +494,8 @@
         android:layout_marginStart="391dp"
         android:layout_marginTop="58dp"
         android:text="+++"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodAmount"
@@ -514,7 +508,8 @@
         android:text="0"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel1"
@@ -526,7 +521,8 @@
         android:layout_marginTop="30dp"
         android:text="Item   /   Price"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel2"
@@ -539,7 +535,8 @@
         android:text="Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel3"
@@ -552,7 +549,8 @@
         android:text="Cost"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel4"
@@ -565,7 +563,8 @@
         android:text="Your Amount  /  Max Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodCost"
@@ -575,9 +574,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="498dp"
         android:layout_marginTop="67dp"
-        android:text="0.00"
+        android:text="$0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourFood"
@@ -590,7 +590,8 @@
         android:text="0   /   None"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeTotalCost"
@@ -602,7 +603,8 @@
         android:layout_marginBottom="222dp"
         android:text="Total Cost: $0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourMoney"
@@ -614,7 +616,8 @@
         android:layout_marginBottom="190dp"
         android:text="Your Money: $0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeBuyButton"
@@ -626,79 +629,6 @@
         android:layout_marginBottom="136dp"
         android:text="Buy"
         android:textSize="24sp"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/riverDepth"
-        android:layout_width="296dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="53dp"
-        android:text="River Depth:"
-        android:textSize="24sp"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/riverWidth"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="87dp"
-        android:text="River Width:"
-        android:textSize="24sp"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/riverFordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="177dp"
-        android:text="Ford The River"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/riverFloatButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="247dp"
-        android:text="Float Across The River"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/riverFerryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginBottom="291dp"
-        android:text="Take The Ferry"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/riverWaitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginBottom="206dp"
-        android:text="Wait To See If Conditions Improve"
         android:visibility="gone"
         tools:visibility="visible" />
 
