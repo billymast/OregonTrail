@@ -1,3 +1,5 @@
+//Not solid code yet, do not impliment
+
 package com.example.myapplication;
 
 public class Individual_Ilness {
