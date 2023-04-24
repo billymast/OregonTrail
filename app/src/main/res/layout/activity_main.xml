@@ -26,18 +26,6 @@
         tools:layout_editor_absoluteX="1005dp"
         tools:layout_editor_absoluteY="11dp" />
 
-    <ImageView
-        android:id="@+id/MainScreen"
-        android:layout_width="757dp"
-        android:layout_height="272dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="13dp"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="17dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
     <TextView
         android:id="@+id/gamePlayText"
         android:layout_width="981dp"
@@ -420,6 +408,18 @@
         tools:visibility="visible" />
 
     <Button
+        android:id="@+id/exitOptionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="348dp"
+        android:text="Exit"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <Button
         android:id="@+id/normalPaceButton"
         android:layout_width="206dp"
         android:layout_height="192dp"
@@ -455,17 +455,6 @@
         android:layout_marginEnd="445dp"
         android:background="@drawable/roundedbutton"
         android:text="Grueling Pace"
-        android:visibility="gone" />
-
-    <Button
-        android:id="@+id/exitOptionsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="348dp"
-        android:text="Exit"
         android:visibility="gone" />
 
     <TextView
@@ -638,8 +627,7 @@
         android:layout_marginTop="53dp"
         android:text="River Depth:"
         android:textSize="24sp"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/riverWidth"
@@ -651,8 +639,7 @@
         android:layout_marginTop="87dp"
         android:text="River Width:"
         android:textSize="24sp"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/riverFordButton"
@@ -663,8 +650,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="177dp"
         android:text="Ford The River"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/riverFloatButton"
@@ -675,8 +661,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="247dp"
         android:text="Float Across The River"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/riverFerryButton"
@@ -687,8 +672,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginBottom="291dp"
         android:text="Take The Ferry"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/riverWaitButton"
@@ -699,6 +683,122 @@
         android:layout_marginStart="45dp"
         android:layout_marginBottom="206dp"
         android:text="Wait To See If Conditions Improve"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/inventoryFood"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="40dp"
+        android:text="Food: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryClothes"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="90dp"
+        android:text="Clothes: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryShots"
+        android:layout_width="398dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="190dp"
+        android:text="Shots: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryRifle"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="140dp"
+        android:text="Rifle: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryWagonWheels"
+        android:layout_width="402dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="290dp"
+        android:text="Wagon Wheels: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryWagonAxels"
+        android:layout_width="407dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="340dp"
+        android:text="Wagon Axels: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryWagonTongues"
+        android:layout_width="408dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="390dp"
+        android:text="Wagon Tongues: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryOxen"
+        android:layout_width="395dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="240dp"
+        android:text="Oxen: "
+        android:textSize="34sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/inventoryMoney"
+        android:layout_width="414dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="440dp"
+        android:text="Money: "
+        android:textSize="34sp"
         android:visibility="gone"
         tools:visibility="visible" />
 

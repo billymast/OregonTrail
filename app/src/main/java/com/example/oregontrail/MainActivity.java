@@ -45,15 +45,14 @@ public class MainActivity extends AppCompatActivity {
         final TextView foodText = findViewById(R.id.foodText);
         final Button nextDayButton = findViewById(R.id.nextDay);
         final TextView locationText = findViewById(R.id.locationText);
-        final Button paceButton = findViewById(R.id.paceButton);
-        final Button normalPaceButton = findViewById(R.id.normalPaceButton);
-        final Button strenuousPaceButton = findViewById(R.id.strenuousPaceButton);
-        final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
-        final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
-        final ImageView optionsBackground = findViewById(R.id.optionsBackground2);
 
         // Options Buttons
         final Button buyButton = findViewById(R.id.buyButton);
+        final Button statusButton = findViewById(R.id.statusButton);
+        final Button paceButton = findViewById(R.id.paceButton);
+
+        final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
+        final ImageView optionsBackground = findViewById(R.id.optionsBackground2);
 
 
         // General Store Screen
@@ -78,6 +77,22 @@ public class MainActivity extends AppCompatActivity {
         final Button riverFloatButton = findViewById(R.id.riverFloatButton);
         final Button riverFerryButton = findViewById(R.id.riverFerryButton);
         final Button riverWaitButton = findViewById(R.id.riverWaitButton);
+
+        // Status Elements
+        final TextView inventoryFood = findViewById(R.id.inventoryFood);
+        final TextView inventoryClothes = findViewById(R.id.inventoryClothes);
+        final TextView inventoryRifle = findViewById(R.id.inventoryRifle);
+        final TextView inventoryShots = findViewById(R.id.inventoryShots);
+        final TextView inventoryOxen = findViewById(R.id.inventoryOxen);
+        final TextView inventoryWagonWheels = findViewById(R.id.inventoryWagonWheels);
+        final TextView inventoryWagonAxels = findViewById(R.id.inventoryWagonAxels);
+        final TextView inventoryWagonTongues = findViewById(R.id.inventoryWagonTongues);
+        final TextView inventoryMoney = findViewById(R.id.inventoryMoney);
+
+        // Pace Buttons
+        final Button normalPaceButton = findViewById(R.id.normalPaceButton);
+        final Button strenuousPaceButton = findViewById(R.id.strenuousPaceButton);
+        final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
 
 
         // When next day button is clicked
@@ -190,6 +205,16 @@ public class MainActivity extends AppCompatActivity {
                 storeFoodAmount.setVisibility(View.GONE);
                 storeFoodCost.setVisibility(View.GONE);
                 storeYourFood.setVisibility(View.GONE);
+                // Status Elements
+                inventoryFood.setVisibility(View.GONE);
+                inventoryClothes.setVisibility(View.GONE);
+                inventoryRifle.setVisibility(View.GONE);
+                inventoryShots.setVisibility(View.GONE);
+                inventoryOxen.setVisibility(View.GONE);
+                inventoryWagonWheels.setVisibility(View.GONE);
+                inventoryWagonAxels.setVisibility(View.GONE);
+                inventoryWagonTongues.setVisibility(View.GONE);
+                inventoryMoney.setVisibility(View.GONE);
                 // Pace Button Items
                 normalPaceButton.setVisibility(View.GONE);
                 strenuousPaceButton.setVisibility(View.GONE);
@@ -311,6 +336,36 @@ public class MainActivity extends AppCompatActivity {
                 // Update and Display the new date
                 dateTextChange.setText(time.outputDate());
                 time.updateDay(1);
+            }
+        });
+
+        // When Status Button is Clicked
+        statusButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Updates Inventory Value
+                inventoryFood.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+                inventoryClothes.setText("Clothes: " + Integer.toString(inventory.getInventoryValue("Clothes")));
+                inventoryRifle.setText("Rifle: " + Integer.toString(inventory.getInventoryValue("Rifle")));
+                inventoryShots.setText("Shots: " + Integer.toString(inventory.getInventoryValue("Shots")));
+                inventoryOxen.setText("Oxen: " + Integer.toString(inventory.getInventoryValue("Oxen")));
+                inventoryWagonWheels.setText("Wagon Wheels: " + Integer.toString(inventory.getInventoryValue("SpareWagonWheels")));
+                inventoryWagonAxels.setText("Wagon Axels: " + Integer.toString(inventory.getInventoryValue("SpareWagonAxel")));
+                inventoryWagonTongues.setText("Wagone Tongues: " + Integer.toString(inventory.getInventoryValue("SpareWagonTongues")));
+                inventoryMoney.setText("Money: " + Integer.toString(inventory.getInventoryValue("Money")));
+
+                // Makes Inventory Visible
+                nextDayButton.setVisibility(View.GONE);
+                optionsBackground.setVisibility(View.VISIBLE);
+                exitOptionsButton.setVisibility(View.VISIBLE);
+                inventoryFood.setVisibility(View.VISIBLE);
+                inventoryClothes.setVisibility(View.VISIBLE);
+                inventoryRifle.setVisibility(View.VISIBLE);
+                inventoryShots.setVisibility(View.VISIBLE);
+                inventoryOxen.setVisibility(View.VISIBLE);
+                inventoryWagonWheels.setVisibility(View.VISIBLE);
+                inventoryWagonAxels.setVisibility(View.VISIBLE);
+                inventoryWagonTongues.setVisibility(View.VISIBLE);
+                inventoryMoney.setVisibility(View.VISIBLE);
             }
         });
 
