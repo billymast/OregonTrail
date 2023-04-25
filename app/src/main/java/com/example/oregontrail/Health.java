@@ -7,11 +7,6 @@ package com.example.oregontrail;
 
 public class Health {
     //Variables
-    private double Hattie;                   //Value 0-2 with 0 healthy, 1 injured/sick, 2 dead
-    private double Husband;
-    private double Kid1;
-    private double Kid2;
-    private double Kid3;
     private int NumSick;                     //Total number of sick individuals
     private int Death;                       //Handles game over if party health too bad
     private double Party;                    //Party Health Value
