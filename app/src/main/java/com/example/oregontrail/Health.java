@@ -84,6 +84,9 @@ public class Health {
         }
 
         // Food
+        if (Rations == "Filling") {
+            //Does nothing to Party
+        }
         if (Rations == "Meager") {
             Party = Party + 2;
         } else if (Rations == "Bare bones") {
