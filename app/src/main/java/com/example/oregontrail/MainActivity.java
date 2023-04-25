@@ -107,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
         final Button strenuousPaceButton = findViewById(R.id.strenuousPaceButton);
         final Button gruelingPaceButton = findViewById(R.id.gruelingPaceButton);
 
+        // Rations Buttons
+        final Button fillingRationsButton = findViewById(R.id.fillingRationsButton);
+        final Button meagerRationsButton = findViewById(R.id.meagerRationsButton);
+        final Button bareBonesRationsButton = findViewById(R.id.bareBonesRationsButton);
+
 
         // When next day button is clicked
         nextDayButton.setOnClickListener(new View.OnClickListener() {
