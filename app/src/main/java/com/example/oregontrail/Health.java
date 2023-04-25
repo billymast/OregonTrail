@@ -47,7 +47,7 @@ public class Health {
     // @param map passes map class to get pace for health reduction
     // @return Party returns daily party health value
 
-    public double PartyUpdate(Weather weather, Inventory inventory, Map map) {
+    public double PartyUpdate(Weather weather, Inventory inventory, Map map, boolean isRest) {
 
         //Required Daily Update
         Party = Party * 0.9;
@@ -131,17 +131,19 @@ public class Health {
         }
         Party = Party + FreezeStarveFactor;
 
-        String Pace = map.getPaceType();
-        if (Pace.equals("Normal")){
-            Party = Party + 2;
+        if(isRest == false {
+            
+            String Pace = map.getPaceType();
+            if (Pace.equals("Normal")){
+               Party = Party + 2;
+         }
+         if (Pace.equals("Strenuous")){
+                Party = Party + 4;
+         }
+            if (Pace.equals("Grueling")){
+                Party = Party + 6;
+           }
         }
-        if (Pace.equals("Strenuous")){
-            Party = Party + 4;
-        }
-        if (Pace.equals("Grueling")){
-            Party = Party + 6;
-        }
-
         return Party;
     }// end of party
 }
