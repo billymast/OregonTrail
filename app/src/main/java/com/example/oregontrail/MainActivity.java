@@ -20,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
     Time time = new Time();
     Weather weather = new Weather();
     RandomEvent randomEvent = new RandomEvent();
+    GeneralStore generalStoreMatt = new GeneralStore(0);
+    GeneralStore generalStoreKearney = new GeneralStore(1);
+    GeneralStore generalStoreLaramie = new GeneralStore(2);
+    GeneralStore generalStoreBridger = new GeneralStore(3);
+    GeneralStore generalStoreHall = new GeneralStore(4);
+    GeneralStore generalStoreBoise = new GeneralStore(5);
+    GeneralStore generalStoreWalla = new GeneralStore(6);
 
     River kansasRiver = new River(2,10,10,"Smooth");
     River bigBlueRiver = new River(5,20,10,"Smooth");
@@ -228,9 +235,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Buttons for General Store
-
-        // When Buy Button is Clicked
+        // When Buy Options Button is Clicked
         buyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -252,30 +257,115 @@ public class MainActivity extends AppCompatActivity {
                 storeFoodCost.setVisibility(View.VISIBLE);
                 storeYourFood.setVisibility(View.VISIBLE);
 
+                String currentLocation = map.getCurrentLandmark();
+                GeneralStore currentStore;
+                switch (currentLocation){
+                    case "Fort Kearney":
+                        currentStore = generalStoreKearney;
+                        break;
+                    case "Fort Laramie":
+                        currentStore = generalStoreLaramie;
+                        break;
+                    case "Fort Bridger":
+                        currentStore = generalStoreBridger;
+                        break;
+                    case "Fort Hall":
+                        currentStore = generalStoreHall;
+                        break;
+                    case "Fort Boise":
+                        currentStore = generalStoreBoise;
+                        break;
+                    case "Fort Walla Walla":
+                        currentStore = generalStoreWalla;
+                        break;
+                    default:
+                        currentStore = generalStoreMatt;
+                }
+
                 // Updates Variables (Also contains text for Max Amount)
+                storeFoodText.setText("Food  /  $" + String.valueOf(currentStore.getPrice(0)));
                 storeYourFood.setText(Integer.toString(inventory.getInventoryValue("Food")) + "   /   None");
+            }
+        });
+
+        // When Store Buy Button is Clicked
+
+        storeBuyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
             }
         });
 
         storeDecrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                final int changeInQuant = 25;
-                double foodPrice = 1.00;
-                int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
-                if (orig_Value > 0) {
-                    storeFoodAmount.setText(Integer.toString(orig_Value - changeInQuant));
-                    storeFoodCost.setText(String.valueOf(Integer.parseInt(storeFoodAmount.getText().toString()) * foodPrice));
+
+                String currentLocation = map.getCurrentLandmark();
+                GeneralStore currentStore;
+                switch (currentLocation){
+                    case "Fort Kearney":
+                        currentStore = generalStoreKearney;
+                        break;
+                    case "Fort Laramie":
+                        currentStore = generalStoreLaramie;
+                        break;
+                    case "Fort Bridger":
+                        currentStore = generalStoreBridger;
+                        break;
+                    case "Fort Hall":
+                        currentStore = generalStoreHall;
+                        break;
+                    case "Fort Boise":
+                        currentStore = generalStoreBoise;
+                        break;
+                    case "Fort Walla Walla":
+                        currentStore = generalStoreWalla;
+                        break;
+                    default:
+                        currentStore = generalStoreMatt;
                 }
+
+                currentStore.removeItemQuantity(0,25);
+                storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
+                storeFoodCost.setText(String.valueOf(currentStore.getQuantity(0) * currentStore.getPrice(0)));
+                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+
+
+
             }
         });
 
         storeIncrementFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                final int changeInQuant = 25;
-                double foodPrice = 1.00;
-                int orig_Value = Integer.parseInt(storeFoodAmount.getText().toString());
-                storeFoodAmount.setText(Integer.toString(orig_Value + changeInQuant));
-                storeFoodCost.setText(String.valueOf(Integer.parseInt(storeFoodAmount.getText().toString()) * foodPrice));
+
+                String currentLocation = map.getCurrentLandmark();
+                GeneralStore currentStore;
+                switch (currentLocation){
+                    case "Fort Kearney":
+                        currentStore = generalStoreKearney;
+                        break;
+                    case "Fort Laramie":
+                        currentStore = generalStoreLaramie;
+                        break;
+                    case "Fort Bridger":
+                        currentStore = generalStoreBridger;
+                        break;
+                    case "Fort Hall":
+                        currentStore = generalStoreHall;
+                        break;
+                    case "Fort Boise":
+                        currentStore = generalStoreBoise;
+                        break;
+                    case "Fort Walla Walla":
+                        currentStore = generalStoreWalla;
+                        break;
+                    default:
+                        currentStore = generalStoreMatt;
+                }
+
+                currentStore.addItem(0,25);
+                storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
+                storeFoodCost.setText(String.valueOf(currentStore.getQuantity(0) * currentStore.getPrice(0)));
+                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
             }
         });
 

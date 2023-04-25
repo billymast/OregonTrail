@@ -103,7 +103,7 @@ public class Map {
         this.currentLandmarkQueue.add("The Dalles");
         this.currentLandmarkQueue.add("Willamette Valley");
 
-        this.currentLandmark = "None";
+        this.currentLandmark = "Matt's Store";
     }
 
     // Method getLocation returns location

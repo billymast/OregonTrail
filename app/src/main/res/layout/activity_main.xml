@@ -54,7 +54,8 @@
         android:text="Click to Continue"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="347dp" />
+        tools:layout_editor_absoluteY="347dp"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/dateText"
@@ -382,7 +383,8 @@
         android:layout_marginTop="10dp"
         android:visibility="gone"
         app:srcCompat="@android:drawable/screen_background_light"
-        tools:layout_editor_absoluteX="23dp" />
+        tools:layout_editor_absoluteX="23dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/exitOptionsButton"
@@ -443,7 +445,8 @@
         android:layout_marginTop="67dp"
         android:text="Food  /  $1.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeDecrementFood"
@@ -455,7 +458,8 @@
         android:layout_marginTop="58dp"
         android:drawableTint="#FF0000"
         android:text="---"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeIncrementFood"
@@ -466,7 +470,8 @@
         android:layout_marginStart="391dp"
         android:layout_marginTop="58dp"
         android:text="+++"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodAmount"
@@ -479,7 +484,8 @@
         android:text="0"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel1"
@@ -491,7 +497,8 @@
         android:layout_marginTop="30dp"
         android:text="Item   /   Price"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel2"
@@ -504,7 +511,8 @@
         android:text="Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel3"
@@ -517,7 +525,8 @@
         android:text="Cost"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel4"
@@ -530,7 +539,8 @@
         android:text="Your Amount  /  Max Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodCost"
@@ -542,7 +552,8 @@
         android:layout_marginTop="67dp"
         android:text="0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourFood"
@@ -555,7 +566,8 @@
         android:text="0   /   None"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeTotalCost"
@@ -565,9 +577,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="222dp"
-        android:text="Total Cost: $0.00"
+        android:text="0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourMoney"
@@ -579,7 +592,8 @@
         android:layout_marginBottom="190dp"
         android:text="Your Money: $0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeBuyButton"
@@ -591,7 +605,8 @@
         android:layout_marginBottom="136dp"
         android:text="Buy"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/riverDepth"
