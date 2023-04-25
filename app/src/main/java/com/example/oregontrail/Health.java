@@ -21,11 +21,12 @@ public class Health {
 
     //Getters
     public double getParty() {return Party;}
-
+    public string getRations() {return Rations;}
 
 
     //Setters
     public void setParty(double party) {Party = party;}
+    public Void setRations(String rations) {Rations = rations};
 
     //Methods
 
