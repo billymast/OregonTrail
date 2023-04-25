@@ -7,6 +7,7 @@ package com.example.oregontrail;
 
 public class Health {
     //Variables
+    private double Party;                    //General Party Health
     private int NumSick;                     //Total number of sick individuals
     private int Death;                       //Handles game over if party health too bad
     private double Party;                    //Party Health Value
