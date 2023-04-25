@@ -63,7 +63,7 @@ public class GeneralStore {
     // Customer variables Quantity & prices for the location and total cost
     private final int[] quantity = new int[20];
 
-    /*   Constructor generalStore(int location):
+    /**   Constructor generalStore(int location):
      *   Where location is a number that correlates to a location of a place to buy supplies
      *   0 = Matt's Store, 1 = Fort Kearney, 2 = Fort Laramie, 3 = Fort Bridger, 4 = Fort Hall,
      *   5 = Fort Boise, and 6 = Fort Walla Walla
@@ -76,7 +76,7 @@ public class GeneralStore {
         }
     }
 
-    /*   addItem(int ItemID, int Quantity)
+    /**   addItem(int ItemID, int Quantity)
      *   Give ItemID, and Quantity, it will add items to Quantity
      *   @param:  int ItemID
      *            int Quantity
@@ -85,7 +85,7 @@ public class GeneralStore {
         quantity[ItemID] = quantity[ItemID] + Quantity;
     }
 
-    /*   getTotal()
+    /**   getTotal()
      *   when invoked, It will calculate the total order cost
      *   @return: double total
      */
@@ -98,7 +98,7 @@ public class GeneralStore {
         return total;
     }
 
-    /*   getPrice(int ItemID)
+    /**   getPrice(int ItemID)
      *   Given the Input of ItemID, this method will return the
      *   @param:  int ItemID
      *   @return: double Item Price
@@ -145,7 +145,7 @@ public class GeneralStore {
         return name;
     }
 
-    /*   removeItem(int ItemID, int Quantity)
+    /**   removeItem(int ItemID, int Quantity)
      *   when invoked with an ItemID number and the quantity, it will add that to the quantity of that ID number
      *   @param:  int ItemID
      *            int Quantity
@@ -154,11 +154,12 @@ public class GeneralStore {
         quantity[ItemID] = quantity[ItemID] - Quantity;
     }
 
-    /*   resetQty():
+    /**   resetQty():
      *   when invoked, reset quantity to 0
      */
-    public void resetQty(){
+    public void resetQty(Inventory inventory){
         for (int i = 0; i <= 15; i++){
+            inventory.addInventory(getProdName(i), quantity[i]);
             quantity[i] = 0;
         }
     }

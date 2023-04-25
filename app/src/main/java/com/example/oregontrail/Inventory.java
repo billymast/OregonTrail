@@ -43,7 +43,7 @@ public class Inventory {
         //then the line following add the value to the linked list inventory
         Food = new String[]{"Food", "2000"}; inventory.add(Food);
         Clothes = new String[]{"Clothes", "8"}; inventory.add(Clothes);
-        Rifle = new String[]{"Riffles", "1"}; inventory.add(Rifle);
+        Rifle = new String[]{"Rifles", "1"}; inventory.add(Rifle);
         Shotgun = new String[]{"Shotgun", "1"}; inventory.add(Shotgun);
         Shots = new String[]{"Shots", "20"}; inventory.add(Shots);
         Oxen = new String[] {"Oxen", "6"}; inventory.add(Oxen);
