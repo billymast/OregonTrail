@@ -154,10 +154,16 @@ public class GeneralStore {
         quantity[ItemID] = quantity[ItemID] - Quantity;
     }
 
-    /**   resetQty():
-     *   when invoked, reset quantity to 0
+    /*   finishTransaction(Inventory inventory)
+     *   when invoked, removes money from players inventory, adds purchased items to players inventory
+     *   reset quantity to 0 for each item purchasable.
+     *   @paramINPUT Inventory inventory
      */
-    public void resetQty(Inventory inventory){
+    public void finishTransaction(Inventory inventory){
+        double temp = getTotal();
+
+        inventory.removeInventory("Money", temp);
+
         for (int i = 0; i <= 15; i++){
             inventory.addInventory(getProdName(i), quantity[i]);
             quantity[i] = 0;
