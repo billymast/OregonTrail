@@ -157,8 +157,9 @@ public class GeneralStore {
     /**   resetQty():
      *   when invoked, reset quantity to 0
      */
-    public void resetQty(){
+    public void resetQty(Inventory inventory){
         for (int i = 0; i <= 15; i++){
+            inventory.addInventory(getProdName(i), quantity[i]);
             quantity[i] = 0;
         }
     }
