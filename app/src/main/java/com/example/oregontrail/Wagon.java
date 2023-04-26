@@ -45,7 +45,8 @@ public class Wagon {
     }
 
     public void updateHealth(River river, Time time, Weather weather) {
-        int riverOutcome = river.riverFord(time, weather, Health);
+        int currentHealth = this.health;
+        int riverOutcome = river.riverFord(time, weather, currentHealth);
 
         int suppliesLost = 0;
 
@@ -54,7 +55,6 @@ public class Wagon {
                 break;
             case 2: // Stuck in mud - 5-15% damage
                 int damage = (new Random()).nextInt(11) + 5;
-                int currentHealth = this.health;
                 currentHealth -= (currentHealth * damage) / 100;
                 this.health = currentHealth;
                 break;
