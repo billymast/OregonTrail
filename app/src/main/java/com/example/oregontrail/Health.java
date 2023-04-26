@@ -1,8 +1,3 @@
-// health class
-// Calculates health of the party and executes actions according to values
-// Author: Gabe Virosteck
-
-
 package com.example.oregontrail;
 
 public class Health {
