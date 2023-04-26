@@ -1,8 +1,3 @@
-// health class
-// Calculates health of the party and executes actions according to values
-// Author: Gabe Virosteck
-
-
 package com.example.oregontrail;
 
 public class Health {
@@ -10,23 +5,22 @@ public class Health {
     private double Party;                    //General Party Health
     private int NumSick;                     //Total number of sick individuals
     private int Death;                       //Handles game over if party health too bad
-    private double Party;                    //Party Health Value
     private String Rations;                  //How much food is being consumed (selected by player)
     private double FreezeStarveFactor;       //Variable that affects health
 
     //Constructors
     //Default Constructor
 
-    public Health() {this.Death = 0; this.Hattie = 0; this.Husband = 0; this.Kid1 = 0; this.Kid2 = 0; this.Kid3 = 0; this.NumSick = 0; this.Party = 0; this.Rations = "Filling"; this.FreezeStarveFactor = 0;} //Default Constructor
+    public Health() {this.Death = 0; this.NumSick = 0; this.Party = 0; this.Rations = "Filling"; this.FreezeStarveFactor = 0;} //Default Constructor
 
     //Getters
     public double getParty() {return Party;}
-    public string getRations() {return Rations;}
+    public String getRations() {return Rations;}
 
 
     //Setters
     public void setParty(double party) {Party = party;}
-    public Void setRations(String rations) {Rations = rations};
+    public void setRations(String rations) {Rations = rations;}
 
     //Methods
 
@@ -131,19 +125,17 @@ public class Health {
         }
         Party = Party + FreezeStarveFactor;
 
-        if(isRest == false {
-            
-            String Pace = map.getPaceType();
-            if (Pace.equals("Normal")){
-               Party = Party + 2;
-         }
-         if (Pace.equals("Strenuous")){
-                Party = Party + 4;
-         }
-            if (Pace.equals("Grueling")){
-                Party = Party + 6;
-           }
+        String Pace = map.getPaceType();
+        if (Pace.equals("Normal")){
+            Party = Party + 2;
         }
+        if (Pace.equals("Strenuous")){
+            Party = Party + 4;
+        }
+        if (Pace.equals("Grueling")){
+            Party = Party + 6;
+        }
+
         return Party;
     }// end of party
 }
