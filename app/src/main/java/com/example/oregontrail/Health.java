@@ -10,23 +10,22 @@ public class Health {
     private double Party;                    //General Party Health
     private int NumSick;                     //Total number of sick individuals
     private int Death;                       //Handles game over if party health too bad
-    private double Party;                    //Party Health Value
     private String Rations;                  //How much food is being consumed (selected by player)
     private double FreezeStarveFactor;       //Variable that affects health
 
     //Constructors
     //Default Constructor
 
-    public Health() {this.Death = 0; this.Hattie = 0; this.Husband = 0; this.Kid1 = 0; this.Kid2 = 0; this.Kid3 = 0; this.NumSick = 0; this.Party = 0; this.Rations = "Filling"; this.FreezeStarveFactor = 0;} //Default Constructor
+    public Health() {this.Death = 0; this.NumSick = 0; this.Party = 0; this.Rations = "Filling"; this.FreezeStarveFactor = 0;} //Default Constructor
 
     //Getters
     public double getParty() {return Party;}
-    public string getRations() {return Rations;}
+    public String getRations() {return Rations;}
 
 
     //Setters
     public void setParty(double party) {Party = party;}
-    public Void setRations(String rations) {Rations = rations};
+    public void setRations(String rations) {Rations = rations;}
 
     //Methods
 
@@ -47,7 +46,7 @@ public class Health {
     // @param map passes map class to get pace for health reduction
     // @return Party returns daily party health value
 
-    public double PartyUpdate(Weather weather, Inventory inventory, Map map) {
+    public double PartyUpdate(Weather weather, Inventory inventory, Map map, boolean isRest) {
 
         //Required Daily Update
         Party = Party * 0.9;

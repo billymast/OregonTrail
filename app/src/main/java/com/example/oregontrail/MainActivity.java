@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     weatherTempText.setText(weather.getTempType());
 
                     // Updates and displays changes to party's health
-                    health.PartyUpdate(weather, inventory, map);
+                    health.PartyUpdate(weather, inventory, map, false);
                     healthText.setText("Health: " + health.getParty());
 
                     // Updates and displays location
@@ -427,7 +427,7 @@ public class MainActivity extends AppCompatActivity {
                 weatherTempText.setText(weather.getTempType());
 
                 // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map);
+                health.PartyUpdate(weather, inventory, map, true);
                 healthText.setText("Health: " + health.getParty());
 
                 // Updates and displays food count
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
                 weatherTempText.setText(weather.getTempType());
 
                 // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map);
+                health.PartyUpdate(weather, inventory, map, true);
                 healthText.setText("Health: " + health.getParty());
 
                 // Updates and displays food count
