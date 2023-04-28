@@ -77,11 +77,53 @@ public class MainActivity extends AppCompatActivity {
         final TextView storeYourMoney = findViewById(R.id.storeYourMoney);
         final Button storeBuyButton = findViewById(R.id.storeBuyButton);
         final TextView storeFoodText = findViewById(R.id.storeFoodText);
+        final TextView storeClothesText = findViewById(R.id.storeClothesText);
+        final TextView storeRifleText = findViewById(R.id.storeRifleText);
+        final TextView storeShotsText = findViewById(R.id.storeShotsText);
+        final TextView storeWheelsText = findViewById(R.id.storeWheelsText);
+        final TextView storeAxlesText = findViewById(R.id.storeAxlesText);
+        final TextView storeTonguesText = findViewById(R.id.storeTonguesText);
+        final TextView storeOxenText = findViewById(R.id.storeOxenText);
         final TextView storeFoodAmount = findViewById(R.id.storeFoodAmount);
+        final TextView storeClothesAmount = findViewById(R.id.storeClothesAmount);
+        final TextView storeRifleAmount = findViewById(R.id.storeRifleAmount);
+        final TextView storeShotsAmount = findViewById(R.id.storeShotsAmount);
+        final TextView storeWheelsAmount = findViewById(R.id.storeWheelsAmount);
+        final TextView storeAxlesAmount = findViewById(R.id.storeAxlesAmount);
+        final TextView storeTonguesAmount = findViewById(R.id.storeTonguesAmount);
+        final TextView storeOxenAmount = findViewById(R.id.storeOxenAmount);
         final Button storeDecrementFood = findViewById(R.id.storeDecrementFood);
+        final Button storeDecrementClothes = findViewById(R.id.storeDecrementClothes);
+        final Button storeDecrementRifle = findViewById(R.id.storeDecrementRifle);
+        final Button storeDecrementShots = findViewById(R.id.storeDecrementShots);
+        final Button storeDecrementWheels = findViewById(R.id.storeDecrementWheels);
+        final Button storeDecrementAxles = findViewById(R.id.storeDecrementAxles);
+        final Button storeDecrementTongues = findViewById(R.id.storeDecrementTongues);
+        final Button storeDecrementOxen = findViewById(R.id.storeDecrementOxen);
         final Button storeIncrementFood = findViewById(R.id.storeIncrementFood);
+        final Button storeIncrementClothes = findViewById(R.id.storeIncrementClothes);
+        final Button storeIncrementRifle = findViewById(R.id.storeIncrementRifle);
+        final Button storeIncrementShots = findViewById(R.id.storeIncrementShots);
+        final Button storeIncrementWheels = findViewById(R.id.storeIncrementWheels);
+        final Button storeIncrementAxles = findViewById(R.id.storeIncrementAxles);
+        final Button storeIncrementTongues = findViewById(R.id.storeIncrementTongues);
+        final Button storeIncrementOxen = findViewById(R.id.storeIncrementOxen);
         final TextView storeFoodCost = findViewById(R.id.storeFoodCost);
+        final TextView storeClothesCost = findViewById(R.id.storeClothesCost);
+        final TextView storeRifleCost = findViewById(R.id.storeRifleCost);
+        final TextView storeShotsCost = findViewById(R.id.storeShotsCost);
+        final TextView storeWheelsCost = findViewById(R.id.storeWheelsCost);
+        final TextView storeAxlesCost = findViewById(R.id.storeAxlesCost);
+        final TextView storeTonguesCost = findViewById(R.id.storeTonguesCost);
+        final TextView storeOxenCost = findViewById(R.id.storeOxenCost);
         final TextView storeYourFood = findViewById(R.id.storeYourFood);
+        final TextView storeYourClothes = findViewById(R.id.storeYourClothes);
+        final TextView storeYourRifle = findViewById(R.id.storeYourRifle);
+        final TextView storeYourShots = findViewById(R.id.storeYourShots);
+        final TextView storeYourWheels = findViewById(R.id.storeYourWheels);
+        final TextView storeYourAxles = findViewById(R.id.storeYourAxles);
+        final TextView storeYourTongues = findViewById(R.id.storeYourTongues);
+        final TextView storeYourOxen = findViewById(R.id.storeYourOxen);
 
         // River Event Elements
         final TextView riverDepth = findViewById(R.id.riverDepth);
@@ -285,11 +327,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     default:
                         currentStore = generalStoreMatt;
+                        break;
                 }
 
                 // Updates Variables (Also contains text for Max Amount)
                 storeFoodText.setText("Food  /  $" + String.valueOf(currentStore.getPrice(0)));
                 storeYourFood.setText(Integer.toString(inventory.getInventoryValue("Food")) + "   /   None");
+                storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
             }
         });
 
@@ -298,6 +342,38 @@ public class MainActivity extends AppCompatActivity {
         storeBuyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                String currentLocation = map.getCurrentLandmark();
+                GeneralStore currentStore;
+                switch (currentLocation){
+                    case "Fort Kearney":
+                        currentStore = generalStoreKearney;
+                        break;
+                    case "Fort Laramie":
+                        currentStore = generalStoreLaramie;
+                        break;
+                    case "Fort Bridger":
+                        currentStore = generalStoreBridger;
+                        break;
+                    case "Fort Hall":
+                        currentStore = generalStoreHall;
+                        break;
+                    case "Fort Boise":
+                        currentStore = generalStoreBoise;
+                        break;
+                    case "Fort Walla Walla":
+                        currentStore = generalStoreWalla;
+                        break;
+                    default:
+                        currentStore = generalStoreMatt;
+                        break;
+                }
+                currentStore.finishTransaction(inventory);
+                storeFoodAmount.setText("0");
+                storeFoodCost.setText("0.00");
+                storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
+                foodText.setText(String.valueOf(inventory.getInventoryValue("Food")));
+                storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
+                storeTotalCost.setText("Total Cost: $" + String.valueOf(currentStore.getTotal()));
             }
         });
 
@@ -327,6 +403,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     default:
                         currentStore = generalStoreMatt;
+                        break;
                 }
 
                 currentStore.removeItemQuantity(0,25);
@@ -365,6 +442,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     default:
                         currentStore = generalStoreMatt;
+                        break;
                 }
 
                 currentStore.addItem(0,25);

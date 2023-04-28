@@ -54,7 +54,8 @@
         android:text="Click to Continue"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="347dp" />
+        tools:layout_editor_absoluteY="347dp"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/dateText"
@@ -382,7 +383,8 @@
         android:layout_marginTop="10dp"
         android:visibility="gone"
         app:srcCompat="@android:drawable/screen_background_light"
-        tools:layout_editor_absoluteX="23dp" />
+        tools:layout_editor_absoluteX="23dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/exitOptionsButton"
@@ -393,7 +395,8 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="348dp"
         android:text="Exit"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/normalPaceButton"
@@ -439,11 +442,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
         android:text="Food  /  $1.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeDecrementFood"
@@ -452,10 +456,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="228dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="51dp"
         android:drawableTint="#FF0000"
         android:text="---"
-        android:visibility="gone" />
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeIncrementFood"
@@ -464,22 +470,25 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="391dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="51dp"
         android:text="+++"
-        android:visibility="gone" />
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodAmount"
-        android:layout_width="75dp"
+        android:layout_width="77dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="314dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:text="0"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel1"
@@ -487,11 +496,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:text="Item   /   Price"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel2"
@@ -500,11 +510,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="309dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel3"
@@ -513,11 +524,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="503dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Cost"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeLabel4"
@@ -526,11 +538,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="577dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Your Amount  /  Max Amount"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeFoodCost"
@@ -538,24 +551,26 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="498dp"
-        android:layout_marginTop="67dp"
-        android:text="0.00"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="60dp"
+        android:text="$0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourFood"
-        android:layout_width="316dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="576dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="60dp"
         android:text="0   /   None"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeTotalCost"
@@ -563,11 +578,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="222dp"
-        android:text="0.00"
+        android:layout_marginStart="376dp"
+        android:layout_marginBottom="140dp"
+        android:text="Total Cost: $0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/storeYourMoney"
@@ -575,11 +591,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="140dp"
         android:text="Your Money: $0.00"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/storeBuyButton"
@@ -587,11 +604,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginStart="753dp"
+        android:layout_marginBottom="135dp"
         android:text="Buy"
         android:textSize="24sp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/riverDepth"
@@ -804,5 +822,490 @@
         android:background="@drawable/roundedbutton"
         android:text="Bare Bones Rations"
         android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/storeClothesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="105dp"
+        android:text="Clothes  /  $0.00"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/storeDecrementClothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="100dp"
+        android:text="---"
+        android:textSize="20sp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/storeIncrementClothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="100dp"
+        android:text="+++"
+        android:textSize="20sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/storeClothesAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="105dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeClothesCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="105dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourClothes"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="105dp"
+        android:text="0   /   None"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/storeDecrementRifle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="150dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeDecrementShots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="200dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeDecrementWheels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="250dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeDecrementAxles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="300dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeDecrementTongues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="350dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeDecrementOxen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="400dp"
+        android:text="---"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementRifle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="150dp"
+        android:text="+++"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementShots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="200dp"
+        android:text="+++"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementWheels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="250dp"
+        android:text="+++"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementAxles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="300dp"
+        android:text="+++"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementTongues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="350dp"
+        android:text="+++"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/storeIncrementOxen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="391dp"
+        android:layout_marginTop="400dp"
+        android:text="+++"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/storeRifleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="155dp"
+        android:text="Rifle  /  $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeRifleAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="155dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeRifleCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="155dp"
+        android:text="$0.00"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourRifle"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="155dp"
+        android:text="0   /   1"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeShotsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="205dp"
+        android:text="Shots  /  $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeWheelsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="255dp"
+        android:text="Wheels  /  $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeAxlesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="305dp"
+        android:text="Axles  /  $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeTonguesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="355dp"
+        android:text="Tongues  /  $0.00"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeOxenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="405dp"
+        android:text="Oxen  /  $0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeShotsAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="205dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeWheelsAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="255dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeAxlesAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="305dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeTonguesAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="355dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeOxenAmount"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="405dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeShotsCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="205dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeWheelsCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="255dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeAxlesCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="305dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeTonguesCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="355dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeOxenCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="503dp"
+        android:layout_marginTop="405dp"
+        android:text="$0.00"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourShots"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="205dp"
+        android:text="0   /   None"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourWheels"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="255dp"
+        android:text="0   /   3"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourAxles"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="305dp"
+        android:text="0   /   3"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourTongues"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="355dp"
+        android:text="0   /   3"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/storeYourOxen"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="577dp"
+        android:layout_marginTop="405dp"
+        android:text="0   /   16"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
 </RelativeLayout>

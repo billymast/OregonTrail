@@ -44,9 +44,9 @@ public class Wagon {
         this.health = currentHealth;
     }
 
-    public void updateHealth(River river, Time time, Weather weather) {
+    public void updateHealth(River river, Time time, Weather weather, Health partyHealth) {
         int currentHealth = this.health;
-        int riverOutcome = river.riverFord(time, weather, currentHealth);
+        int riverOutcome = river.riverFord(time, weather, partyHealth);
 
         int suppliesLost = 0;
 

@@ -420,10 +420,6 @@ public class Inventory {
                 tempArr = inventory.get(16);
                 value = Integer.parseInt(tempArr[1]);
                 break;
-            case "Money":
-                tempArr = inventory.get(17);
-                value = Integer.parseInt(tempArr[1]);
-                break;
         }
 
         return value;
@@ -437,4 +433,28 @@ public class Inventory {
         return inventory;
     }
 
+
+    public void removeInventory (String type, double Value) {
+        double tempValue = 0;
+        //switch statement that checks the value that were input as 'Value'
+        switch (type) {
+            case "Money":
+                tempValue = Double.parseDouble(Money[1]);// converts from string to an int than adds the value
+                if (tempValue > Value) {
+                    tempValue = tempValue - Value;
+                } else {
+                    tempValue = 0;
+                }
+                Money[1] = Double.toString(tempValue); //converts back to a string and stores it in the array
+                break;
+        }
+    }
+
+    public double moneyAmount() {
+        String[] tempArr = {};
+        double value = -1; //sets the default value to '-1' so we can detect if the code did not work
+        tempArr = inventory.get(17);
+        value = Double.parseDouble(tempArr[1]);
+        return value;
+    }
 }
