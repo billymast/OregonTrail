@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         final Button nextDayButton = findViewById(R.id.nextDay);
         final TextView locationText = findViewById(R.id.locationText);
 
+        final ImageView imageView = (ImageView) findViewById (R.id.HattieCampbell);
+        imageView.setImageResource(R.drawable.hattie_normal);
+
         // Options Buttons
         final Button mapButton = findViewById(R.id.mapButton);
         final Button statusButton = findViewById(R.id.statusButton);
@@ -343,7 +346,6 @@ public class MainActivity extends AppCompatActivity {
         // When Buy Options Button is Clicked
         buyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 // Displays Store Screen
                 nextDayButton.setVisibility(View.GONE);
                 optionsBackground.setVisibility(View.VISIBLE);
@@ -443,7 +445,7 @@ public class MainActivity extends AppCompatActivity {
                 storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   1");
                 storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
                 storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   3");
-                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel")) + "   /   3");
+                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel"))  + "   /   3");
                 storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   3");
                 storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   16");
                 storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
