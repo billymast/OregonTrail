@@ -426,12 +426,12 @@ public class MainActivity extends AppCompatActivity {
                 storeOxenText.setText("Oxen  /  $" + String.valueOf(currentStore.getPrice(5)));
                 storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
                 storeYourClothes.setText(String.valueOf(inventory.getInventoryValue("Clothes")) + "   /   None");
-                storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   None");
+                storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   1");
                 storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
-                storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   None");
-                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel")) + "   /   None");
-                storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   None");
-                storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   None");
+                storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   3");
+                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel")) + "   /   3");
+                storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   3");
+                storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   16");
                 storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
             }
         });
@@ -457,15 +457,15 @@ public class MainActivity extends AppCompatActivity {
                 storeAxlesCost.setText("$0.00");
                 storeTonguesCost.setText("$0.00");
                 storeOxenCost.setText("$0.00");
-                storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
-                storeYourClothes.setText(String.valueOf(inventory.getInventoryValue("Clothes")) + "   /   None");
-                storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   None");
-                storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
-                storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   None");
-                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel")) + "   /   None");
-                storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   None");
-                storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   None");
-                foodText.setText(String.valueOf(inventory.getInventoryValue("Food")));
+                storeYourFood.setText(inventory.getInventoryValue("Food") + "   /   None");
+                storeYourClothes.setText(inventory.getInventoryValue("Clothes") + "   /   None");
+                storeYourRifle.setText(inventory.getInventoryValue("Rifle") + "   /   1");
+                storeYourShots.setText(inventory.getInventoryValue("Shots") + "   /   None");
+                storeYourWheels.setText(inventory.getInventoryValue("SpareWagonWheels") + "   /   3");
+                storeYourAxles.setText(inventory.getInventoryValue("SpareWagonAxel") + "   /   3");
+                storeYourTongues.setText(inventory.getInventoryValue("SpareWagonTongues") + "   /   3");
+                storeYourOxen.setText(inventory.getInventoryValue("Oxen") + "   /   16");
+                foodText.setText("Food Left: " + inventory.getInventoryValue("Food"));
                 storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
                 storeTotalCost.setText("Total Cost: $" + String.valueOf(currentStore.getTotal()));
             }
@@ -477,64 +477,64 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(0,25);
                 storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
-                storeFoodCost.setText(String.valueOf(currentStore.getQuantity(0) * currentStore.getPrice(0)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeFoodCost.setText("$" + currentStore.getQuantity(0) * currentStore.getPrice(0));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementClothes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(1,1);
                 storeClothesAmount.setText(String.valueOf(currentStore.getQuantity(1)));
-                storeClothesCost.setText(String.valueOf(currentStore.getQuantity(1) * currentStore.getPrice(1)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeClothesCost.setText("$" + currentStore.getQuantity(1) * currentStore.getPrice(1));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementRifle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(2,1);
                 storeRifleAmount.setText(String.valueOf(currentStore.getQuantity(2)));
-                storeRifleCost.setText(String.valueOf(currentStore.getQuantity(2) * currentStore.getPrice(2)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeRifleCost.setText("$" + currentStore.getQuantity(2) * currentStore.getPrice(2));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementShots.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(4,5);
                 storeShotsAmount.setText(String.valueOf(currentStore.getQuantity(4)));
-                storeShotsCost.setText(String.valueOf(currentStore.getQuantity(4) * currentStore.getPrice(4)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeShotsCost.setText("$" + currentStore.getQuantity(4) * currentStore.getPrice(4));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(6,1);
                 storeWheelsAmount.setText(String.valueOf(currentStore.getQuantity(6)));
-                storeWheelsCost.setText(String.valueOf(currentStore.getQuantity(6) * currentStore.getPrice(6)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeWheelsCost.setText("$" + currentStore.getQuantity(6) * currentStore.getPrice(6));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(7,1);
                 storeAxlesAmount.setText(String.valueOf(currentStore.getQuantity(7)));
-                storeAxlesCost.setText(String.valueOf(currentStore.getQuantity(7) * currentStore.getPrice(7)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeAxlesCost.setText("$" + currentStore.getQuantity(7) * currentStore.getPrice(7));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(8,1);
                 storeTonguesAmount.setText(String.valueOf(currentStore.getQuantity(8)));
-                storeTonguesCost.setText(String.valueOf(currentStore.getQuantity(8) * currentStore.getPrice(8)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeTonguesCost.setText("$" + currentStore.getQuantity(8) * currentStore.getPrice(8));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeDecrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(5,2);
                 storeOxenAmount.setText(String.valueOf(currentStore.getQuantity(5)));
-                storeOxenCost.setText(String.valueOf(currentStore.getQuantity(5) * currentStore.getPrice(5)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeOxenCost.setText("$" + currentStore.getQuantity(5) * currentStore.getPrice(5));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
 
@@ -544,64 +544,64 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 currentStore.addItem(0,25);
                 storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
-                storeFoodCost.setText(String.valueOf(currentStore.getQuantity(0) * currentStore.getPrice(0)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeFoodCost.setText("$" + currentStore.getQuantity(0) * currentStore.getPrice(0));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementClothes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(1,1);
                 storeClothesAmount.setText(String.valueOf(currentStore.getQuantity(1)));
-                storeClothesCost.setText(String.valueOf(currentStore.getQuantity(1) * currentStore.getPrice(1)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeClothesCost.setText("$" + currentStore.getQuantity(1) * currentStore.getPrice(1));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementRifle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(2,1);
                 storeRifleAmount.setText(String.valueOf(currentStore.getQuantity(2)));
-                storeRifleCost.setText(String.valueOf(currentStore.getQuantity(2) * currentStore.getPrice(2)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeRifleCost.setText("$" + currentStore.getQuantity(2) * currentStore.getPrice(2));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementShots.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(4,5);
                 storeShotsAmount.setText(String.valueOf(currentStore.getQuantity(4)));
-                storeShotsCost.setText(String.valueOf(currentStore.getQuantity(4) * currentStore.getPrice(4)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeShotsCost.setText("$" + currentStore.getQuantity(4) * currentStore.getPrice(4));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(6,1);
                 storeWheelsAmount.setText(String.valueOf(currentStore.getQuantity(6)));
-                storeWheelsCost.setText(String.valueOf(currentStore.getQuantity(6) * currentStore.getPrice(6)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeWheelsCost.setText("$" + currentStore.getQuantity(6) * currentStore.getPrice(6));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(7,1);
                 storeAxlesAmount.setText(String.valueOf(currentStore.getQuantity(7)));
-                storeAxlesCost.setText(String.valueOf(currentStore.getQuantity(7) * currentStore.getPrice(7)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeAxlesCost.setText("$" + currentStore.getQuantity(7) * currentStore.getPrice(7));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(8,1);
                 storeTonguesAmount.setText(String.valueOf(currentStore.getQuantity(8)));
-                storeTonguesCost.setText(String.valueOf(currentStore.getQuantity(8) * currentStore.getPrice(8)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeTonguesCost.setText("$" + currentStore.getQuantity(8) * currentStore.getPrice(8));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
         storeIncrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(5,2);
                 storeOxenAmount.setText(String.valueOf(currentStore.getQuantity(5)));
-                storeOxenCost.setText(String.valueOf(currentStore.getQuantity(5) * currentStore.getPrice(5)));
-                storeTotalCost.setText(String.valueOf(currentStore.getTotal()));
+                storeOxenCost.setText("$" + currentStore.getQuantity(5) * currentStore.getPrice(5));
+                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
             }
         });
 
