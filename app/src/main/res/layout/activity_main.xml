@@ -130,7 +130,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/hattie"
+        app:srcCompat="@drawable/hattie_normal"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="16dp" />
 
