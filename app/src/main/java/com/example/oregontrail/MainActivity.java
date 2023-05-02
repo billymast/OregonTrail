@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         final Button huntYesButton = findViewById(R.id.huntYesButton);
 
 
+
         // When next day button is clicked
         nextDayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -861,12 +862,88 @@ public class MainActivity extends AppCompatActivity {
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
+        final Button shootOne = findViewById(R.id.button);
+        final Button shootTwo = findViewById(R.id.button2);
+        final Button shootThree = findViewById(R.id.button3);
+        final Button shootFour = findViewById(R.id.button4);
+        final TextView isShot = findViewById(R.id.isHit);
 
         huntYesButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
                 startActivity(new Intent(MainActivity.this, HuntActivity.class));
+
+                final ImageView imageView2 = (ImageView) findViewById (R.id.imageView2);
+                imageView2.setImageResource(R.drawable.deerhiding);
+                final ImageView imageView3 = (ImageView) findViewById (R.id.imageView3);
+                imageView3.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
+                final ImageView imageView4 = (ImageView) findViewById (R.id.imageView4);
+                imageView4.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
+                final ImageView imageView5 = (ImageView) findViewById (R.id.imageView5);
+                imageView5.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
+
+
+                final TextView shotCount = findViewById(R.id.textView);
+
+                shotCount.setText("Shots remaining: " + inventory.getInventoryValue("Shots"));
+
+                int location = (int) (Math.random() * 5) + 1;
+
+                shootOne.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (location == 1){
+                            isShot.setText("HIT");
+                            inventory.addInventory("Food", 25);
+                            inventory.removeInventory("Shot", 1);
+                        }
+                        else{
+                            isShot.setText("MISS");
+                        }
+                    }
+                });
+                shootTwo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (location == 2){
+                            isShot.setText("HIT");
+                            inventory.addInventory("Food", 25);
+                            inventory.removeInventory("Shot", 1);
+                        }
+                        else{
+                            isShot.setText("MISS");
+                        }
+                    }
+                });
+                shootThree.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (location == 3){
+                            isShot.setText("HIT");
+                            inventory.addInventory("Food", 25);
+                            inventory.removeInventory("Shot", 1);
+                        }
+                        else{
+                            isShot.setText("MISS");
+                        }
+                    }
+                });
+                shootFour.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (location == 4){
+                            isShot.setText("HIT");
+                            inventory.addInventory("Food", 25);
+                            inventory.removeInventory("Shot", 1);
+                        }
+                        else{
+                            isShot.setText("MISS");
+                        }
+                    }
+                });
+
+
 
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);

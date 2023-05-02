@@ -30,13 +30,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="658dp"
-        android:layout_height="219dp"
+        android:layout_width="441dp"
+        android:layout_height="221dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="330dp"
-        android:layout_marginBottom="136dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="455dp"
+        android:layout_marginBottom="172dp"
         tools:srcCompat="@drawable/deerhiding" />
 
     <TextView
@@ -45,21 +45,33 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="143dp"
         android:scaleX="3"
         android:scaleY="3"
         android:text="TextView" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="630dp"
+        android:layout_marginBottom="109dp"
+        android:text="SHOOT!" />
+
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="287dp"
-        android:layout_height="218dp"
+        android:layout_width="217dp"
+        android:layout_height="214dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
-        app:srcCompat="@drawable/craiyon_153058_bushes_and_woods" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="39dp"
+        app:srcCompat="@drawable/craiyon_161150_bushes_in_dark_woods" />
 
     <Button
         android:id="@+id/button"
@@ -67,19 +79,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="277dp"
-        android:text="Button" />
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="265dp"
+        android:text="SHOOT!" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="221dp"
-        android:layout_height="197dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="218dp"
+        android:layout_height="219dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="131dp"
-        app:srcCompat="@drawable/craiyon_153058_bushes_and_woods" />
+        android:layout_marginStart="71dp"
+        android:layout_marginBottom="66dp"
+        app:srcCompat="@drawable/craiyon_161150_bushes_in_dark_woods" />
 
     <Button
         android:id="@+id/button2"
@@ -87,17 +99,39 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginBottom="73dp"
-        android:text="Button" />
+        android:layout_marginStart="137dp"
+        android:layout_marginBottom="11dp"
+        android:text="SHOOT!" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="218dp"
+        android:layout_height="218dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="52dp"
+        app:srcCompat="@drawable/craiyon_161150_bushes_in_dark_woods" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="53dp"
+        android:text="SHOOT!" />
+
+    <TextView
+        android:id="@+id/isHit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
-        android:text="Button" />
+        android:layout_marginBottom="53dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="isHIt" />
 
 </RelativeLayout>
