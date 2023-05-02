@@ -10,6 +10,7 @@ public class IndividualIlness {
     boolean sickcheck;
     int daytodie = 0;
     String Who;
+    int PeopleAlive;
 
     public IndividualIlness() {
         this.Hattie = 0;
@@ -20,11 +21,12 @@ public class IndividualIlness {
         this.sickcheck = false;
         this.daytodie = 0;
         this.Who = "";
+        this.PeopleAlive = 5;
     }
 
     //Get Value From Health
 
-    public String Thing(Health health) {
+    public String Thing(Health health, Inventory inventory) {
 
         if (Party <= 34) {
             daytodie = 0;
@@ -72,19 +74,41 @@ public class IndividualIlness {
         if(daytodie < 5) {
             if (Kid3 == 2) {
                 Who = "Kid3";
+                Kid3 = 5;
+                PeopleAlive = PeopleAlive - 1;
             } else if (Kid2 == 2) {
                 Who = "Kid2";
+                Kid2 = 5;
+                PeopleAlive = PeopleAlive - 1;
             } else if (Kid1 == 2) {
                 Who = "Kid1";
+                Kid1 = 5;
+                PeopleAlive = PeopleAlive - 1;
             } else if (Husband == 2) {
                 Who = "Husband";
+                Husband = 5;
+                PeopleAlive = PeopleAlive - 1;
             } else if (Hattie == 2) {
-                Who = "Hattie";
+                Who = "Death";
             }
         }
         else {
             Who = "Death";
         }
+
+        if(health.getRations == "Filling"){
+            inventory.removeFromInventory("Food",(3*PeopleAlive));
+        }
+        if(health.getRations == "Meager"){
+            inventory.removeFromInventory("Food",(2*PeopleAlive));
+        }
+        if(health.getRations == "Bare Bones"){
+            inventory.removeFromInventory("Food",(PeopleAlive));
+        }
+        if(health.getRations == "Out of Food"){
+
+        }
+
 
         sickcheck = false;
         return Who;
