@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
 
 import org.w3c.dom.Text;
 
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Buttons to Take To Other Screens
+        configurehuntYesButton();
 
         // Elements for Main Game Screen
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
@@ -760,7 +764,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map, true);
-                healthText.setText("Health: " + health.getParty());
+                healthText.setText("Health: " + health.HealthString());
 
                 // Updates and displays food count
                 inventory.removeInventory("Food", 20);
@@ -818,8 +822,30 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Buttons for Hunt Menu
-        huntYesButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+
+    }
+
+
+    private void configurehuntYesButton(){
+
+        Button huntYesButton = (Button) findViewById(R.id.huntYesButton);
+
+        final Button nextDayButton = findViewById(R.id.nextDay);
+        final ImageView optionsBackground = findViewById(R.id.optionsBackground2);
+        final TextView huntText = findViewById(R.id.huntText);
+        final Button exitOptionsButton = findViewById(R.id.exitOptionsButton);
+        final TextView weatherConditionText = findViewById(R.id.weatherConditionText);
+        final TextView weatherTempText = findViewById(R.id.weatherTempText);
+        final TextView healthText = findViewById(R.id.healthText);
+        final TextView foodText = findViewById(R.id.foodText);
+        final TextView dateTextChange = findViewById(R.id.dateTextChange);
+
+        huntYesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(MainActivity.this, HuntActivity.class));
+
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
                 huntText.setVisibility(View.GONE);
@@ -833,7 +859,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map, true);
-                healthText.setText("Health: " + health.getParty());
+                healthText.setText("Health: " + health.HealthString());
 
                 // Updates and displays food count
                 inventory.removeInventory("Food", 20);
@@ -844,9 +870,6 @@ public class MainActivity extends AppCompatActivity {
                 time.updateDay(1);
             }
         });
-
     }
-
-
 
 }
