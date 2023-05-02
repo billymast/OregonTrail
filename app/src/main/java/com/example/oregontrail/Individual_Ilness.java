@@ -1,6 +1,6 @@
 package com.example.oregontrail;
 
-public class IndividualIlness {
+public class Individual_Ilness {
     //Variables
     int Hattie;
     int Husband;
@@ -12,7 +12,7 @@ public class IndividualIlness {
     String Who;
     int PeopleAlive;
 
-    public IndividualIlness() {
+    public Individual_Ilness() {
         this.Hattie = 0;
         this.Husband = 0;
         this.Kid1 = 0;
@@ -27,6 +27,8 @@ public class IndividualIlness {
     //Get Value From Health
 
     public String Thing(Health health, Inventory inventory) {
+
+        double Party = health.getParty();
 
         if (Party <= 34) {
             daytodie = 0;
@@ -96,16 +98,16 @@ public class IndividualIlness {
             Who = "Death";
         }
 
-        if(health.getRations == "Filling"){
-            inventory.removeFromInventory("Food",(3*PeopleAlive));
+        if(health.getRations() == "Filling"){
+            inventory.removeInventory("Food",(3*PeopleAlive));
         }
-        if(health.getRations == "Meager"){
-            inventory.removeFromInventory("Food",(2*PeopleAlive));
+        if(health.getRations() == "Meager"){
+            inventory.removeInventory("Food",(2*PeopleAlive));
         }
-        if(health.getRations == "Bare Bones"){
-            inventory.removeFromInventory("Food",(PeopleAlive));
+        if(health.getRations() == "Bare Bones"){
+            inventory.removeInventory("Food",(PeopleAlive));
         }
-        if(health.getRations == "Out of Food"){
+        if(health.getRations() == "Out of Food"){
 
         }
 
