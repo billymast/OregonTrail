@@ -28,6 +28,8 @@ public class IndividualIlness {
 
     public String Thing(Health health, Inventory inventory) {
 
+        double Party = health.getParty();
+
         if (Party <= 34) {
             daytodie = 0;
             //0% chance of getting sick
@@ -96,16 +98,16 @@ public class IndividualIlness {
             Who = "Death";
         }
 
-        if(health.getRations == "Filling"){
-            inventory.removeFromInventory("Food",(3*PeopleAlive));
+        if(health.getRations() == "Filling"){
+            inventory.removeInventory("Food",(3*PeopleAlive));
         }
-        if(health.getRations == "Meager"){
-            inventory.removeFromInventory("Food",(2*PeopleAlive));
+        if(health.getRations() == "Meager"){
+            inventory.removeInventory("Food",(2*PeopleAlive));
         }
-        if(health.getRations == "Bare Bones"){
-            inventory.removeFromInventory("Food",(PeopleAlive));
+        if(health.getRations() == "Bare Bones"){
+            inventory.removeInventory("Food",(PeopleAlive));
         }
-        if(health.getRations == "Out of Food"){
+        if(health.getRations() == "Out of Food"){
 
         }
 
