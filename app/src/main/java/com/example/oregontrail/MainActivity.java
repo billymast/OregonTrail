@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -156,6 +158,10 @@ public class MainActivity extends AppCompatActivity {
         final Button fillingRationsButton = findViewById(R.id.fillingRationsButton);
         final Button meagerRationsButton = findViewById(R.id.meagerRationsButton);
         final Button bareBonesRationsButton = findViewById(R.id.bareBonesRationsButton);
+
+        // Hunt Button Elements
+        final TextView huntText = findViewById(R.id.huntText);
+        final Button huntYesButton = findViewById(R.id.huntYesButton);
 
 
         // When next day button is clicked
@@ -328,6 +334,9 @@ public class MainActivity extends AppCompatActivity {
                 normalPaceButton.setVisibility(View.GONE);
                 strenuousPaceButton.setVisibility(View.GONE);
                 gruelingPaceButton.setVisibility(View.GONE);
+                // Hunt Button Elements
+                huntText.setVisibility(View.GONE);
+                huntYesButton.setVisibility(View.GONE);
             }
         });
 
@@ -792,6 +801,45 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 map.setPaceType("Grueling");
                 paceText.setText("Pace: Grueling");
+            }
+        });
+
+        // When Hunt Button is Clicked
+        huntButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nextDayButton.setVisibility(View.GONE);
+                optionsBackground.setVisibility(View.VISIBLE);
+                huntText.setVisibility(View.VISIBLE);
+                huntYesButton.setVisibility(View.VISIBLE);
+                exitOptionsButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // Buttons for Hunt Menu
+        huntYesButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nextDayButton.setVisibility(View.VISIBLE);
+                optionsBackground.setVisibility(View.GONE);
+                huntText.setVisibility(View.GONE);
+                huntYesButton.setVisibility(View.GONE);
+                exitOptionsButton.setVisibility(View.GONE);
+
+                // Updates and displays changes to weather
+                weather.dailyWeather(time);
+                weatherConditionText.setText(weather.weatherTypeString());
+                weatherTempText.setText(weather.getTempType());
+
+                // Updates and displays changes to party's health
+                health.PartyUpdate(weather, inventory, map, true);
+                healthText.setText("Health: " + health.getParty());
+
+                // Updates and displays food count
+                inventory.removeInventory("Food", 20);
+                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                // Update and Display the new date
+                dateTextChange.setText(time.outputDate());
+                time.updateDay(1);
             }
         });
 
