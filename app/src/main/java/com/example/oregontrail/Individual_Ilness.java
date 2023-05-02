@@ -1,6 +1,6 @@
 package com.example.oregontrail;
 
-public class IndividualIlness {
+public class Individual_Ilness {
     //Variables
     int Hattie;
     int Husband;
@@ -12,7 +12,7 @@ public class IndividualIlness {
     String Who;
     int PeopleAlive;
 
-    public IndividualIlness() {
+    public Individual_Ilness() {
         this.Hattie = 0;
         this.Husband = 0;
         this.Kid1 = 0;
