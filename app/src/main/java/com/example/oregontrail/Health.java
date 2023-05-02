@@ -1,10 +1,7 @@
-package com.example.myapplication;
+package com.example.oregontrail;
 
 public class Health {
-    package com.example.oregontrail;
-
-    public class Health {
-        //Variables
+    //Variables
         private double Party;                    //General Party Health
         private int NumSick;                     //Total number of sick individuals
         private int Death;                       //Handles game over if party health too bad
@@ -169,3 +166,5 @@ public class Health {
         }
     }
 }
+
+        
