@@ -30,9 +30,9 @@ public class GeneralStore {
     final double Shotgun = 10.00;          // ID =  3
     final double Shots = 5.00;             // ID =  4
     final double Oxen = 50.00;             // ID =  5
-    final double SpareWagonWheel = 8.00;   // ID =  6
+    final double SpareWagonWheels = 8.00;   // ID =  6
     final double SpareWagonAxel = 3.00;    // ID =  7
-    final double SpareWagonTongue = 3.00;  // ID =  8
+    final double SpareWagonTongues = 3.00;  // ID =  8
     final double MedicalSupplyBox = 1.50;  // ID =  9
     final double SewingKit = 0.50;         // ID = 10
     final double FireStartKit = 0.25;      // ID = 11
@@ -49,9 +49,9 @@ public class GeneralStore {
             Shotgun,
             Shots,
             Oxen,
-            SpareWagonWheel,
+            SpareWagonWheels,
             SpareWagonAxel,
-            SpareWagonTongue,
+            SpareWagonTongues,
             MedicalSupplyBox,
             SewingKit,
             FireStartKit,

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView distanceLandmarkText = findViewById(R.id.distanceLandmarkText);
         final TextView distanceTraveledText = findViewById(R.id.distanceTraveledText);
         final TextView paceText = findViewById(R.id.paceText);
+        final TextView rationsText = findViewById(R.id.rationsText);
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
         final Button nextDayButton = findViewById(R.id.nextDay);
@@ -210,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Updates and displays changes to party's health
                     health.PartyUpdate(weather, inventory, map, false);
-                    healthText.setText("Health: " + health.getParty());
+                    healthText.setText("Health: " + health.HealthString());
 
                     // Updates and displays location
                     if(map.updateLocation(map.getPace())){
@@ -319,7 +320,11 @@ public class MainActivity extends AppCompatActivity {
                 inventoryWagonAxels.setVisibility(View.GONE);
                 inventoryWagonTongues.setVisibility(View.GONE);
                 inventoryMoney.setVisibility(View.GONE);
-                // Pace Button Items
+                // Ration Button Elements
+                fillingRationsButton.setVisibility(View.GONE);
+                meagerRationsButton.setVisibility(View.GONE);
+                bareBonesRationsButton.setVisibility(View.GONE);
+                // Pace Button Elements
                 normalPaceButton.setVisibility(View.GONE);
                 strenuousPaceButton.setVisibility(View.GONE);
                 gruelingPaceButton.setVisibility(View.GONE);
@@ -698,6 +703,39 @@ public class MainActivity extends AppCompatActivity {
                 inventoryWagonAxels.setVisibility(View.VISIBLE);
                 inventoryWagonTongues.setVisibility(View.VISIBLE);
                 inventoryMoney.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // When the Rations Button is Clicked
+        rationsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nextDayButton.setVisibility(View.GONE);
+                optionsBackground.setVisibility(View.VISIBLE);
+                fillingRationsButton.setVisibility(View.VISIBLE);
+                meagerRationsButton.setVisibility(View.VISIBLE);
+                bareBonesRationsButton.setVisibility(View.VISIBLE);
+                exitOptionsButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        fillingRationsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                health.setRations("Filling");
+                rationsText.setText("Rations: Filling");
+            }
+        });
+
+        meagerRationsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                health.setRations("Meager");
+                rationsText.setText("Rations: Meager");
+            }
+        });
+
+        bareBonesRationsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                health.setRations("Bare Bones");
+                rationsText.setText("Rations: Bare Bones");
             }
         });
 
