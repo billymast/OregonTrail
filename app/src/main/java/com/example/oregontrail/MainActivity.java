@@ -175,6 +175,28 @@ public class MainActivity extends AppCompatActivity {
         nextDayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                String hattiePicValue = health.HealthString();
+
+                switch (hattiePicValue) {
+                    case "Good Health":
+                        imageView.setImageResource(R.drawable.hattie_happy);
+                        break;
+                    case "Fair Health":
+                        imageView.setImageResource(R.drawable.hattie_normal);
+                        break;
+                    case "Poor Health":
+                        imageView.setImageResource(R.drawable.hattie_sad);
+                        break;
+                    case "Very Poor Health":
+                        imageView.setImageResource(R.drawable.hattie_sad);
+                        break;
+                    case "Death Imminent":
+                        imageView.setImageResource(R.drawable.hattie_injured);
+                        break;
+                    default:  imageView.setImageResource(R.drawable.hattie_normal);
+                }
+
+
                 if (map.isRiver()) {
                     nextDayButton.setVisibility(View.GONE);
                     optionsBackground.setVisibility(View.VISIBLE);
