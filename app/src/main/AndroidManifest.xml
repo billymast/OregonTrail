@@ -12,6 +12,9 @@
         android:theme="@style/Theme.OregonTrail"
         tools:targetApi="31">
         <activity
+            android:name=".RiverActivity"
+            android:exported="false" />
+        <activity
             android:name=".HuntActivity"
             android:exported="false" />
         <activity
