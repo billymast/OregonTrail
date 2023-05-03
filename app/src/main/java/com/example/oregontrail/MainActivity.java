@@ -3,6 +3,7 @@ package com.example.oregontrail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import android.content.Intent;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -47,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Buttons to Take To Other Screens
         configurehuntYesButton();
-        configuregoToRiverEventButton();
 
         // Elements for Main Game Screen
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
@@ -146,8 +147,6 @@ public class MainActivity extends AppCompatActivity {
         final Button riverFerryButton = findViewById(R.id.riverFerryButton);
         final Button riverWaitButton = findViewById(R.id.riverWaitButton);
 
-        final Button goToRiverEventButton = findViewById(R.id.goToRiverEventButton);
-
         // Status Elements
         final TextView inventoryFood = findViewById(R.id.inventoryFood);
         final TextView inventoryClothes = findViewById(R.id.inventoryClothes);
@@ -200,51 +199,88 @@ public class MainActivity extends AppCompatActivity {
                     default:  imageView.setImageResource(R.drawable.hattie_normal);
                 }
 
-                String dailyOutput = time.outputDate() + "\n";
-
-                // Updates and displays changes to weather
-                weather.dailyWeather(time);
-                weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
-
-                // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map, false);
-                healthText.setText("Health: " + health.HealthString());
-
-                // Updates and displays location
-                if(map.updateLocation(map.getPace())){
-                    locationText.setText(map.getCurrentLandmark());
-                }
-                distanceTraveledText.setText("Traveled: " + map.getLocation());
-                distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
-
-                // Updates and displays food count
-                inventory.removeInventory("Food", 20);
-                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
-
-                // Checks whether a fort is reached
-                if (map.isFort()){
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Checks whether a river is reached
-                else if (map.isRiver()) {
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Otherwise check for any random events that may occur
-                else {
-                    dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
-                }
-
-                // Displays Text explaining what happened during the day
-                gamePlayText.setText(dailyOutput);
-
-                // Update and Display the new date
-                dateTextChange.setText(time.outputDate());
-                time.updateDay(1);
 
                 if (map.isRiver()) {
-                    goToRiverEventButton.setVisibility(View.VISIBLE);
                     nextDayButton.setVisibility(View.GONE);
+                    optionsBackground.setVisibility(View.VISIBLE);
+                    riverDepth.setVisibility(View.VISIBLE);
+                    riverWidth.setVisibility(View.VISIBLE);
+                    riverFordButton.setVisibility(View.VISIBLE);
+                    riverFloatButton.setVisibility(View.VISIBLE);
+                    riverFerryButton.setVisibility(View.VISIBLE);
+                    riverWaitButton.setVisibility(View.VISIBLE);
+
+                    // Displays River Depth and Width Depending on Which River
+                    String currentLandmark = map.getCurrentLandmark();
+                    if (currentLandmark == "Kansas River"){
+                        String depth = Integer.toString(kansasRiver.getDepth());
+                        String width = Integer.toString(kansasRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else if (currentLandmark == "Big Blue River"){
+                        String depth = Integer.toString(bigBlueRiver.getDepth());
+                        String width = Integer.toString(bigBlueRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else if (currentLandmark == "Snake River"){
+                        String depth = Integer.toString(snakeRiver.getDepth());
+                        String width = Integer.toString(snakeRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+                    else {
+                        String depth = Integer.toString(greenRiver.getDepth());
+                        String width = Integer.toString(greenRiver.getWidth());
+                        riverDepth.setText("River Depth: " + depth);
+                        riverWidth.setText("River Width: " + width);
+                    }
+
+                    map.updateLocation(20);
+                }
+                else {
+                    String dailyOutput = time.outputDate() + "\n";
+
+                    // Updates and displays changes to weather
+                    weather.dailyWeather(time);
+                    weatherConditionText.setText(weather.weatherTypeString());
+                    weatherTempText.setText(weather.getTempType());
+
+                    // Updates and displays changes to party's health
+                    health.PartyUpdate(weather, inventory, map, false);
+                    healthText.setText("Health: " + health.HealthString());
+
+                    // Updates and displays location
+                    if(map.updateLocation(map.getPace())){
+                        locationText.setText(map.getCurrentLandmark());
+                    }
+                    distanceTraveledText.setText("Traveled: " + map.getLocation());
+                    distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
+
+                    // Updates and displays food count
+                    inventory.removeInventory("Food", 20);
+                    foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                    // Checks whether a fort is reached
+                    if (map.isFort()){
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Checks whether a river is reached
+                    else if (map.isRiver()) {
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Otherwise check for any random events that may occur
+                    else {
+                        dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
+                    }
+
+                    // Displays Text explaining what happened during the day
+                    gamePlayText.setText(dailyOutput);
+
+                    // Update and Display the new date
+                    dateTextChange.setText(time.outputDate());
+                    time.updateDay(1);
                 }
             }
 
@@ -815,7 +851,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void configurehuntYesButton() {
+    private void configurehuntYesButton(){
 
         Button huntYesButton = (Button) findViewById(R.id.huntYesButton);
 
@@ -828,83 +864,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
-        final Button shootOne = findViewById(R.id.button);
-        final Button shootTwo = findViewById(R.id.button2);
-        final Button shootThree = findViewById(R.id.button3);
-        final Button shootFour = findViewById(R.id.button4);
-        final TextView isShot = findViewById(R.id.isHit);
 
-        huntYesButton.setOnClickListener(new View.OnClickListener() {
+
+
+        huntYesButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, HuntActivity.class));
-
-                final ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
-                imageView2.setImageResource(R.drawable.deerhiding);
-                final ImageView imageView3 = (ImageView) findViewById(R.id.imageView3);
-                imageView3.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-                final ImageView imageView4 = (ImageView) findViewById(R.id.imageView4);
-                imageView4.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-                final ImageView imageView5 = (ImageView) findViewById(R.id.imageView5);
-                imageView5.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-
-
-                final TextView shotCount = findViewById(R.id.textView);
-
-                shotCount.setText("Shots remaining: " + inventory.getInventoryValue("Shots"));
-
-                int location = (int) (Math.random() * 5) + 1;
-
-                shootOne.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 1) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootTwo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 2) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootThree.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 3) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootFour.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 4) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-
+                Intent intent = new Intent(MainActivity.this, HuntActivity.class);
+                //intent.putExtra("inventory", finalTempShotValue);
+                startActivity(intent);
 
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
@@ -931,27 +900,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void configuregoToRiverEventButton() {
-
-        Button goToRiverEventButton = (Button) findViewById(R.id.goToRiverEventButton);
-
-        final Button nextDay = findViewById(R.id.nextDay);
-
-        goToRiverEventButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(MainActivity.this, RiverActivity.class));
-
-                nextDay.setVisibility(View.VISIBLE);
-                goToRiverEventButton.setVisibility(View.GONE);
-                map.updateLocation(20);
-            }
-        });
-    }
-
-
-
 
 }
