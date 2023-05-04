@@ -1,10 +1,16 @@
 package com.example.oregontrail;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+
 // River Class: Object for Rivers which contain depth, width, river current swiftness, and floor type of river
 // Also contains functions involving outcomes that occur when crossing river under different circumstances
 // Author: Billy Mast
 
-public class River {
+public class River implements Parcelable {
 
     private int depth;
     private int width;
@@ -25,6 +31,25 @@ public class River {
         this.swiftness = swiftness;
         this.riverFloorType = riverFloorType;
     }
+
+    protected River(Parcel in) {
+        depth = in.readInt();
+        width = in.readInt();
+        swiftness = in.readInt();
+        riverFloorType = in.readString();
+    }
+
+    public static final Creator<River> CREATOR = new Creator<River>() {
+        @Override
+        public River createFromParcel(Parcel in) {
+            return new River(in);
+        }
+
+        @Override
+        public River[] newArray(int size) {
+            return new River[size];
+        }
+    };
 
     public int getDepth() {
         return depth;
@@ -93,4 +118,16 @@ public class River {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(depth);
+        parcel.writeInt(width);
+        parcel.writeInt(swiftness);
+        parcel.writeString(riverFloorType);
+    }
 }

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/roundedbutton"
@@ -16,4 +17,66 @@
         android:layout_marginTop="61dp"
         android:layout_marginEnd="130dp"
         android:text="Go Back" />
+
+    <TextView
+        android:id="@+id/riverWidthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="76dp"
+        android:text="River Width: "
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/riverDepthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="152dp"
+        android:text="River Depth:"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/riverFordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="270dp"
+        android:text="Ford the River" />
+
+    <Button
+        android:id="@+id/riverFloatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginBottom="261dp"
+        android:text="Float Across the River" />
+
+    <Button
+        android:id="@+id/riverFerryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginBottom="176dp"
+        android:text="Use Ferry to Cross the River" />
+
+    <Button
+        android:id="@+id/riverWaitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginBottom="94dp"
+        android:text="Wait to see if Conditions Improve" />
 </RelativeLayout>
