@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
     GeneralStore currentStore;
 
+    River currentRiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,13 +141,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView storeYourOxen = findViewById(R.id.storeYourOxen);
 
         // River Event Elements
-        final TextView riverDepth = findViewById(R.id.riverDepth);
-        final TextView riverWidth = findViewById(R.id.riverWidth);
-        final Button riverFordButton = findViewById(R.id.riverFordButton);
-        final Button riverFloatButton = findViewById(R.id.riverFloatButton);
-        final Button riverFerryButton = findViewById(R.id.riverFerryButton);
-        final Button riverWaitButton = findViewById(R.id.riverWaitButton);
-
         final Button goToRiverEventButton = findViewById(R.id.goToRiverEventButton);
 
         // Status Elements
@@ -614,72 +609,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Buttons For River Event
-
-        riverFordButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                nextDayButton.setVisibility(View.VISIBLE);
-                optionsBackground.setVisibility(View.GONE);
-                riverDepth.setVisibility(View.GONE);
-                riverWidth.setVisibility(View.GONE);
-                riverFordButton.setVisibility(View.GONE);
-                riverFloatButton.setVisibility(View.GONE);
-                riverFerryButton.setVisibility(View.GONE);
-                riverWaitButton.setVisibility(View.GONE);
-            }
-        });
-
-        riverFloatButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                nextDayButton.setVisibility(View.VISIBLE);
-                optionsBackground.setVisibility(View.GONE);
-                riverDepth.setVisibility(View.GONE);
-                riverWidth.setVisibility(View.GONE);
-                riverFordButton.setVisibility(View.GONE);
-                riverFloatButton.setVisibility(View.GONE);
-                riverFerryButton.setVisibility(View.GONE);
-                riverWaitButton.setVisibility(View.GONE);
-            }
-        });
-
-        riverFerryButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                nextDayButton.setVisibility(View.VISIBLE);
-                optionsBackground.setVisibility(View.GONE);
-                riverDepth.setVisibility(View.GONE);
-                riverWidth.setVisibility(View.GONE);
-                riverFordButton.setVisibility(View.GONE);
-                riverFloatButton.setVisibility(View.GONE);
-                riverFerryButton.setVisibility(View.GONE);
-                riverWaitButton.setVisibility(View.GONE);
-            }
-        });
-
-        riverWaitButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                // Updates and displays changes to weather
-                weather.dailyWeather(time);
-                weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
-
-                // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map, true);
-                healthText.setText("Health: " + health.getParty());
-
-                // Updates and displays food count
-                inventory.removeInventory("Food", 20);
-                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
-
-                // Update and Display the new date
-                dateTextChange.setText(time.outputDate());
-                time.updateDay(1);
-            }
-        });
-
         // When Status Button is Clicked
         statusButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -840,72 +769,6 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(new Intent(MainActivity.this, HuntActivity.class));
 
-                final ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
-                imageView2.setImageResource(R.drawable.deerhiding);
-                final ImageView imageView3 = (ImageView) findViewById(R.id.imageView3);
-                imageView3.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-                final ImageView imageView4 = (ImageView) findViewById(R.id.imageView4);
-                imageView4.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-                final ImageView imageView5 = (ImageView) findViewById(R.id.imageView5);
-                imageView5.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-
-
-                final TextView shotCount = findViewById(R.id.textView);
-
-                shotCount.setText("Shots remaining: " + inventory.getInventoryValue("Shots"));
-
-                int location = (int) (Math.random() * 5) + 1;
-
-                shootOne.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 1) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootTwo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 2) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootThree.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 3) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-                shootFour.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (location == 4) {
-                            isShot.setText("HIT");
-                            inventory.addInventory("Food", 25);
-                            inventory.removeInventory("Shot", 1);
-                        } else {
-                            isShot.setText("MISS");
-                        }
-                    }
-                });
-
-
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
                 huntText.setVisibility(View.GONE);
@@ -942,7 +805,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, RiverActivity.class));
+                String currentLocation = map.getCurrentLandmark();
+                switch (currentLocation){
+                    case "Kansas River":
+                        currentRiver = kansasRiver;
+                        break;
+                    case "Big Blue River":
+                        currentRiver = bigBlueRiver;
+                        break;
+                    case "Snake River":
+                        currentRiver = snakeRiver;
+                        break;
+                    case "Green River":
+                        currentRiver = greenRiver;
+                        break;
+                    default:
+                        currentRiver = null;
+                        break;
+                }
+
+                // Pass River Class to River Activity
+                Intent intent = new Intent(MainActivity.this,RiverActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("currentRiver", currentRiver);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
 
                 nextDay.setVisibility(View.VISIBLE);
                 goToRiverEventButton.setVisibility(View.GONE);
