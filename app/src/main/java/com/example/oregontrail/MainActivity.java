@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     River greenRiver = new River(3,15,10,"Smooth");
     River snakeRiver = new River(10,35,10,"Smooth");
 
-    Queue<River> riverQueue = new LinkedList<>();
-
     GeneralStore currentStore;
 
     River currentRiver;
@@ -619,9 +617,9 @@ public class MainActivity extends AppCompatActivity {
                 inventoryShots.setText("Shots: " + Integer.toString(inventory.getInventoryValue("Shots")));
                 inventoryOxen.setText("Oxen: " + Integer.toString(inventory.getInventoryValue("Oxen")));
                 inventoryWagonWheels.setText("Wagon Wheels: " + Integer.toString(inventory.getInventoryValue("SpareWagonWheels")));
-                inventoryWagonAxels.setText("Wagon Axels: " + Integer.toString(inventory.getInventoryValue("SpareWagonAxel")));
-                inventoryWagonTongues.setText("Wagone Tongues: " + Integer.toString(inventory.getInventoryValue("SpareWagonTongues")));
-                inventoryMoney.setText("Money: " + Integer.toString(inventory.getInventoryValue("Money")));
+                inventoryWagonAxels.setText("Wagon Axles: " + Integer.toString(inventory.getInventoryValue("SpareWagonAxel")));
+                inventoryWagonTongues.setText("Wagon Tongues: " + Integer.toString(inventory.getInventoryValue("SpareWagonTongues")));
+                inventoryMoney.setText("Money: " + inventory.moneyAmount());
 
                 // Makes Inventory Visible
                 nextDayButton.setVisibility(View.GONE);
