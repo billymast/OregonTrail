@@ -767,7 +767,7 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putParcelable("inventory", inventory);
                 intent.putExtras(bundle);
                 startActivity(intent);
-                
+
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
                 huntText.setVisibility(View.GONE);
