@@ -757,11 +757,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView healthText = findViewById(R.id.healthText);
         final TextView foodText = findViewById(R.id.foodText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
-        final Button shootOne = findViewById(R.id.button);
-        final Button shootTwo = findViewById(R.id.button2);
-        final Button shootThree = findViewById(R.id.button3);
-        final Button shootFour = findViewById(R.id.button4);
-        final TextView isShot = findViewById(R.id.isHit);
 
         huntYesButton.setOnClickListener(new View.OnClickListener() {
             @Override

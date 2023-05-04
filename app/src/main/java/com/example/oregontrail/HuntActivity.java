@@ -18,7 +18,7 @@ public class HuntActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        Inventory inventory = (Inventory) getIntent().getParcelableExtra("inventory");
+        Inventory inventory = getIntent().getExtras().getParcelable("inventory");
 
 
         super.onCreate(savedInstanceState);
