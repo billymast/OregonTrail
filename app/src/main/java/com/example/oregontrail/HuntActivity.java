@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.LinkedList;
 
 
 public class HuntActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class HuntActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        Inventory inventory = (Inventory) getIntent().getSerializableExtra("inventory");
+        Inventory inventory = (Inventory) getIntent().getParcelableExtra("inventory");
 
 
         super.onCreate(savedInstanceState);

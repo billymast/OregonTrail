@@ -1,7 +1,12 @@
 package com.example.oregontrail;
 
 import android.media.MediaCas;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.ViewDebug;
+
+import androidx.annotation.NonNull;
+
 import java.util.LinkedList;
 
 
@@ -10,7 +15,7 @@ import java.util.LinkedList;
  * its allows you to add remove and view any value in the inventory with random access
  */
 
-public class Inventory {
+public class Inventory implements Parcelable {
 
     private LinkedList<String[]> inventory;
     private String[] Food;
@@ -61,6 +66,39 @@ public class Inventory {
         Money = new String[] {"Money", "1600"}; inventory.add(Money);
 
     }
+
+    protected Inventory(Parcel in) {
+        Food = in.createStringArray();
+        Clothes = in.createStringArray();
+        Rifle = in.createStringArray();
+        Shotgun = in.createStringArray();
+        Shots = in.createStringArray();
+        Oxen = in.createStringArray();
+        SpareWagonWheels = in.createStringArray();
+        SpareWagonAxel = in.createStringArray();
+        SpareWagonTongues = in.createStringArray();
+        MedicalSupplyBox = in.createStringArray();
+        SewingKit = in.createStringArray();
+        FireStartingKit = in.createStringArray();
+        KidsToys = in.createStringArray();
+        FamilyKeepsakes = in.createStringArray();
+        SeedPackages = in.createStringArray();
+        Shovels = in.createStringArray();
+        CookingItems = in.createStringArray();
+        Money = in.createStringArray();
+    }
+
+    public static final Creator<Inventory> CREATOR = new Creator<Inventory>() {
+        @Override
+        public Inventory createFromParcel(Parcel in) {
+            return new Inventory(in);
+        }
+
+        @Override
+        public Inventory[] newArray(int size) {
+            return new Inventory[size];
+        }
+    };
 
     /**
      * @param type the item that you would like to add to inventory
@@ -452,9 +490,36 @@ public class Inventory {
 
     public double moneyAmount() {
         String[] tempArr = {};
-        double value = -1; //sets the default value to '-1' so we can detect if the code did not work
+        double value = 0.0; //sets the default value to '-1' so we can detect if the code did not work
         tempArr = inventory.get(17);
         value = Double.parseDouble(tempArr[1]);
         return value;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeStringArray(Food);
+        parcel.writeStringArray(Clothes);
+        parcel.writeStringArray(Rifle);
+        parcel.writeStringArray(Shotgun);
+        parcel.writeStringArray(Shots);
+        parcel.writeStringArray(Oxen);
+        parcel.writeStringArray(SpareWagonWheels);
+        parcel.writeStringArray(SpareWagonAxel);
+        parcel.writeStringArray(SpareWagonTongues);
+        parcel.writeStringArray(MedicalSupplyBox);
+        parcel.writeStringArray(SewingKit);
+        parcel.writeStringArray(FireStartingKit);
+        parcel.writeStringArray(KidsToys);
+        parcel.writeStringArray(FamilyKeepsakes);
+        parcel.writeStringArray(SeedPackages);
+        parcel.writeStringArray(Shovels);
+        parcel.writeStringArray(CookingItems);
+        parcel.writeStringArray(Money);
     }
 }

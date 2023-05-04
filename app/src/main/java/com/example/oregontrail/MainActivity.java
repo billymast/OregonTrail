@@ -872,7 +872,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, HuntActivity.class);
-                //intent.putExtra("inventory", finalTempShotValue);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("inventory", inventory);
+                intent.putExtras(bundle);
                 startActivity(intent);
 
                 nextDayButton.setVisibility(View.VISIBLE);
