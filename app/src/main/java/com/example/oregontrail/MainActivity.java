@@ -767,8 +767,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, HuntActivity.class));
-
+                Intent intent = new Intent(MainActivity.this, HuntActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("inventory", inventory);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
                 huntText.setVisibility(View.GONE);
