@@ -24,10 +24,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:visibility="gone"
         app:srcCompat="@android:drawable/screen_background_light"
         tools:layout_editor_absoluteX="1005dp"
-        tools:layout_editor_absoluteY="11dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="11dp" />
 
     <TextView
         android:id="@+id/gamePlayText"
@@ -41,9 +41,9 @@
         android:text="GamePlay Text"
         android:textAlignment="textStart"
         android:textSize="34sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="432dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="432dp" />
 
     <Button
         android:id="@+id/nextDay"
@@ -57,9 +57,9 @@
         android:background="#000000"
         android:text="Click to Continue"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="347dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="347dp" />
 
     <TextView
         android:id="@+id/dateText"
@@ -71,9 +71,9 @@
         android:layout_marginEnd="138dp"
         android:text="Today's Date:"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="27dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="27dp" />
 
     <TextView
         android:id="@+id/weatherText"
@@ -85,9 +85,9 @@
         android:layout_marginEnd="165dp"
         android:text="Weather:"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="115dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="115dp" />
 
     <TextView
         android:id="@+id/healthText"
@@ -99,9 +99,9 @@
         android:layout_marginBottom="181dp"
         android:text="Health:"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="413dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="413dp" />
 
     <TextView
         android:id="@+id/foodText"
@@ -113,9 +113,9 @@
         android:layout_marginEnd="47dp"
         android:text="Food Left:"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="441dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="441dp" />
 
     <TextView
         android:id="@+id/distanceText"
@@ -127,9 +127,9 @@
         android:layout_marginEnd="172dp"
         android:text="Distance:"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="219dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="219dp" />
 
     <ImageView
         android:id="@+id/HattieCampbell"
@@ -139,10 +139,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
         app:srcCompat="@drawable/hattie_sad"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/mapButton"
@@ -154,9 +154,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Map"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="685dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="685dp" />
 
     <Button
         android:id="@+id/statusButton"
@@ -169,9 +169,9 @@
         android:background="@drawable/roundedbutton"
         android:text="Status"
         android:textSize="13sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="814dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/rationsButton"
@@ -184,9 +184,9 @@
         android:background="@drawable/roundedbutton"
         android:text="Rations"
         android:textSize="12sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1059dp"
-        tools:layout_editor_absoluteY="678dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="678dp" />
 
     <Button
         android:id="@+id/buyButton"
@@ -198,9 +198,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Buy"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="683dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/tradeButton"
@@ -212,9 +212,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Trade"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="933dp"
-        tools:layout_editor_absoluteY="677dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="677dp" />
 
     <Button
         android:id="@+id/talkButton"
@@ -226,9 +226,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Talk"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="430dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/restButton"
@@ -240,9 +240,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Rest"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="681dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="681dp" />
 
     <Button
         android:id="@+id/paceButton"
@@ -254,9 +254,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Pace"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1183dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/huntButton"
@@ -268,9 +268,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/roundedbutton"
         android:text="Hunt"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="557dp"
-        tools:layout_editor_absoluteY="679dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="679dp" />
 
     <TextView
         android:id="@+id/dateTextChange"
@@ -282,9 +282,9 @@
         android:layout_marginEnd="53dp"
         android:text="January 1, 1848"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="63dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="63dp" />
 
     <TextView
         android:id="@+id/weatherConditionText"
@@ -296,9 +296,9 @@
         android:layout_marginEnd="49dp"
         android:text="Sunny"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="146dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="146dp" />
 
     <TextView
         android:id="@+id/weatherTempText"
@@ -310,9 +310,9 @@
         android:layout_marginEnd="255dp"
         android:text="Warm"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="175dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="175dp" />
 
     <TextView
         android:id="@+id/distanceLandmarkText"
@@ -324,9 +324,9 @@
         android:layout_marginEnd="51dp"
         android:text="To Landmark:"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="250dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="250dp" />
 
     <TextView
         android:id="@+id/distanceTraveledText"
@@ -338,9 +338,9 @@
         android:layout_marginEnd="44dp"
         android:text="Traveled:"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="277dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="277dp" />
 
     <TextView
         android:id="@+id/wagonText"
@@ -352,9 +352,9 @@
         android:layout_marginBottom="287dp"
         android:text="Wagon:"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="325dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="325dp" />
 
     <TextView
         android:id="@+id/paceText"
@@ -366,9 +366,9 @@
         android:layout_marginBottom="258dp"
         android:text="Pace: Normal"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="358dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="358dp" />
 
     <TextView
         android:id="@+id/rationsText"
@@ -380,9 +380,9 @@
         android:layout_marginEnd="47dp"
         android:text="Rations: Filling"
         android:textSize="20sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="385dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="385dp" />
 
     <TextView
         android:id="@+id/locationText"
@@ -397,9 +397,9 @@
         android:text="Independence, Missouri"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="306dp"
-        tools:layout_editor_absoluteY="363dp"
-        tools:visibility="gone" />
+        tools:layout_editor_absoluteY="363dp" />
 
     <ImageView
         android:id="@+id/optionsBackground2"
