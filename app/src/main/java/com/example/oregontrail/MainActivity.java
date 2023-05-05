@@ -49,6 +49,31 @@ public class MainActivity extends AppCompatActivity {
         configurehuntYesButton();
         configuregoToRiverEventButton();
 
+        // Start of Game Elements
+        final ImageView startBackground1 = findViewById(R.id.startBackground1);
+
+        // Phase 1 (Choose Mode)
+        final ImageView startBackground11 = findViewById(R.id.startBackground11);
+        final Button startEasyButton = findViewById(R.id.startEasyButton);
+        final Button startNormalButton = findViewById(R.id.startNormalButton);
+        final Button startHardButton = findViewById(R.id.startHardButton);
+
+        // Phase 2 (Choose Start Month)
+        final TextView chooseMonthText = findViewById(R.id.chooseMonthText);
+        final Button januaryButton = findViewById(R.id.januaryButton);
+        final Button februaryButton = findViewById(R.id.februaryButton);
+        final Button marchButton = findViewById(R.id.marchButton);
+        final Button aprilButton = findViewById(R.id.aprilButton);
+        final Button mayButton = findViewById(R.id.mayButton);
+        final Button juneButton = findViewById(R.id.juneButton);
+        final Button julyButton = findViewById(R.id.julyButton);
+        final Button augustButton = findViewById(R.id.augustButton);
+        final Button septemberButton = findViewById(R.id.septemberButton);
+        final Button octoberButton = findViewById(R.id.octoberButton);
+        final Button novemberButton = findViewById(R.id.novemberButton);
+        final Button decemberButton = findViewById(R.id.decemberButton);
+
+
         // Elements for Main Game Screen
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
@@ -166,6 +191,27 @@ public class MainActivity extends AppCompatActivity {
         final TextView huntText = findViewById(R.id.huntText);
         final Button huntYesButton = findViewById(R.id.huntYesButton);
 
+        // Start of Game Elements
+
+        // Phase 1 (Chooses Difficulty)
+
+        startEasyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        startNormalButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        startHardButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
 
 
         // When next day button is clicked
