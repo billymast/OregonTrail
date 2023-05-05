@@ -38,6 +38,8 @@ public class Inventory implements Parcelable {
     private String[] Money;
 
 
+
+
     //default constructor
     public Inventory () {
 
@@ -495,6 +497,19 @@ public class Inventory implements Parcelable {
         value = Double.parseDouble(tempArr[1]);
         return value;
     }
+
+    public String[][] getArrValue() {
+        String[][] InventoryArr = new String[2][17];
+        String[] tempArr = {};
+        int n = 17;
+        for (int i = 0; i < n; i++ ){
+            tempArr = inventory.get(i);
+            tempArr[0] = InventoryArr[i][0];
+            tempArr[1] = InventoryArr[i][1];
+        }
+        return InventoryArr;
+    }
+
 
     @Override
     public int describeContents() {

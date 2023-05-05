@@ -760,11 +760,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                int shotValue = 0;
+                shotValue = inventory.getInventoryValue("Shots");
+
                 Intent intent = new Intent(MainActivity.this, HuntActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("inventory", inventory);
+                bundle.putInt("shot", shotValue);
                 intent.putExtras(bundle);
                 startActivity(intent);
+
+                inventory.removeInventory("Shots", 1);
 
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
