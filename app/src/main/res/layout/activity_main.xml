@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/roundedbutton"
@@ -22,12 +23,27 @@
         android:layout_height="531dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
         android:visibility="gone"
         app:srcCompat="@android:drawable/screen_background_light"
         tools:layout_editor_absoluteX="1005dp"
-        tools:layout_editor_absoluteY="11dp" />
+        tools:layout_editor_absoluteY="11dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/HattieCampbell"
+        android:layout_width="211dp"
+        android:layout_height="264dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/hattie_sad"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/gamePlayText"
@@ -38,12 +54,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="121dp"
         android:background="#FFFFFF"
-        android:text="GamePlay Text"
+        android:fontFamily="@font/bad_script"
+        android:text="Hattie Campbell and her family, Jeff, Forest, Jenny, and Sally, are ready to set off on the Oregon Trail. Make sure to stock up on supplies at Matt's Store by hitting the Buy Button to stock up before setting off on your adventure. You will only be able to access the store when at the Forts along the trail."
         android:textAlignment="textStart"
-        android:textSize="34sp"
+        android:textSize="20sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="432dp" />
+        tools:layout_editor_absoluteY="432dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/nextDay"
@@ -59,63 +77,68 @@
         android:textSize="24sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="347dp" />
+        tools:layout_editor_absoluteY="347dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/dateText"
-        android:layout_width="173dp"
-        android:layout_height="36dp"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="138dp"
+        android:layout_marginEnd="126dp"
+        android:fontFamily="sans-serif-black"
         android:text="Today's Date:"
         android:textSize="24sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="27dp" />
+        tools:layout_editor_absoluteY="27dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/weatherText"
-        android:layout_width="145dp"
-        android:layout_height="31dp"
+        android:layout_width="152dp"
+        android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="165dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="sans-serif-black"
         android:text="Weather:"
         android:textSize="24sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="115dp" />
-
-    <TextView
-        android:id="@+id/healthText"
-        android:layout_width="273dp"
-        android:layout_height="28dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="181dp"
-        android:text="Health:"
-        android:textSize="20sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="413dp" />
+        tools:layout_editor_absoluteY="115dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/foodText"
-        android:layout_width="267dp"
-        android:layout_height="27dp"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="481dp"
-        android:layout_marginEnd="47dp"
-        android:text="Food Left:"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="42dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Food Left: 0"
         android:textSize="20sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="441dp" />
+        tools:layout_editor_absoluteY="441dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/healthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1020dp"
+        android:layout_marginTop="458dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Health: Good Health"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/distanceText"
@@ -125,24 +148,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="172dp"
+        android:fontFamily="sans-serif-black"
         android:text="Distance:"
         android:textSize="24sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="219dp" />
-
-    <ImageView
-        android:id="@+id/HattieCampbell"
-        android:layout_width="211dp"
-        android:layout_height="264dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        app:srcCompat="@drawable/hattie_sad"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="219dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/mapButton"
@@ -156,7 +168,8 @@
         android:text="Map"
         android:visibility="gone"
         tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="685dp" />
+        tools:layout_editor_absoluteY="685dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/statusButton"
@@ -171,7 +184,8 @@
         android:textSize="13sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="814dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="679dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/rationsButton"
@@ -186,7 +200,8 @@
         android:textSize="12sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1059dp"
-        tools:layout_editor_absoluteY="678dp" />
+        tools:layout_editor_absoluteY="678dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/buyButton"
@@ -200,7 +215,8 @@
         android:text="Buy"
         android:visibility="gone"
         tools:layout_editor_absoluteX="683dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="679dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/tradeButton"
@@ -214,7 +230,8 @@
         android:text="Trade"
         android:visibility="gone"
         tools:layout_editor_absoluteX="933dp"
-        tools:layout_editor_absoluteY="677dp" />
+        tools:layout_editor_absoluteY="677dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/talkButton"
@@ -228,7 +245,8 @@
         android:text="Talk"
         android:visibility="gone"
         tools:layout_editor_absoluteX="430dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="679dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/restButton"
@@ -242,7 +260,8 @@
         android:text="Rest"
         android:visibility="gone"
         tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="681dp" />
+        tools:layout_editor_absoluteY="681dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/paceButton"
@@ -256,7 +275,8 @@
         android:text="Pace"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1183dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="679dp"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/huntButton"
@@ -270,119 +290,129 @@
         android:text="Hunt"
         android:visibility="gone"
         tools:layout_editor_absoluteX="557dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteY="679dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/dateTextChange"
-        android:layout_width="256dp"
-        android:layout_height="31dp"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="53dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="46dp"
+        android:fontFamily="@font/bad_script"
         android:text="January 1, 1848"
         android:textSize="20sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <TextView
-        android:id="@+id/weatherConditionText"
-        android:layout_width="261dp"
-        android:layout_height="29dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="181dp"
-        android:layout_marginEnd="49dp"
-        android:text="Sunny"
-        android:textSize="20sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="146dp" />
-
-    <TextView
-        android:id="@+id/weatherTempText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="155dp"
-        android:layout_marginEnd="255dp"
-        android:text="Warm"
-        android:textSize="20sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="175dp" />
-
-    <TextView
-        android:id="@+id/distanceLandmarkText"
-        android:layout_width="263dp"
-        android:layout_height="27dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="51dp"
-        android:text="To Landmark:"
-        android:textSize="20sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="250dp" />
-
-    <TextView
-        android:id="@+id/distanceTraveledText"
-        android:layout_width="268dp"
-        android:layout_height="28dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="263dp"
-        android:layout_marginEnd="44dp"
-        android:text="Traveled:"
-        android:textSize="20sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:layout_editor_absoluteY="63dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/wagonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="233dp"
-        android:layout_marginBottom="287dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1020dp"
+        android:layout_marginTop="343dp"
+        android:fontFamily="sans-serif-black"
         android:text="Wagon:"
-        android:textSize="24sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="325dp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/paceText"
-        android:layout_width="268dp"
-        android:layout_height="27dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="258dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1021dp"
+        android:layout_marginTop="378dp"
+        android:fontFamily="@font/bad_script"
         android:text="Pace: Normal"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/weatherConditionText"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="48dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Sunny"
         android:textSize="20sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="358dp" />
+        tools:layout_editor_absoluteY="146dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/weatherTempText"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="147dp"
+        android:layout_marginEnd="59dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Warm"
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="175dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/distanceLandmarkText"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="44dp"
+        android:fontFamily="@font/bad_script"
+        android:text="To Landmark: 102"
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="250dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/distanceTraveledText"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/bad_script"
+        android:text="Traveled: 0"
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="1019dp"
+        tools:layout_editor_absoluteY="277dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/rationsText"
-        android:layout_width="270dp"
-        android:layout_height="27dp"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="405dp"
-        android:layout_marginEnd="47dp"
+        android:layout_marginTop="417dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/bad_script"
         android:text="Rations: Filling"
         android:textSize="20sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="1019dp"
-        tools:layout_editor_absoluteY="385dp" />
+        tools:layout_editor_absoluteY="385dp"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/locationText"
@@ -394,12 +424,14 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="294dp"
         android:background="#FFFFFF"
+        android:fontFamily="sans-serif-black"
         android:text="Independence, Missouri"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:visibility="gone"
         tools:layout_editor_absoluteX="306dp"
-        tools:layout_editor_absoluteY="363dp" />
+        tools:layout_editor_absoluteY="363dp"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/optionsBackground2"
@@ -1337,7 +1369,8 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="17dp"
         android:layout_marginTop="28dp"
-        app:srcCompat="@android:drawable/screen_background_light" />
+        app:srcCompat="@android:drawable/screen_background_light"
+        tools:visibility="gone" />
 
     <ImageView
         android:id="@+id/startBackground11"
@@ -1570,6 +1603,120 @@
         android:text="December"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/person2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Person 2:"
+        android:textSize="34sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/person3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Person 3:"
+        android:textSize="34sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/person4Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="650dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Person 4:"
+        android:textSize="34sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/person5Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="900dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Person 5:"
+        android:textSize="34sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/person2Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="450dp"
+        android:text="Enter Name"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/person3Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="450dp"
+        android:text="Enter Name"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/person4Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="650dp"
+        android:layout_marginTop="450dp"
+        android:text="Enter Name"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/person5Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="900dp"
+        android:layout_marginTop="450dp"
+        android:text="Enter Name"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/namesContinueButton"
+        android:layout_width="1241dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Press to Continue"
+        android:textSize="45sp"
         android:visibility="gone" />
 
 </RelativeLayout>

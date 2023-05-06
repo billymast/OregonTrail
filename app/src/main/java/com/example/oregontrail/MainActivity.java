@@ -3,17 +3,12 @@ package com.example.oregontrail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
-
-import org.w3c.dom.Text;
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
         final Button decemberButton = findViewById(R.id.decemberButton);
 
         // Phase 3 (Choose Names of Members)
+        final TextView person2Text = findViewById(R.id.person2Text);
+        final TextView person3Text = findViewById(R.id.person3Text);
+        final TextView person4Text = findViewById(R.id.person4Text);
+        final TextView person5Text = findViewById(R.id.person5Text);
+        final EditText person2Enter = findViewById(R.id.person2Enter);
+        final EditText person3Enter = findViewById(R.id.person3Enter);
+        final EditText person4Enter = findViewById(R.id.person4Enter);
+        final EditText person5Enter = findViewById(R.id.person5Enter);
+        final Button namesContinueButton = findViewById(R.id.namesContinueButton);
 
 
         // Elements for Main Game Screen
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
         final TextView weatherText = findViewById(R.id.weatherText);
         final TextView weatherTempText = findViewById(R.id.weatherTempText);
+        final TextView distanceText = findViewById(R.id.distanceText);
         final TextView weatherConditionText = findViewById(R.id.weatherConditionText);
         final TextView distanceLandmarkText = findViewById(R.id.distanceLandmarkText);
         final TextView distanceTraveledText = findViewById(R.id.distanceTraveledText);
@@ -204,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
         startEasyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                inventory.addInventory("money", 2000);
+                inventory.addInventory("Money", 2000);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -226,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         });
         startNormalButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                inventory.addInventory("money", 1500);
+                inventory.addInventory("Money", 1500);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -248,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         });
         startHardButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                inventory.addInventory("money", 1000);
+                inventory.addInventory("Money", 1000);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -274,9 +279,9 @@ public class MainActivity extends AppCompatActivity {
         januaryButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 time.setMonth(1);
+                dateTextChange.setText(time.outputDate());
 
-                // Phase 1 Disappears
-                startBackground1.setVisibility(View.GONE);
+                // Phase 2 Disappears
                 chooseMonthText.setVisibility(View.GONE);
                 januaryButton.setVisibility(View.GONE);
                 februaryButton.setVisibility(View.GONE);
@@ -291,13 +296,413 @@ public class MainActivity extends AppCompatActivity {
                 novemberButton.setVisibility(View.GONE);
                 decemberButton.setVisibility(View.GONE);
 
-                // Phase 2 Appears
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
 
+            }
+        });
+        februaryButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(2);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        marchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(3);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        aprilButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(4);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        mayButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(5);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        juneButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(6);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        julyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(7);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        augustButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(8);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        septemberButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(9);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        octoberButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(10);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        novemberButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(11);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+        decemberButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                time.setMonth(12);
+                dateTextChange.setText(time.outputDate());
+
+                // Phase 2 Disappears
+                chooseMonthText.setVisibility(View.GONE);
+                januaryButton.setVisibility(View.GONE);
+                februaryButton.setVisibility(View.GONE);
+                marchButton.setVisibility(View.GONE);
+                aprilButton.setVisibility(View.GONE);
+                mayButton.setVisibility(View.GONE);
+                juneButton.setVisibility(View.GONE);
+                julyButton.setVisibility(View.GONE);
+                augustButton.setVisibility(View.GONE);
+                septemberButton.setVisibility(View.GONE);
+                octoberButton.setVisibility(View.GONE);
+                novemberButton.setVisibility(View.GONE);
+                decemberButton.setVisibility(View.GONE);
+
+                // Phase 3 Appears
+                person2Text.setVisibility(View.VISIBLE);
+                person3Text.setVisibility(View.VISIBLE);
+                person4Text.setVisibility(View.VISIBLE);
+                person5Text.setVisibility(View.VISIBLE);
+                person2Enter.setVisibility(View.VISIBLE);
+                person3Enter.setVisibility(View.VISIBLE);
+                person4Enter.setVisibility(View.VISIBLE);
+                person5Enter.setVisibility(View.VISIBLE);
+                namesContinueButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // Phase 3 (Chooses Names of Members)
+        namesContinueButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String name2 = person2Enter.getText().toString();
+                if (name2 == "" || name2 == "Enter Name") {
+                    name2 = "Jeff";
+                }
+                String name3 = person3Enter.getText().toString();
+                if (name3 == "" || name3 == "Enter Name") {
+                    name3 = "Forest";
+                }
+                String name4 = person4Enter.getText().toString();
+                if (name4 == "" || name4 == "Enter Name") {
+                    name4 = "Jenny";
+                }
+                String name5 = person5Enter.getText().toString();
+                if (name5 == "" || name5 == "Enter Name") {
+                    name5 = "Sally";
+                }
+
+                gamePlayText.setText("Hattie Campbell and her family, " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + ", are ready to set off on the Oregon Trail. Make sure to stock up on supplies at Matt's Store by hitting the Buy Button to stock up before setting off on your adventure. You will only be able to access the store when at the Forts along the trail.");
+
+                // Phase 3 Disappears
+                startBackground1.setVisibility(View.GONE);
+                person2Text.setVisibility(View.GONE);
+                person3Text.setVisibility(View.GONE);
+                person4Text.setVisibility(View.GONE);
+                person5Text.setVisibility(View.GONE);
+                person2Enter.setVisibility(View.GONE);
+                person3Enter.setVisibility(View.GONE);
+                person4Enter.setVisibility(View.GONE);
+                person5Enter.setVisibility(View.GONE);
+                namesContinueButton.setVisibility(View.GONE);
+
+                // Continues to Main Screen
                 statsBackground2.setVisibility(View.VISIBLE);
                 gamePlayText.setVisibility(View.VISIBLE);
                 dateTextChange.setVisibility(View.VISIBLE);
                 weatherText.setVisibility(View.VISIBLE);
                 weatherTempText.setVisibility(View.VISIBLE);
+                distanceText.setVisibility(View.VISIBLE);
                 weatherConditionText.setVisibility(View.VISIBLE);
                 distanceLandmarkText.setVisibility(View.VISIBLE);
                 distanceTraveledText.setVisibility(View.VISIBLE);
@@ -319,66 +724,8 @@ public class MainActivity extends AppCompatActivity {
                 restButton.setVisibility(View.VISIBLE);
                 paceButton.setVisibility(View.VISIBLE);
                 huntButton.setVisibility(View.VISIBLE);
-
             }
         });
-        februaryButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(2);
-            }
-        });
-        marchButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(3);
-            }
-        });
-        aprilButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(4);
-            }
-        });
-        mayButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(5);
-            }
-        });
-        juneButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(6);
-            }
-        });
-        julyButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(7);
-            }
-        });
-        augustButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(8);
-            }
-        });
-        septemberButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(9);
-            }
-        });
-        octoberButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(10);
-            }
-        });
-        novemberButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(11);
-            }
-        });
-        decemberButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time.setMonth(12);
-            }
-        });
-
-        // Phase 3 (Chooses Names of Members)
 
 
         // When next day button is clicked

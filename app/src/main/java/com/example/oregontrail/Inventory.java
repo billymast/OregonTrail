@@ -53,7 +53,7 @@ public class Inventory implements Parcelable {
         Rifle = new String[]{"Rifles", "0"}; inventory.add(Rifle);
         Shotgun = new String[]{"Shotgun", "0"}; inventory.add(Shotgun);
         Shots = new String[]{"Shots", "0"}; inventory.add(Shots);
-        Oxen = new String[] {"Oxen", ""}; inventory.add(Oxen);
+        Oxen = new String[] {"Oxen", "0"}; inventory.add(Oxen);
         SpareWagonWheels = new String [] {"SpareWagonWheels", "0"}; inventory.add(SpareWagonWheels);
         SpareWagonAxel = new String[] {"SpareWagonAxel", "0"}; inventory.add(SpareWagonAxel);
         SpareWagonTongues = new String[] {"SpareWagonTongues", "0"}; inventory.add(SpareWagonTongues);
