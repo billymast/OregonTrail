@@ -510,6 +510,16 @@ public class Inventory implements Parcelable {
         return InventoryArr;
     }
 
+    public void returnArr (String[][] arr) {
+        String[] tempArr = new String[2];
+        for (int i = 0; i < (arr.length)/2; i++) {
+            tempArr[0] = arr[i][0];
+            tempArr[1] = arr[0][1];
+            inventory.set(i, tempArr);
+        }
+    }//
+
+
 
     @Override
     public int describeContents() {
