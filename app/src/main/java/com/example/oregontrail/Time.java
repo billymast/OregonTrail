@@ -47,20 +47,10 @@ public class Time {
     // Need to update both years depending on when the game takes place
 
     public Time() {
-        this.year = 1900;
+        this.year = 1848;
         this.month = 1;
         this.day = 1;
     }
-
-
-    // Will need to update depending on how we pick month at start of game
-    public Time(int month) {
-        this.year = 1900;
-        this.month = month;
-        this.day = 1;
-    }
-
-
 
     // Getters and Setters
 

@@ -47,7 +47,7 @@ public class Health {
     public double PartyUpdate(Weather weather, Inventory inventory, Map map, boolean isRest) {
 
         //Required Daily Update
-        Party = Party * 0.9;
+        Party = Party * 0.95;
 
         // Getting all Values
         String Type = weather.getTempType();

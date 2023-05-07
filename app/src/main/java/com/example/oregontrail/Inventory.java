@@ -48,24 +48,24 @@ public class Inventory implements Parcelable {
 
         //creates all the array values that are in the linked list
         //then the line following add the value to the linked list inventory
-        Food = new String[]{"Food", "2000"}; inventory.add(Food);
-        Clothes = new String[]{"Clothes", "8"}; inventory.add(Clothes);
-        Rifle = new String[]{"Rifles", "1"}; inventory.add(Rifle);
-        Shotgun = new String[]{"Shotgun", "1"}; inventory.add(Shotgun);
-        Shots = new String[]{"Shots", "20"}; inventory.add(Shots);
-        Oxen = new String[] {"Oxen", "6"}; inventory.add(Oxen);
-        SpareWagonWheels = new String [] {"SpareWagonWheels", "3"}; inventory.add(SpareWagonWheels);
-        SpareWagonAxel = new String[] {"SpareWagonAxel", "3"}; inventory.add(SpareWagonAxel);
-        SpareWagonTongues = new String[] {"SpareWagonTongues", "3"}; inventory.add(SpareWagonTongues);
-        MedicalSupplyBox = new String[] {"MedicalSupplyBox", "1"}; inventory.add(MedicalSupplyBox);
-        SewingKit = new String[] {"SewingKit", "1"}; inventory.add(SewingKit);
-        FireStartingKit = new String[] {"FireStartingKit", "2"}; inventory.add(FireStartingKit);
-        KidsToys = new String[] {"KidsToys", "3"}; inventory.add(KidsToys);
-        FamilyKeepsakes = new String[] {"FamilyKeepsakes", "1"}; inventory.add (FamilyKeepsakes);
-        SeedPackages = new String[] {"SeedPackages", "10"}; inventory.add(SeedPackages);
-        Shovels = new String[] {"Shovels", "5"}; inventory.add(Shovels);
-        CookingItems = new String[] {"CookingItems", "1"}; inventory.add(CookingItems);
-        Money = new String[] {"Money", "1600"}; inventory.add(Money);
+        Food = new String[]{"Food", "0"}; inventory.add(Food);
+        Clothes = new String[]{"Clothes", "0"}; inventory.add(Clothes);
+        Rifle = new String[]{"Rifles", "0"}; inventory.add(Rifle);
+        Shotgun = new String[]{"Shotgun", "0"}; inventory.add(Shotgun);
+        Shots = new String[]{"Shots", "0"}; inventory.add(Shots);
+        Oxen = new String[] {"Oxen", "0"}; inventory.add(Oxen);
+        SpareWagonWheels = new String [] {"SpareWagonWheels", "0"}; inventory.add(SpareWagonWheels);
+        SpareWagonAxel = new String[] {"SpareWagonAxel", "0"}; inventory.add(SpareWagonAxel);
+        SpareWagonTongues = new String[] {"SpareWagonTongues", "0"}; inventory.add(SpareWagonTongues);
+        MedicalSupplyBox = new String[] {"MedicalSupplyBox", "0"}; inventory.add(MedicalSupplyBox);
+        SewingKit = new String[] {"SewingKit", "0"}; inventory.add(SewingKit);
+        FireStartingKit = new String[] {"FireStartingKit", "0"}; inventory.add(FireStartingKit);
+        KidsToys = new String[] {"KidsToys", "0"}; inventory.add(KidsToys);
+        FamilyKeepsakes = new String[] {"FamilyKeepsakes", "0"}; inventory.add (FamilyKeepsakes);
+        SeedPackages = new String[] {"SeedPackages", "0"}; inventory.add(SeedPackages);
+        Shovels = new String[] {"Shovels", "0"}; inventory.add(Shovels);
+        CookingItems = new String[] {"CookingItems", "0"}; inventory.add(CookingItems);
+        Money = new String[] {"Money", "0"}; inventory.add(Money);
 
     }
 
