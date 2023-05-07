@@ -517,7 +517,7 @@ public class Inventory implements Parcelable {
             tempArr[1] = arr[0][1];
             inventory.set(i, tempArr);
         }
-    }
+    }//
 
 
 
