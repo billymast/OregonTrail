@@ -28,11 +28,11 @@ public class Individual_Ilness {
         this.daytodie = 0;
         this.Who = "";
         this.PeopleAlive = 5;
-        name1 = "Hattie";
-        name2 = "";
-        name3 = "";
-        name4 = "";
-        name5 = "";
+        this.name1 = "Hattie";
+        this.name2 = "";
+        this.name3 = "";
+        this.name4 = "";
+        this.name5 = "";
     }
 
     //Get Value From Health
@@ -85,7 +85,7 @@ public class Individual_Ilness {
         }
 
         String sickness = "";
-        int random = Math.random();
+        double random = Math.random();
         if (random <= .33) {
             sickness = "typhoid fever";
         }
@@ -97,9 +97,9 @@ public class Individual_Ilness {
         }
         
         if(daytodie < 5) {
-            if (Kid3 == 1 {
-                Who = name1 + " is sick with " sickness + ".";
-                Kid3 = 5;
+            if (Kid3 == 1) {
+                Who = name1 + " is sick with " + sickness + ".";
+                Kid3 = 5; }
             if (Kid3 == 2) {
                 Who = "Kid3";
                 Kid3 = 5;
