@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView startBackground1 = findViewById(R.id.startBackground1);
 
         // Phase 1 (Choose Mode)
+        final ImageView startTitle = findViewById(R.id.startTitle);
         final ImageView startBackground11 = findViewById(R.id.startBackground11);
         final Button startEasyButton = findViewById(R.id.startEasyButton);
         final Button startNormalButton = findViewById(R.id.startNormalButton);
@@ -210,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
         startEasyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 inventory.addInventory("Money", 2000);
+                startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -232,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
         startNormalButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 inventory.addInventory("Money", 1500);
+                startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -254,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         startHardButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 inventory.addInventory("Money", 1000);
+                startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
                 startEasyButton.setVisibility(View.GONE);
                 startNormalButton.setVisibility(View.GONE);
@@ -689,6 +693,12 @@ public class MainActivity extends AppCompatActivity {
                     name5 = "Sally";
                     isAutoNameUsed = true;
                 }
+
+                // Sets all names in the health class
+                health.setPerson2Name(name2);
+                health.setPerson3Name(name3);
+                health.setPerson4Name(name4);
+                health.setPerson5Name(name5);
 
                 String beginningText;
 
@@ -1417,9 +1427,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
 }

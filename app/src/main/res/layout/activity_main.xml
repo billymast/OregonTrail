@@ -138,7 +138,9 @@
         android:layout_marginTop="458dp"
         android:fontFamily="@font/bad_script"
         android:text="Health: Good Health"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/distanceText"
@@ -319,7 +321,9 @@
         android:layout_marginTop="343dp"
         android:fontFamily="sans-serif-black"
         android:text="Wagon:"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/paceText"
@@ -331,7 +335,9 @@
         android:layout_marginTop="378dp"
         android:fontFamily="@font/bad_script"
         android:text="Pace: Normal"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/weatherConditionText"
@@ -1381,6 +1387,18 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="436dp"
         app:srcCompat="@android:drawable/screen_background_dark"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/startTitle"
+        android:layout_width="1198dp"
+        android:layout_height="370dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="48dp"
+        app:srcCompat="@drawable/asii_title"
         tools:visibility="gone" />
 
     <Button

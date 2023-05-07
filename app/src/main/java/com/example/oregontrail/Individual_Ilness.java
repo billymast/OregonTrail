@@ -12,6 +12,12 @@ public class Individual_Ilness {
     String Who;
     int PeopleAlive;
 
+    private String name1;
+    private String name2;
+    private String name3;
+    private String name4;
+    private String name5;
+
     public Individual_Ilness() {
         this.Hattie = 0;
         this.Husband = 0;
@@ -22,6 +28,11 @@ public class Individual_Ilness {
         this.daytodie = 0;
         this.Who = "";
         this.PeopleAlive = 5;
+        name1 = "";
+        name2 = "";
+        name3 = "";
+        name4 = "";
+        name5 = "";
     }
 
     //Get Value From Health
@@ -107,12 +118,43 @@ public class Individual_Ilness {
         if(health.getRations() == "Bare Bones"){
             inventory.removeInventory("Food",(PeopleAlive));
         }
-        if(health.getRations() == "Out of Food"){
-
-        }
-
 
         sickcheck = false;
         return Who;
     }
+
+    // Getters and Setters
+
+    public String getName2() {
+        return name2;
+    }
+
+    public void setName2(String name2) {
+        this.name2 = name2;
+    }
+
+    public String getName3() {
+        return name3;
+    }
+
+    public void setName3(String name3) {
+        this.name3 = name3;
+    }
+
+    public String getName4() {
+        return name4;
+    }
+
+    public void setName4(String name4) {
+        this.name4 = name4;
+    }
+
+    public String getName5() {
+        return name5;
+    }
+
+    public void setName5(String name5) {
+        this.name5 = name5;
+    }
 }
+

@@ -8,13 +8,20 @@ public class Health {
     private int Death;                       //Handles game over if party health too bad
     private String Rations;                  //How much food is being consumed (selected by player)
     private double FreezeStarveFactor;       //Variable that affects health
-    String update;                           //Used for returning string of health status
-    int death;                               //Used for days to death
+    private String update;                           //Used for returning string of health status
+    private int death;                               //Used for days to death
 
-    //Constructors
+
     //Default Constructor
-
-    public Health() {this.Death = 0; this.NumSick = 0; this.Party = 0; this.Rations = "Filling"; this.FreezeStarveFactor = 0; this.death = 0; this.update="";} //Default Constructor
+    public Health() {
+        this.Death = 0;
+        this.NumSick = 0;
+        this.Party = 0;
+        this.Rations = "Filling";
+        this.FreezeStarveFactor = 0;
+        this.death = 0;
+        this.update="";
+    }
 
     //Getters
     public double getParty() {return Party;}
