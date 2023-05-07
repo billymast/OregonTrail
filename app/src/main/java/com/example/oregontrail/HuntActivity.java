@@ -32,6 +32,7 @@ public class HuntActivity extends AppCompatActivity {
         final Button shootFour = findViewById(R.id.button4);
         final TextView isShot = findViewById(R.id.isHit);
 
+
         final ImageView imageView2 = (ImageView) findViewById (R.id.imageView2);
         imageView2.setImageResource(R.drawable.deerhiding);
         final ImageView imageView3 = (ImageView) findViewById (R.id.imageView3);
