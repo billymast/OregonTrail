@@ -248,7 +248,7 @@ public class Weather {
         // Updates Snowfall Amount
 
         // Fast snow melt conditions
-        if (this.tempType == "warm" || this.tempType == "hot" || this.tempType == "very hot" || this.weatherType == heavyRain) {
+        if (this.tempType.equals("warm") || this.tempType.equals("hot") || this.tempType.equals("very hot") || this.weatherType == heavyRain) {
             // If snow amount is less than 5 inches
             if (this.snowAmount <= 5.0) {
                 this.snowAmount = minSnowAmount;

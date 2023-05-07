@@ -665,24 +665,41 @@ public class MainActivity extends AppCompatActivity {
         // Phase 3 (Chooses Names of Members)
         namesContinueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                String autoNameUsed = "(Names were given to family members who were not given a name).";
+                boolean isAutoNameUsed = false;
+
                 String name2 = person2Enter.getText().toString();
-                if (name2 == "" || name2 == "Enter Name") {
+                if (name2.equals("") || name2.equals("Enter Name")) {
                     name2 = "Jeff";
+                    isAutoNameUsed = true;
                 }
                 String name3 = person3Enter.getText().toString();
-                if (name3 == "" || name3 == "Enter Name") {
+                if (name3.equals("") || name3.equals("Enter Name")) {
                     name3 = "Forest";
+                    isAutoNameUsed = true;
                 }
                 String name4 = person4Enter.getText().toString();
-                if (name4 == "" || name4 == "Enter Name") {
+                if (name4.equals("") || name4.equals("Enter Name")) {
                     name4 = "Jenny";
+                    isAutoNameUsed = true;
                 }
                 String name5 = person5Enter.getText().toString();
-                if (name5 == "" || name5 == "Enter Name") {
+                if (name5.equals("") || name5.equals("Enter Name")) {
                     name5 = "Sally";
+                    isAutoNameUsed = true;
                 }
 
-                gamePlayText.setText("Hattie Campbell and her family, " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + ", are ready to set off on the Oregon Trail. Make sure to stock up on supplies at Matt's Store by hitting the Buy Button to stock up before setting off on your adventure. You will only be able to access the store when at the Forts along the trail.");
+                String beginningText;
+
+                if (isAutoNameUsed) {
+                    beginningText = "Hattie Campbell and her family, " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + ", are ready to set off on the Oregon Trail " + autoNameUsed + " Make sure to stock up on supplies at Matt's Store by hitting the Buy Button to stock up before setting off on your adventure. You will only be able to access the store when at Forts along the trail.";
+                }
+                else {
+                    beginningText = "Hattie Campbell and her family, " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + ", are ready to set off on the Oregon Trail. Make sure to stock up on supplies at Matt's Store by hitting the Buy Button to stock up before setting off on your adventure. You will only be able to access the store when at Forts along the trail.";
+                }
+
+                gamePlayText.setText(beginningText);
 
                 // Phase 3 Disappears
                 startBackground1.setVisibility(View.GONE);
