@@ -39,7 +39,7 @@
         android:layout_marginEnd="137dp"
         android:scaleX="3"
         android:scaleY="3"
-        android:text="TextView" />
+        android:text="SHOTS: 20" />
 
     <Button
         android:id="@+id/button3"
