@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
     Health health = new Health();
+    Individual_Ilness Illness = new Individual_Ilness();
     Inventory inventory = new Inventory();
     Map map = new Map();
     Time time = new Time();
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         final Button decemberButton = findViewById(R.id.decemberButton);
 
         // Phase 3 (Choose Names of Members)
+        final ImageView namingTextImage = findViewById(R.id.namingTextImage);
         final TextView person2Text = findViewById(R.id.person2Text);
         final TextView person3Text = findViewById(R.id.person3Text);
         final TextView person4Text = findViewById(R.id.person4Text);
@@ -301,6 +303,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -334,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -366,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -398,6 +403,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -430,6 +436,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -462,6 +469,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -494,6 +502,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -526,6 +535,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -558,6 +568,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -590,6 +601,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -622,6 +634,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -654,6 +667,7 @@ public class MainActivity extends AppCompatActivity {
                 decemberButton.setVisibility(View.GONE);
 
                 // Phase 3 Appears
+                namingTextImage.setVisibility(View.VISIBLE);
                 person2Text.setVisibility(View.VISIBLE);
                 person3Text.setVisibility(View.VISIBLE);
                 person4Text.setVisibility(View.VISIBLE);
@@ -695,10 +709,10 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Sets all names in the health class
-                health.setPerson2Name(name2);
-                health.setPerson3Name(name3);
-                health.setPerson4Name(name4);
-                health.setPerson5Name(name5);
+                Illness.setName2(name2);
+                Illness.setName3(name3);
+                Illness.setName4(name4);
+                Illness.setName5(name5);
 
                 String beginningText;
 
@@ -713,6 +727,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Phase 3 Disappears
                 startBackground1.setVisibility(View.GONE);
+                namingTextImage.setVisibility(View.GONE);
                 person2Text.setVisibility(View.GONE);
                 person3Text.setVisibility(View.GONE);
                 person4Text.setVisibility(View.GONE);
