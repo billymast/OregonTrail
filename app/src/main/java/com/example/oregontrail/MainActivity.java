@@ -837,7 +837,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // Otherwise check for any random events that may occur
                 else {
-                    dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
+                    dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time, mainScreenImage) + ".\n";
                 }
 
                 // Displays Text explaining what happened during the day

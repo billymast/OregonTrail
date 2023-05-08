@@ -161,12 +161,15 @@ public class RandomEvent {
             return "Wrong Trail";
         }
         if (RoughTrail()){
+            image.setImageResource(R.drawable.wagon_in_mud);
             return "Rough Trail";
         }
         if (NativesHelp(inventory)){
+            image.setImageResource(R.drawable.wild_fruit);
             return "Natives help find food";
         }
         if (SevereBlizzard(weather)){
+            image.setImageResource(R.drawable.wagon_in_blizzard);
             return "Severe Blizzard";
         }
         if (findWildFruit(time)){
@@ -175,8 +178,10 @@ public class RandomEvent {
         }
         if (FireInWagon()){
             FireWagon(inventory);
+            image.setImageResource(R.drawable.wagon);
             return "There was a fire in your wagon, some supplies are lost";
         }
+        image.setImageResource(R.drawable.wagon);
         return "no random event";
     }
 
