@@ -119,29 +119,51 @@ public class Individual_Ilness {
             sickness = "dysentery";
         }
         
+		//Outputs based on health value
         if(daytodie < 5) {
+
+			//Kid3
             if (Kid3 == 1) {
-                Output = name1 + " is sick with " + sickness + ".";
+                Output = name3 + " is sick with " + sickness + ".";
                 Kid3 = 5; }
             if (Kid3 == 2) {
-                Output = name1 + " has died from " + sickness + ".";
+                Output = name3 + " has died from " + sickness + ".";
                 Kid3 = 5;
                 PeopleAlive = PeopleAlive - 1; } 
+
+			//Kid2
+            if (Kid2 == 1) {
+                Output = name2 + " is sick with " + sickness + ".";
+                Kid2 = 5; }
             if (Kid2 == 2) {
-                Output = "Kid2";
+                Output = name2 + " has died from " + sickness + ".";
                 Kid2 = 5;
                 PeopleAlive = PeopleAlive - 1; }
-            if (Kid1 == 2) {
-                Output = "Kid1";
+
+			//Hattie
+			if (Hattie == 1) {
+                Output = "Hattie is sick with " + sickness + ".";
+                Hattie = 5; }
+            if (Hattie == 2) {
+                Output = "Hattie has died from " + sickness + ". Game over.";
+                Hattie = 5;
+                PeopleAlive = PeopleAlive - 1; }
+
+			//Kid1
+			if (Kid1 == 1) {
+                Output = name4 + " is sick with " + sickness + ".";
+                Kid1 = 5; }
+            if (Kid3 == 2) {
+                Output = name4 + " has died from " + sickness + ".";
                 Kid1 = 5;
                 PeopleAlive = PeopleAlive - 1; }
+			if (Husband == 1) {
+                Output = name5 + " is sick with " + sickness + ".";
+                Husband = 5; }
             if (Husband == 2) {
-                Output = "Husband";
+                Output = name5 + " has died from " + sickness + ".";
                 Husband = 5;
-                PeopleAlive = PeopleAlive - 1;
-            } if (Hattie == 2) {
-                Output = "Hattie has died. Your adventure is over.";
-            }
+                PeopleAlive = PeopleAlive - 1; }
         }
         else {
             Output = "The party health has been too poor for too long. Your adventure is over.";
