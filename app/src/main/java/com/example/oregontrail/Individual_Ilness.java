@@ -28,11 +28,11 @@ public class Individual_Ilness {
         this.daytodie = 0;
         this.Who = "";
         this.PeopleAlive = 5;
-        name1 = "";
-        name2 = "";
-        name3 = "";
-        name4 = "";
-        name5 = "";
+        this.name1 = "Hattie";
+        this.name2 = "";
+        this.name3 = "";
+        this.name4 = "";
+        this.name5 = "";
     }
 
     //Get Value From Health
@@ -84,29 +84,44 @@ public class Individual_Ilness {
             }
         }
 
+        String sickness = "";
+        double random = Math.random();
+        if (random <= .33) {
+            sickness = "typhoid fever";
+        }
+        else if (random <= .66 && random > .33){
+            sickness = "chlorea";
+        }
+        else if (random > .66){
+            sickness = "dysentery";
+        }
+        
         if(daytodie < 5) {
+            if (Kid3 == 1) {
+                Who = name1 + " is sick with " + sickness + ".";
+                Kid3 = 5; }
             if (Kid3 == 2) {
                 Who = "Kid3";
                 Kid3 = 5;
                 PeopleAlive = PeopleAlive - 1;
-            } else if (Kid2 == 2) {
+            } if (Kid2 == 2) {
                 Who = "Kid2";
                 Kid2 = 5;
                 PeopleAlive = PeopleAlive - 1;
-            } else if (Kid1 == 2) {
+            } if (Kid1 == 2) {
                 Who = "Kid1";
                 Kid1 = 5;
                 PeopleAlive = PeopleAlive - 1;
-            } else if (Husband == 2) {
+            } if (Husband == 2) {
                 Who = "Husband";
                 Husband = 5;
                 PeopleAlive = PeopleAlive - 1;
-            } else if (Hattie == 2) {
-                Who = "Death";
+            } if (Hattie == 2) {
+                Who = "Hattie has died. Your adventure is over.";
             }
         }
         else {
-            Who = "Death";
+            Who = "The party health has been too poor for too long. Your adventure is over.";
         }
 
         if(health.getRations() == "Filling"){
