@@ -2,21 +2,21 @@ package com.example.oregontrail;
 
 public class Individual_Ilness {
     //Variables
-    int Hattie;
-    int Husband;
-    int Kid1;
-    int Kid2;
-    int Kid3;
-    boolean sickcheck;
-    int daytodie = 0;
-    String Who;
-    int PeopleAlive;
+    int Hattie;                               //Logic checker for Hattie. 0 if healthy, 1 if sick, 2 -> 5 if dead. Goes to 5 so no more calculations are performed.
+    int Husband;                              //""
+    int Kid1;                                 //""
+    int Kid2;                                 //""
+    int Kid3;                                 //""
+    int sickcheck;                            //Logic checker to randomly see if someone will get sick or get healthy. 1 is for sick, 2 for healthy.
+    int daytodie = 0;                         //If general party health becomes too poor, the entire party dies in 5 days.
+    String Output;                            //Output to user based on who is sick or died.
+    int PeopleAlive;                          //Used for food removal at end of class. Used for main declutter.
 
-    private String name1;
-    private String name2;
-    private String name3;
-    private String name4;
-    private String name5;
+    private String name1;                     //Always Hattie.
+    private String name2;                     //Stores user inputted value for character name.
+    private String name3;                     //""
+    private String name4;                     //""
+    private String name5;                     //""
 
     public Individual_Ilness() {
         this.Hattie = 0;
@@ -24,9 +24,9 @@ public class Individual_Ilness {
         this.Kid1 = 0;
         this.Kid2 = 0;
         this.Kid3 = 0;
-        this.sickcheck = false;
+        this.sickcheck = 0;
         this.daytodie = 0;
-        this.Who = "";
+        this.Output = "";
         this.PeopleAlive = 5;
         this.name1 = "Hattie";
         this.name2 = "";
@@ -49,28 +49,28 @@ public class Individual_Ilness {
             //15% chance
             double chance = .15;
             if (Math.random() < chance) {
-                sickcheck = true;
+                sickcheck = 1;
             }
         } else if (Party <= 104) {
             daytodie = 0;
             //30% chance
             double chance = .30;
             if (Math.random() < chance) {
-                sickcheck = true;
+                sickcheck = 1;
             }
         } else if (Party <= 139) {
             daytodie = 0;
             //40% Chance
             double chance = .40;
             if (Math.random() < chance) {
-                sickcheck = true;
+                sickcheck = 1;
             }
         } else if (Party > 139) {
             daytodie = daytodie + 1;
         }
 
         //sick checks
-        if (sickcheck == true) {
+        if (sickcheck == 1) {
             if (Kid3 < 2) {
                 Kid3 = Kid3 + 1;
             } else if (Kid2 < 2) {
@@ -98,32 +98,33 @@ public class Individual_Ilness {
         
         if(daytodie < 5) {
             if (Kid3 == 1) {
-                Who = name1 + " is sick with " + sickness + ".";
+                Output = name1 + " is sick with " + sickness + ".";
                 Kid3 = 5; }
             if (Kid3 == 2) {
-                Who = "Kid3";
+                Output = name1 + " has died from " + sickness + ".";
                 Kid3 = 5;
-                PeopleAlive = PeopleAlive - 1;
-            } if (Kid2 == 2) {
-                Who = "Kid2";
+                PeopleAlive = PeopleAlive - 1; } 
+            if (Kid2 == 2) {
+                Output = "Kid2";
                 Kid2 = 5;
-                PeopleAlive = PeopleAlive - 1;
-            } if (Kid1 == 2) {
-                Who = "Kid1";
+                PeopleAlive = PeopleAlive - 1; }
+            if (Kid1 == 2) {
+                Output = "Kid1";
                 Kid1 = 5;
-                PeopleAlive = PeopleAlive - 1;
-            } if (Husband == 2) {
-                Who = "Husband";
+                PeopleAlive = PeopleAlive - 1; }
+            if (Husband == 2) {
+                Output = "Husband";
                 Husband = 5;
                 PeopleAlive = PeopleAlive - 1;
             } if (Hattie == 2) {
-                Who = "Hattie has died. Your adventure is over.";
+                Output = "Hattie has died. Your adventure is over.";
             }
         }
         else {
-            Who = "The party health has been too poor for too long. Your adventure is over.";
+            Output = "The party health has been too poor for too long. Your adventure is over.";
         }
 
+        // Declutter Main Inventory Update
         if(health.getRations() == "Filling"){
             inventory.removeInventory("Food",(3*PeopleAlive));
         }
@@ -134,8 +135,9 @@ public class Individual_Ilness {
             inventory.removeInventory("Food",(PeopleAlive));
         }
 
-        sickcheck = false;
-        return Who;
+        //Logic reset
+        sickcheck = 0;
+        return Output;
     }
 
     // Getters and Setters
