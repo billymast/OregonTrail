@@ -11,8 +11,6 @@ public class Weather {
 
     private String tempType;
 
-    private int zone;
-
     /*
     0 = No Precipitation
     1 = Rain
@@ -39,17 +37,13 @@ public class Weather {
     private final int[][] temperatures =
             {
                     // Zone 1
-                    {60,60,60,60,60,60,60,60,60,60,60,60},
+                    {14,19,39,54,66,72,76,72,66,50,38,23},
                     // Zone 2
-                    {60,60,60,60,60,60,60,60,60,60,60,60},
+                    {22,24,37,45,55,69,76,74,65,48,34,26},
                     // Zone 3
-                    {60,60,60,60,60,60,60,60,60,60,60,60},
+                    {31,36,44,51,59,68,76,75,65,53,40,31},
                     // Zone 4
-                    {60,60,60,60,60,60,60,60,60,60,60,60},
-                    // Zone 5
-                    {60,60,60,60,60,60,60,60,60,60,60,60},
-                    // Zone 6
-                    {60,60,60,60,60,60,60,60,60,60,60,60}
+                    {29,34,41,46,54,61,69,68,59,47,36,29}
             };
 
     private final double[][] precipitationChances =
@@ -61,10 +55,6 @@ public class Weather {
                     // Zone 3
                     {0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2},
                     // Zone 4
-                    {0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2},
-                    // Zone 5
-                    {0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2},
-                    // Zone 6
                     {0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2}
             };
 
@@ -74,7 +64,6 @@ public class Weather {
     public Weather(){
         temp = 60;
         tempType = "warm";
-        zone = 1;
         weatherType = 0;
         rainAmount = 0.0001;
         snowAmount = 0.0001;
@@ -107,18 +96,6 @@ public class Weather {
     // @param temp - temperature type to change to
     public void setTempType(String tempType) {
         this.tempType = tempType;
-    }
-
-    // getZone - returns the current zone
-    // @return zone - current zone
-    public int getZone() {
-        return zone;
-    }
-
-    // setZone - sets the zone to entered zone
-    // @param zone - zone to change to
-    public void setZone(int zone) {
-        this.zone = zone;
     }
 
     // getRainAmount - returns the current rain amount
@@ -206,19 +183,19 @@ public class Weather {
     }
 
     // adjustTemp - Randomly adds or subtracts up to 20 to or from the temperature
-    public void adjustTemp(Time time) {
-        int startTemp = temperatures[this.zone][time.getMonth()];
+    public void adjustTemp(Time time, Map map) {
+        int startTemp = temperatures[map.getZone() - 1][time.getMonth() - 1];
         int adjustment = ((int)(Math.random() * 41)) - 20;
         this.temp = startTemp + adjustment;
     }
 
     // dailyPrecipitation - Determines whether no precipitation, light rain, heavy rain, light snow, or heavy snow
-    public void dailyPrecipitation(Time time) {
+    public void dailyPrecipitation(Time time, Map map) {
         // 50% chance for no change in weather
         if (Math.random() < 0.5) {
             this.weatherType = 0;
             // Chance for Precipitation
-            if (Math.random() < precipitationChances[zone][time.getMonth()]) {
+            if (Math.random() < precipitationChances[map.getZone() - 1][time.getMonth() - 1]) {
                 this.weatherType += 1;
                 // Chance of Heavy Precipitation
                 if (Math.random() < 0.3) { this.weatherType += 1; }
@@ -282,15 +259,15 @@ public class Weather {
     // Daily Function
 
     // dailyWeather - simulates a daily cycle for weather in the game
-    public void dailyWeather(Time time){
+    public void dailyWeather(Time time, Map map){
         // Randomly adjust Temperature
-        adjustTemp(time);
+        adjustTemp(time, map);
 
         // Updates Temp Classification
         updateTempType();
 
         // Random Precipitation for Day
-        dailyPrecipitation(time);
+        dailyPrecipitation(time, map);
 
         // Update rainfall and snowfall amounts
         updateRainfall();

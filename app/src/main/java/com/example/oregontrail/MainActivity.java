@@ -800,7 +800,7 @@ public class MainActivity extends AppCompatActivity {
                 String dailyOutput = time.outputDate() + "\n";
 
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter
@@ -1300,7 +1300,7 @@ public class MainActivity extends AppCompatActivity {
         restButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter
@@ -1417,7 +1417,7 @@ public class MainActivity extends AppCompatActivity {
                 exitOptionsButton.setVisibility(View.GONE);
 
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter
