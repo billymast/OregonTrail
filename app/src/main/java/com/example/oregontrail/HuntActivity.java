@@ -19,9 +19,7 @@ public class HuntActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         int shots = getIntent().getExtras().getInt("shot");
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hunt);
@@ -31,7 +29,6 @@ public class HuntActivity extends AppCompatActivity {
         final Button shootThree = findViewById(R.id.button3);
         final Button shootFour = findViewById(R.id.button4);
         final TextView isShot = findViewById(R.id.isHit);
-
 
         final ImageView imageView2 = (ImageView) findViewById (R.id.imageView2);
         imageView2.setImageResource(R.drawable.deerhiding);
@@ -49,7 +46,7 @@ public class HuntActivity extends AppCompatActivity {
 
         shotCount.setText("Shots remaining: " + shots);
 
-        int location = (int) (Math.random() * 5) + 1;
+        int location = (int) (Math.random() * 4) + 1;
 
         int shotCounts = 0;
 
