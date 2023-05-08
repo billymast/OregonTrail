@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Elements for Main Game Screen
         final ImageView statsBackground2 = findViewById(R.id.StatsBackground2);
+        final ImageView mainScreenImage = findViewById(R.id.mainScreenImage);
         final TextView gamePlayText = findViewById(R.id.gamePlayText);
         final TextView dateTextChange = findViewById(R.id.dateTextChange);
         final TextView weatherText = findViewById(R.id.weatherText);
@@ -740,6 +741,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Continues to Main Screen
                 statsBackground2.setVisibility(View.VISIBLE);
+                mainScreenImage.setVisibility(View.VISIBLE);
                 gamePlayText.setVisibility(View.VISIBLE);
                 dateTextChange.setVisibility(View.VISIBLE);
                 weatherText.setVisibility(View.VISIBLE);
@@ -800,7 +802,12 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays changes to weather
                 weather.dailyWeather(time);
                 weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
+
+                // Makes Temp Type start with Uppercase letter
+                String weatherText1 = weather.getTempType();
+                String weatherText2 = weatherText1.substring(0,1).toUpperCase();
+
+                weatherTempText.setText(weatherText2 + weatherText1.substring(1));
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map, false);
@@ -809,6 +816,9 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays location
                 if(map.updateLocation(map.getPace())){
                     locationText.setText(map.getCurrentLandmark());
+                }
+                else {
+                    locationText.setText("On the Trail");
                 }
                 distanceTraveledText.setText("Traveled: " + map.getLocation());
                 distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
@@ -1278,7 +1288,12 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays changes to weather
                 weather.dailyWeather(time);
                 weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
+
+                // Makes Temp Type start with Uppercase letter
+                String weatherText1 = weather.getTempType();
+                String weatherText2 = weatherText1.substring(0,1).toUpperCase();
+
+                weatherTempText.setText(weatherText2 + weatherText1.substring(1));
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map, true);
@@ -1386,7 +1401,12 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays changes to weather
                 weather.dailyWeather(time);
                 weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
+
+                // Makes Temp Type start with Uppercase letter
+                String weatherText1 = weather.getTempType();
+                String weatherText2 = weatherText1.substring(0,1).toUpperCase();
+
+                weatherTempText.setText(weatherText2 + weatherText1.substring(1));
 
                 // Updates and displays changes to party's health
                 health.PartyUpdate(weather, inventory, map, true);
