@@ -1365,14 +1365,18 @@ public class MainActivity extends AppCompatActivity {
                 int shotValue = 0;
                 shotValue = inventory.getInventoryValue("Shots");
 
-                Intent intent = new Intent(MainActivity.this, HuntActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("shot", shotValue);
-                intent.putExtras(bundle);
-                startActivity(intent);
 
-                inventory.removeInventory("Shots", 1);
+                while (shotValue != 0) {
+                    Intent intent = new Intent(MainActivity.this, HuntActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("shot", shotValue);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
 
+                if (inventory.getInventoryValue("Shots") != 0) {
+                    inventory.removeInventory("Shots", 1);
+                }
                 nextDayButton.setVisibility(View.VISIBLE);
                 optionsBackground.setVisibility(View.GONE);
                 huntText.setVisibility(View.GONE);

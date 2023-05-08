@@ -147,25 +147,25 @@ public class RandomEvent {
     public String Event (Inventory inventory, Weather weather, Time time) {
 
         if (SnakeBite()){
-            return "Snake Bite";
+            return "There was a snake bite. Some health has been removed.";
         }
         if (LoseTrail()){
-            return "Lost Trail";
+            return "You have lost the trail. A day has passed.";
         }
         if (WrongTrail()) {
-            return "Wrong Trail";
+            return "You are on the wrong trail. A day has passed.";
         }
         if (RoughTrail()){
-            return "Rough Trail";
+            return "The trail is very rough. You pace is slowed.";
         }
         if (NativesHelp(inventory)){
-            return "Natives help find food";
+            return "The Natives have help to find food. Food has been added to inventory.";
         }
         if (SevereBlizzard(weather)){
-            return "Severe Blizzard";
+            return "The weather has turned into a severe blizzard. Your pace has slowed.";
         }
         if (findWildFruit(time)){
-            return "You found wild fruit";
+            return "You and you party found wild fruit! Food has been added to inventory.";
         }
         if (FireInWagon()){
             FireWagon(inventory);
@@ -173,6 +173,10 @@ public class RandomEvent {
         }
         return "no random event";
     }
+
+
+
+
 
     public void FireWagon(Inventory inventory) {
 

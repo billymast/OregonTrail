@@ -57,6 +57,16 @@ public class HuntActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if (location == 1){
+                    isShot.setText("HIT");
+                    //inventory.addInventory("Food", 25);
+                    //inventory.removeInventory("Shot", 1);
+
+                }
+                else{
+                    isShot.setText("MISS");
+                }
+
                 switch (location) {
                     case 1:
                         imageView2.setImageResource(R.drawable.deerhiding);
@@ -85,15 +95,7 @@ public class HuntActivity extends AppCompatActivity {
                 }
 
 
-                if (location == 1){
-                    isShot.setText("HIT");
-                    //inventory.addInventory("Food", 25);
-                    //inventory.removeInventory("Shot", 1);
 
-                }
-                else{
-                    isShot.setText("MISS");
-                }
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -107,6 +109,14 @@ public class HuntActivity extends AppCompatActivity {
         shootTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (location == 2){
+                    isShot.setText("HIT");
+                    //inventory.addInventory("Food", 25);
+                    //inventory.removeInventory("Shot", 1);
+                }
+                else{
+                    isShot.setText("MISS");
+                }
                 switch (location) {
                     case 1:
                         imageView2.setImageResource(R.drawable.deerhiding);
@@ -133,14 +143,7 @@ public class HuntActivity extends AppCompatActivity {
                         imageView2.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
                         break;
                 }
-                if (location == 2){
-                    isShot.setText("HIT");
-                    //inventory.addInventory("Food", 25);
-                    //inventory.removeInventory("Shot", 1);
-                }
-                else{
-                    isShot.setText("MISS");
-                }
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -153,6 +156,14 @@ public class HuntActivity extends AppCompatActivity {
         shootThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (location == 3){
+                    isShot.setText("HIT");
+                    //inventory.addInventory("Food", 25);
+                    //inventory.removeInventory("Shot", 1);
+                }
+                else{
+                    isShot.setText("MISS");
+                }
                 switch (location) {
                     case 1:
                         imageView2.setImageResource(R.drawable.deerhiding);
@@ -179,14 +190,7 @@ public class HuntActivity extends AppCompatActivity {
                         imageView2.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
                         break;
                 }
-                if (location == 3){
-                    isShot.setText("HIT");
-                    //inventory.addInventory("Food", 25);
-                    //inventory.removeInventory("Shot", 1);
-                }
-                else{
-                    isShot.setText("MISS");
-                }
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -200,6 +204,13 @@ public class HuntActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (location == 4){
+                    isShot.setText("HIT");
+                    //inventory.addInventory("Food", 25);
+                    //inventory.removeInventory("Shot", 1);
+                }
+                else{
+                    isShot.setText("MISS");
+                }
                     switch (location) {
                         case 1:
                             imageView2.setImageResource(R.drawable.deerhiding);
@@ -226,13 +237,7 @@ public class HuntActivity extends AppCompatActivity {
                             imageView2.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
                             break;
                     }
-                    isShot.setText("HIT");
-                    //inventory.addInventory("Food", 25);
-                    //inventory.removeInventory("Shot", 1);
-                }
-                else{
-                    isShot.setText("MISS");
-                }
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
