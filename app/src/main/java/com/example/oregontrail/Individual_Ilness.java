@@ -73,7 +73,9 @@ public class Individual_Ilness {
             daytodie = daytodie + 1;
         }
         if (sickcheck != 1){
-            
+            if (Math.random() < .5){
+				sickcheck = 2;
+            }
         }
 
         //sick checks
@@ -90,6 +92,20 @@ public class Individual_Ilness {
                 Hattie = Hattie + 2;
             }
         }
+		else if (sickcheck == 2) {
+            if (Kid3 > 0 && Kid3 < 5) {
+                Kid3 = Kid3 - 1;
+            } else if (Kid2 > 0 && Kid2 < 5) {
+                Kid2 = Kid2 - 1;
+            } else if (Kid1 > 0 && Kid1 < 5) {
+                Kid1 = Kid1 - 1;
+            } else if (Husband > 0 && Husband < 5) {
+                Husband = Husband - 1;
+            } else if (Hattie > 0 && Hattie < 5) {
+                Hattie = Hattie - 1;
+            }
+        }
+
 
         String sickness = "";
         double random = Math.random();
