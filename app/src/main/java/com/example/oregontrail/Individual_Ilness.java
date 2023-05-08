@@ -14,10 +14,10 @@ public class Individual_Ilness {
     int PeopleAlive;                          //Used for food removal at end of class. Used for main declutter.
 
     private String name1;                     //Always Hattie.
-    private String name2;                     //Stores user inputted value for character name.
-    private String name3;                     //""
-    private String name4;                     //""
-    private String name5;                     //""
+    private String name2;                     //Stores user inputted value for character name. Corresponds to Kid2.
+    private String name3;                     //Corresponds to Kid3
+    private String name4;                     //Corresponds to Kid1
+    private String name5;                     //Corresponds to Husband
 
     //Default Constructor
     public Individual_Ilness() {
