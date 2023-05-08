@@ -181,6 +181,7 @@ public class RandomEvent {
             image.setImageResource(R.drawable.wagon);
             return "There was a fire in your wagon, some supplies are lost";
         }
+
         image.setImageResource(R.drawable.wagon);
         return "no random event";
     }
