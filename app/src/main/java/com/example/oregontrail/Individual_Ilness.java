@@ -72,6 +72,9 @@ public class Individual_Ilness {
         } else if (Party > 139) {
             daytodie = daytodie + 1;
         }
+        if (sickcheck != 1){
+            
+        }
 
         //sick checks
         if (sickcheck == 1) {
