@@ -1,5 +1,6 @@
 package com.example.oregontrail;
 
+
 public class Individual_Ilness {
     //Variables
     int Hattie;                               //Logic checker for Hattie. 0 if healthy, 1 if sick, 2 -> 5 if dead. Goes to 5 so no more calculations are performed.
@@ -18,6 +19,7 @@ public class Individual_Ilness {
     private String name4;                     //""
     private String name5;                     //""
 
+    //Default Constructor
     public Individual_Ilness() {
         this.Hattie = 0;
         this.Husband = 0;
@@ -35,12 +37,14 @@ public class Individual_Ilness {
         this.name5 = "";
     }
 
-    //Get Value From Health
+   
+    //Outputs a message to the player informing them about individual illnesses, deaths, and becoming healthy.
+    public String OutputIndividualIllness(Health health, Inventory inventory) {
 
-    public String Thing(Health health, Inventory inventory) {
-
+        //Need general health stat from Health
         double Party = health.getParty();
 
+        //Getting sick or getting healthy
         if (Party <= 34) {
             daytodie = 0;
             //0% chance of getting sick
