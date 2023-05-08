@@ -1,5 +1,7 @@
 package com.example.oregontrail;
 
+import android.widget.ImageView;
+
 /**
  * this class is used to determine whether a random events takes place
  */
@@ -144,15 +146,18 @@ public class RandomEvent {
      * @return a string value indicating which random event happens or none
      */
 
-    public String Event (Inventory inventory, Weather weather, Time time) {
+    public String Event (Inventory inventory, Weather weather, Time time, ImageView image) {
 
         if (SnakeBite()){
+            image.setImageResource(R.drawable.snake);
             return "Snake Bite";
         }
         if (LoseTrail()){
+            image.setImageResource(R.drawable.wagon_in_mud);
             return "Lost Trail";
         }
         if (WrongTrail()) {
+            image.setImageResource(R.drawable.wagon_in_mud);
             return "Wrong Trail";
         }
         if (RoughTrail()){
@@ -165,6 +170,7 @@ public class RandomEvent {
             return "Severe Blizzard";
         }
         if (findWildFruit(time)){
+            image.setImageResource(R.drawable.wild_fruit);
             return "You found wild fruit";
         }
         if (FireInWagon()){
