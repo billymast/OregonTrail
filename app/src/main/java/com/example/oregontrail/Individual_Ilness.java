@@ -4,10 +4,10 @@ package com.example.oregontrail;
 public class Individual_Ilness {
     //Variables
     int Hattie;                               //Logic checker for Hattie. 0 if healthy, 1 if sick, 2 -> 5 if dead. Goes to 5 so no more calculations are performed.
-    int Husband;                              //""
-    int Kid1;                                 //""
-    int Kid2;                                 //""
-    int Kid3;                                 //""
+    public int Husband;                              //""
+    public int Kid1;                                 //""
+    public int Kid2;                                 //""
+    public int Kid3;                                 //""
     int sickcheck;                            //Logic checker to randomly see if someone will get sick or get healthy. 1 is for sick, 2 for healthy.
     int daytodie = 0;                         //If general party health becomes too poor, the entire party dies in 5 days.
     String Output;                            //Output to user based on who is sick or died.
