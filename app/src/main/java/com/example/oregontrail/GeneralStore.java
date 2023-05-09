@@ -137,7 +137,7 @@ public class GeneralStore {
             case 10:  name = "SewingKit"; break;
             case 11:  name = "FireStartKit"; break;
             case 12:  name = "KidsToy"; break;
-            case 13:  name = "Seedpack"; break;
+            case 13:  name = "SeedPacks"; break;
             case 14:  name = "Shovel"; break;
             case 15:  name = "CookWare"; break;
             default:  name = ""; break;
