@@ -108,17 +108,16 @@ public class RandomEvent {
         return false;
     }
 
-    public boolean findWildFruit (Time time){
+    public boolean findWildFruit (Time time) {
         int month = time.getMonth();
         double value = randomValue();
-        if (month >= 5 && month <= 9 ){
-            if (value < 0.04){
+        if (month >= 5 && month <= 9) {
+            if (value < 0.04) {
                 return true;
             }
         }
         return false;
     }
-
 
     public boolean FoundWagon () {
         double value = randomValue();
@@ -128,6 +127,7 @@ public class RandomEvent {
         return false;
     }
 
+
     public boolean FireInWagon () {
         double value = randomValue();
         if (randomValue() < 0.02){
@@ -136,6 +136,32 @@ public class RandomEvent {
         else {
             return false;
         }
+    }
+
+    int wagonCounter = 0;
+
+    public boolean loseWagonPart(Inventory inventory) {
+        double value = randomValue();
+        double value2 = randomValue();
+        double value3 = randomValue();
+        if (value < 0.05){
+            if (value2 < 0.25){
+                inventory.removeInventory("SpareWagonAxel", 1);
+                wagonCounter = 1;
+                return true;
+            }
+            else if (value3 < 0.25){
+                inventory.removeInventory("SpareWagonTongues", 1);
+                wagonCounter = 2;
+                return true;
+            }
+            else {
+                inventory.removeInventory("SpareWagonWheels", 1);
+                wagonCounter = 3;
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -180,6 +206,17 @@ public class RandomEvent {
             FireWagon(inventory);
             image.setImageResource(R.drawable.wagon);
             return "There was a fire in your wagon, some supplies are lost";
+        }
+        if (loseWagonPart(inventory)){
+            image.setImageResource(R.drawable.wagon);
+            switch (wagonCounter){
+                case 1:
+                    return "You hit a bump and broke an axel";
+                case 2:
+                    return "You hit a root and broke a wagon tongues";
+                case 3:
+                    return "You ran over a hole and broke a wagon wheel";
+            }
         }
 
         image.setImageResource(R.drawable.wagon);

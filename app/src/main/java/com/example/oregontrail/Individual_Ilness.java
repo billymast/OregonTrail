@@ -12,6 +12,7 @@ public class Individual_Ilness {
     int daytodie = 0;                         //If general party health becomes too poor, the entire party dies in 5 days.
     String Output;                            //Output to user based on who is sick or died.
     int PeopleAlive;                          //Used for food removal at end of class. Used for main declutter.
+	boolean GameOver;
 
     private String name1;                     //Always Hattie.
     private String name2;                     //Stores user inputted value for character name. Corresponds to Kid2.
@@ -35,11 +36,15 @@ public class Individual_Ilness {
         this.name3 = "";
         this.name4 = "";
         this.name5 = "";
+		this.GameOver = false;
     }
 
    
     //Outputs a message to the player informing them about individual illnesses, deaths, and becoming healthy.
     public String OutputIndividualIllness(Health health, Inventory inventory) {
+
+		//Resetting Output
+		Output = " ";		
 
         //Need general health stat from Health
         double Party = health.getParty();
@@ -147,6 +152,7 @@ public class Individual_Ilness {
             if (Hattie == 2) {
                 Output = "Hattie has died from " + sickness + ". Game over.";
                 Hattie = 5;
+                GameOver = true;
                 PeopleAlive = PeopleAlive - 1; }
 
 			//Kid1
@@ -157,6 +163,8 @@ public class Individual_Ilness {
                 Output = name4 + " has died from " + sickness + ".";
                 Kid1 = 5;
                 PeopleAlive = PeopleAlive - 1; }
+
+			//Husband
 			if (Husband == 1) {
                 Output = name5 + " is sick with " + sickness + ".";
                 Husband = 5; }
@@ -167,6 +175,7 @@ public class Individual_Ilness {
         }
         else {
             Output = "The party health has been too poor for too long. Your adventure is over.";
+            GameOver = true;
         }
 
         // Declutter Main Inventory Update
@@ -186,6 +195,10 @@ public class Individual_Ilness {
     }
 
     // Getters and Setters
+
+	public boolean getGameOver() {
+		return GameOver;
+	}
 
     public String getName2() {
         return name2;
