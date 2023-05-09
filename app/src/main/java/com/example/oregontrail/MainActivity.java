@@ -811,7 +811,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays changes to party's health
                 String dailyIllnessOutput = Illness.OutputIndividualIllness(health, inventory);
-                if (!dailyIllnessOutput.equals("")) {
+                if (!dailyIllnessOutput.equals(" ")) {
                     dailyOutput = dailyOutput + dailyIllnessOutput + "\n";
                 }
                 health.PartyUpdate(weather, inventory, map, false);
@@ -1066,7 +1066,9 @@ public class MainActivity extends AppCompatActivity {
                     storeYourAxles.setText(inventory.getInventoryValue("SpareWagonAxel")  + "   /   3");
                     storeYourTongues.setText(inventory.getInventoryValue("SpareWagonTongues") + "   /   3");
                     storeYourOxen.setText(inventory.getInventoryValue("Oxen") + "   /   16");
-                    storeYourMoney.setText("Your Money: $" + inventory.moneyAmount());
+
+                    String moneyAmount = String.format("%.2f", inventory.moneyAmount());
+                    storeYourMoney.setText("Your Money: $" + moneyAmount);
 
                 }
             }
@@ -1102,8 +1104,11 @@ public class MainActivity extends AppCompatActivity {
                 storeYourTongues.setText(inventory.getInventoryValue("SpareWagonTongues") + "   /   3");
                 storeYourOxen.setText(inventory.getInventoryValue("Oxen") + "   /   16");
                 foodText.setText("Food Left: " + inventory.getInventoryValue("Food"));
-                storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
-                storeTotalCost.setText("Total Cost: $" + String.valueOf(currentStore.getTotal()));
+
+                String moneyAmount = String.format("%.2f", inventory.moneyAmount());
+                storeYourMoney.setText("Your Money: $" + moneyAmount);
+
+                storeTotalCost.setText("Total Cost: $0.00");
             }
         });
 
@@ -1129,7 +1134,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(1) * currentStore.getPrice(1));
                 storeClothesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);
             }
         });
         storeDecrementRifle.setOnClickListener(new View.OnClickListener() {
@@ -1140,7 +1146,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(2) * currentStore.getPrice(2));
                 storeRifleCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);
             }
         });
         storeDecrementShots.setOnClickListener(new View.OnClickListener() {
@@ -1151,8 +1158,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(4) * currentStore.getPrice(4));
                 storeShotsCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1162,8 +1169,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(6) * currentStore.getPrice(6));
                 storeWheelsCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1173,8 +1180,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(7) * currentStore.getPrice(7));
                 storeAxlesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1184,8 +1191,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(8) * currentStore.getPrice(8));
                 storeTonguesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1195,8 +1202,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(5) * currentStore.getPrice(5));
                 storeOxenCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
 
         // General Store Increment Buttons
@@ -1209,8 +1216,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(0) * currentStore.getPrice(0));
                 storeFoodCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementClothes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1220,8 +1227,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(1) * currentStore.getPrice(1));
                 storeClothesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementRifle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1231,8 +1238,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(2) * currentStore.getPrice(2));
                 storeRifleCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementShots.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1242,8 +1249,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(4) * currentStore.getPrice(4));
                 storeShotsCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1253,8 +1260,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(6) * currentStore.getPrice(6));
                 storeWheelsCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1264,8 +1271,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(7) * currentStore.getPrice(7));
                 storeAxlesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1275,8 +1282,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(8) * currentStore.getPrice(8));
                 storeTonguesCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1286,8 +1293,8 @@ public class MainActivity extends AppCompatActivity {
                 String currentCost = String.format("%.2f", currentStore.getQuantity(5) * currentStore.getPrice(5));
                 storeOxenCost.setText("$" + currentCost);
 
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
 
         // When Status Button is Clicked
