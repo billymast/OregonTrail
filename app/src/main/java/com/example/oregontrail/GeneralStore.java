@@ -130,16 +130,16 @@ public class GeneralStore {
             case  3:  name = "Shotgun"; break;
             case  4:  name = "Shots"; break;
             case  5:  name = "Oxen"; break;
-            case  6:  name = "Spare Wagon Wheel"; break;
-            case  7:  name = "Spare Wagon Axel"; break;
-            case  8:  name = "Spare Wagon Tongue"; break;
-            case  9:  name = "Medical Supply Kit"; break;
-            case 10:  name = "Sewing Kit"; break;
-            case 11:  name = "Fire Start Kit"; break;
-            case 12:  name = "Kids Toy"; break;
-            case 13:  name = "Seed pack"; break;
+            case  6:  name = "SpareWagonWheels"; break;
+            case  7:  name = "SpareWagonAxel"; break;
+            case  8:  name = "SpareWagonTongues"; break;
+            case  9:  name = "MedicalSupplyKit"; break;
+            case 10:  name = "SewingKit"; break;
+            case 11:  name = "FireStartKit"; break;
+            case 12:  name = "KidsToy"; break;
+            case 13:  name = "Seedpack"; break;
             case 14:  name = "Shovel"; break;
-            case 15:  name = "Cook Ware"; break;
+            case 15:  name = "CookWare"; break;
             default:  name = ""; break;
         }
         return name;

@@ -115,7 +115,9 @@ public class RandomEvent {
             }
         }
         return false;
-    }
+
+
+    public boolean
 
 
     public boolean FoundWagon () {

@@ -498,6 +498,7 @@ public class Inventory implements Parcelable {
         return value;
     }
 
+
     public String[][] getArrValue() {
         String[][] InventoryArr = new String[2][17];
         String[] tempArr = {};
