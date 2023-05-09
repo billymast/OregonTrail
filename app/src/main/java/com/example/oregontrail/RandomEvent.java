@@ -100,7 +100,7 @@ public class RandomEvent {
     public boolean SevereBlizzard (Weather weather){
         String currentWeather = weather.getTempType();
         double value = randomValue();
-        if (currentWeather == "cold" || currentWeather == "very cold"){
+        if (currentWeather == "cold" || currentWeather == "very cold" && weather.weatherTypeString().equals("Heavy Snow")){
             if (value < .15){
                 return true;
             }
@@ -108,11 +108,12 @@ public class RandomEvent {
         return false;
     }
 
-    public boolean findWildFruit (Time time) {
+    public boolean findWildFruit (Time time, Inventory inventory) {
         int month = time.getMonth();
         double value = randomValue();
         if (month >= 5 && month <= 9) {
             if (value < 0.04) {
+                inventory.addInventory("Food",  25);
                 return true;
             }
         }
@@ -198,7 +199,7 @@ public class RandomEvent {
             image.setImageResource(R.drawable.wagon_in_blizzard);
             return "Severe Blizzard";
         }
-        if (findWildFruit(time)){
+        if (findWildFruit(time, inventory)){
             image.setImageResource(R.drawable.wild_fruit);
             return "You found wild fruit";
         }
@@ -220,7 +221,7 @@ public class RandomEvent {
         }
 
         image.setImageResource(R.drawable.wagon);
-        return "no random event";
+        return "";
     }
 
     public void FireWagon(Inventory inventory) {
