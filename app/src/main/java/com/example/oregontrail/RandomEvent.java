@@ -1,5 +1,7 @@
 package com.example.oregontrail;
 
+import android.widget.ImageView;
+
 /**
  * this class is used to determine whether a random events takes place
  */
@@ -146,39 +148,45 @@ public class RandomEvent {
      * @return a string value indicating which random event happens or none
      */
 
-    public String Event (Inventory inventory, Weather weather, Time time) {
+    public String Event (Inventory inventory, Weather weather, Time time, ImageView image) {
 
         if (SnakeBite()){
-            return "There was a snake bite. Some health has been removed.";
+            image.setImageResource(R.drawable.snake);
+            return "Snake Bite";
         }
         if (LoseTrail()){
-            return "You have lost the trail. A day has passed.";
+            image.setImageResource(R.drawable.wagon_in_mud);
+            return "Lost Trail";
         }
         if (WrongTrail()) {
-            return "You are on the wrong trail. A day has passed.";
+            image.setImageResource(R.drawable.wagon_in_mud);
+            return "Wrong Trail";
         }
         if (RoughTrail()){
-            return "The trail is very rough. You pace is slowed.";
+            image.setImageResource(R.drawable.wagon_in_mud);
+            return "Rough Trail";
         }
         if (NativesHelp(inventory)){
-            return "The Natives have help to find food. Food has been added to inventory.";
+            image.setImageResource(R.drawable.wild_fruit);
+            return "Natives help find food";
         }
         if (SevereBlizzard(weather)){
-            return "The weather has turned into a severe blizzard. Your pace has slowed.";
+            image.setImageResource(R.drawable.wagon_in_blizzard);
+            return "Severe Blizzard";
         }
         if (findWildFruit(time)){
-            return "You and you party found wild fruit! Food has been added to inventory.";
+            image.setImageResource(R.drawable.wild_fruit);
+            return "You found wild fruit";
         }
         if (FireInWagon()){
             FireWagon(inventory);
+            image.setImageResource(R.drawable.wagon);
             return "There was a fire in your wagon, some supplies are lost";
         }
+
+        image.setImageResource(R.drawable.wagon);
         return "no random event";
     }
-
-
-
-
 
     public void FireWagon(Inventory inventory) {
 

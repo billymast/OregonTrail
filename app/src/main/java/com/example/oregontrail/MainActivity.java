@@ -800,7 +800,7 @@ public class MainActivity extends AppCompatActivity {
                 String dailyOutput = time.outputDate() + "\n";
 
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter
@@ -810,6 +810,10 @@ public class MainActivity extends AppCompatActivity {
                 weatherTempText.setText(weatherText2 + weatherText1.substring(1));
 
                 // Updates and displays changes to party's health
+                String dailyIllnessOutput = Illness.OutputIndividualIllness(health, inventory);
+                if (!dailyIllnessOutput.equals("")) {
+                    dailyOutput = dailyOutput + dailyIllnessOutput + "\n";
+                }
                 health.PartyUpdate(weather, inventory, map, false);
                 healthText.setText("Health: " + health.HealthString());
 
@@ -837,10 +841,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // Otherwise check for any random events that may occur
                 else {
-                    dailyOutput = dailyOutput + "Random Event: " + randomEvent.Event(inventory, weather, time) + ".\n";
+                    String randomEventText = randomEvent.Event(inventory, weather, time, mainScreenImage);
+                    if (!randomEventText.equals("no random event")) {
+                        dailyOutput = dailyOutput + randomEventText + ".\n";
+                    }
                 }
 
                 // Displays Text explaining what happened during the day
+                if(dailyOutput.equals(time.outputDate() + "\n")) {
+                    dailyOutput = time.outputDate() + "\nAnother long, boring day on the trail.";
+                }
                 gamePlayText.setText(dailyOutput);
 
                 // Update and Display the new date
@@ -944,109 +954,113 @@ public class MainActivity extends AppCompatActivity {
         // When Buy Options Button is Clicked
         buyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Displays Store Screen
-                nextDayButton.setVisibility(View.GONE);
-                optionsBackground.setVisibility(View.VISIBLE);
-                exitOptionsButton.setVisibility(View.VISIBLE);
-                storeLabel1.setVisibility(View.VISIBLE);
-                storeLabel2.setVisibility(View.VISIBLE);
-                storeLabel3.setVisibility(View.VISIBLE);
-                storeLabel4.setVisibility(View.VISIBLE);
-                storeTotalCost.setVisibility(View.VISIBLE);
-                storeYourMoney.setVisibility(View.VISIBLE);
-                storeBuyButton.setVisibility(View.VISIBLE);
-                storeFoodText.setVisibility(View.VISIBLE);
-                storeClothesText.setVisibility(View.VISIBLE);
-                storeRifleText.setVisibility(View.VISIBLE);
-                storeShotsText.setVisibility(View.VISIBLE);
-                storeWheelsText.setVisibility(View.VISIBLE);
-                storeAxlesText.setVisibility(View.VISIBLE);
-                storeTonguesText.setVisibility(View.VISIBLE);
-                storeOxenText.setVisibility(View.VISIBLE);
-                storeDecrementFood.setVisibility(View.VISIBLE);
-                storeDecrementClothes.setVisibility(View.VISIBLE);
-                storeDecrementRifle.setVisibility(View.VISIBLE);
-                storeDecrementShots.setVisibility(View.VISIBLE);
-                storeDecrementWheels.setVisibility(View.VISIBLE);
-                storeDecrementAxles.setVisibility(View.VISIBLE);
-                storeDecrementTongues.setVisibility(View.VISIBLE);
-                storeDecrementOxen.setVisibility(View.VISIBLE);
-                storeIncrementFood.setVisibility(View.VISIBLE);
-                storeIncrementClothes.setVisibility(View.VISIBLE);
-                storeIncrementRifle.setVisibility(View.VISIBLE);
-                storeIncrementShots.setVisibility(View.VISIBLE);
-                storeIncrementWheels.setVisibility(View.VISIBLE);
-                storeIncrementAxles.setVisibility(View.VISIBLE);
-                storeIncrementTongues.setVisibility(View.VISIBLE);
-                storeIncrementOxen.setVisibility(View.VISIBLE);
-                storeFoodAmount.setVisibility(View.VISIBLE);
-                storeClothesAmount.setVisibility(View.VISIBLE);
-                storeRifleAmount.setVisibility(View.VISIBLE);
-                storeShotsAmount.setVisibility(View.VISIBLE);
-                storeWheelsAmount.setVisibility(View.VISIBLE);
-                storeAxlesAmount.setVisibility(View.VISIBLE);
-                storeTonguesAmount.setVisibility(View.VISIBLE);
-                storeOxenAmount.setVisibility(View.VISIBLE);
-                storeFoodCost.setVisibility(View.VISIBLE);
-                storeClothesCost.setVisibility(View.VISIBLE);
-                storeRifleCost.setVisibility(View.VISIBLE);
-                storeShotsCost.setVisibility(View.VISIBLE);
-                storeWheelsCost.setVisibility(View.VISIBLE);
-                storeAxlesCost.setVisibility(View.VISIBLE);
-                storeTonguesCost.setVisibility(View.VISIBLE);
-                storeOxenCost.setVisibility(View.VISIBLE);
-                storeYourFood.setVisibility(View.VISIBLE);
-                storeYourClothes.setVisibility(View.VISIBLE);
-                storeYourRifle.setVisibility(View.VISIBLE);
-                storeYourShots.setVisibility(View.VISIBLE);
-                storeYourWheels.setVisibility(View.VISIBLE);
-                storeYourAxles.setVisibility(View.VISIBLE);
-                storeYourTongues.setVisibility(View.VISIBLE);
-                storeYourOxen.setVisibility(View.VISIBLE);
+                if (map.isFort() || map.getCurrentLandmark().equals("Matt's Store")) {
 
-                String currentLocation = map.getCurrentLandmark();
-                switch (currentLocation){
-                    case "Fort Kearney":
-                        currentStore = generalStoreKearney;
-                        break;
-                    case "Fort Laramie":
-                        currentStore = generalStoreLaramie;
-                        break;
-                    case "Fort Bridger":
-                        currentStore = generalStoreBridger;
-                        break;
-                    case "Fort Hall":
-                        currentStore = generalStoreHall;
-                        break;
-                    case "Fort Boise":
-                        currentStore = generalStoreBoise;
-                        break;
-                    case "Fort Walla Walla":
-                        currentStore = generalStoreWalla;
-                        break;
-                    default:
-                        currentStore = generalStoreMatt;
-                        break;
+                    // Displays Store Screen
+                    nextDayButton.setVisibility(View.GONE);
+                    optionsBackground.setVisibility(View.VISIBLE);
+                    exitOptionsButton.setVisibility(View.VISIBLE);
+                    storeLabel1.setVisibility(View.VISIBLE);
+                    storeLabel2.setVisibility(View.VISIBLE);
+                    storeLabel3.setVisibility(View.VISIBLE);
+                    storeLabel4.setVisibility(View.VISIBLE);
+                    storeTotalCost.setVisibility(View.VISIBLE);
+                    storeYourMoney.setVisibility(View.VISIBLE);
+                    storeBuyButton.setVisibility(View.VISIBLE);
+                    storeFoodText.setVisibility(View.VISIBLE);
+                    storeClothesText.setVisibility(View.VISIBLE);
+                    storeRifleText.setVisibility(View.VISIBLE);
+                    storeShotsText.setVisibility(View.VISIBLE);
+                    storeWheelsText.setVisibility(View.VISIBLE);
+                    storeAxlesText.setVisibility(View.VISIBLE);
+                    storeTonguesText.setVisibility(View.VISIBLE);
+                    storeOxenText.setVisibility(View.VISIBLE);
+                    storeDecrementFood.setVisibility(View.VISIBLE);
+                    storeDecrementClothes.setVisibility(View.VISIBLE);
+                    storeDecrementRifle.setVisibility(View.VISIBLE);
+                    storeDecrementShots.setVisibility(View.VISIBLE);
+                    storeDecrementWheels.setVisibility(View.VISIBLE);
+                    storeDecrementAxles.setVisibility(View.VISIBLE);
+                    storeDecrementTongues.setVisibility(View.VISIBLE);
+                    storeDecrementOxen.setVisibility(View.VISIBLE);
+                    storeIncrementFood.setVisibility(View.VISIBLE);
+                    storeIncrementClothes.setVisibility(View.VISIBLE);
+                    storeIncrementRifle.setVisibility(View.VISIBLE);
+                    storeIncrementShots.setVisibility(View.VISIBLE);
+                    storeIncrementWheels.setVisibility(View.VISIBLE);
+                    storeIncrementAxles.setVisibility(View.VISIBLE);
+                    storeIncrementTongues.setVisibility(View.VISIBLE);
+                    storeIncrementOxen.setVisibility(View.VISIBLE);
+                    storeFoodAmount.setVisibility(View.VISIBLE);
+                    storeClothesAmount.setVisibility(View.VISIBLE);
+                    storeRifleAmount.setVisibility(View.VISIBLE);
+                    storeShotsAmount.setVisibility(View.VISIBLE);
+                    storeWheelsAmount.setVisibility(View.VISIBLE);
+                    storeAxlesAmount.setVisibility(View.VISIBLE);
+                    storeTonguesAmount.setVisibility(View.VISIBLE);
+                    storeOxenAmount.setVisibility(View.VISIBLE);
+                    storeFoodCost.setVisibility(View.VISIBLE);
+                    storeClothesCost.setVisibility(View.VISIBLE);
+                    storeRifleCost.setVisibility(View.VISIBLE);
+                    storeShotsCost.setVisibility(View.VISIBLE);
+                    storeWheelsCost.setVisibility(View.VISIBLE);
+                    storeAxlesCost.setVisibility(View.VISIBLE);
+                    storeTonguesCost.setVisibility(View.VISIBLE);
+                    storeOxenCost.setVisibility(View.VISIBLE);
+                    storeYourFood.setVisibility(View.VISIBLE);
+                    storeYourClothes.setVisibility(View.VISIBLE);
+                    storeYourRifle.setVisibility(View.VISIBLE);
+                    storeYourShots.setVisibility(View.VISIBLE);
+                    storeYourWheels.setVisibility(View.VISIBLE);
+                    storeYourAxles.setVisibility(View.VISIBLE);
+                    storeYourTongues.setVisibility(View.VISIBLE);
+                    storeYourOxen.setVisibility(View.VISIBLE);
+
+                    String currentLocation = map.getCurrentLandmark();
+                    switch (currentLocation){
+                        case "Fort Kearney":
+                            currentStore = generalStoreKearney;
+                            break;
+                        case "Fort Laramie":
+                            currentStore = generalStoreLaramie;
+                            break;
+                        case "Fort Bridger":
+                            currentStore = generalStoreBridger;
+                            break;
+                        case "Fort Hall":
+                            currentStore = generalStoreHall;
+                            break;
+                        case "Fort Boise":
+                            currentStore = generalStoreBoise;
+                            break;
+                        case "Fort Walla Walla":
+                            currentStore = generalStoreWalla;
+                            break;
+                        default:
+                            currentStore = generalStoreMatt;
+                            break;
+                    }
+
+                    // Updates Variables (Also contains text for Max Amount)
+                    storeFoodText.setText("Food  /  $" + String.valueOf(currentStore.getPrice(0)));
+                    storeClothesText.setText("Clothes  /  $" + String.valueOf(currentStore.getPrice(1)));
+                    storeRifleText.setText("Rifle  /  $" + String.valueOf(currentStore.getPrice(2)));
+                    storeShotsText.setText("Shots  /  $" + String.valueOf(currentStore.getPrice(4)));
+                    storeWheelsText.setText("Wheels  /  $" + String.valueOf(currentStore.getPrice(6)));
+                    storeAxlesText.setText("Axles  /  $" + String.valueOf(currentStore.getPrice(7)));
+                    storeTonguesText.setText("Tongues  /  $" + String.valueOf(currentStore.getPrice(8)));
+                    storeOxenText.setText("Oxen  /  $" + String.valueOf(currentStore.getPrice(5)));
+                    storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
+                    storeYourClothes.setText(String.valueOf(inventory.getInventoryValue("Clothes")) + "   /   None");
+                    storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   1");
+                    storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
+                    storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   3");
+                    storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel"))  + "   /   3");
+                    storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   3");
+                    storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   16");
+                    storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
+
                 }
-
-                // Updates Variables (Also contains text for Max Amount)
-                storeFoodText.setText("Food  /  $" + String.valueOf(currentStore.getPrice(0)));
-                storeClothesText.setText("Clothes  /  $" + String.valueOf(currentStore.getPrice(1)));
-                storeRifleText.setText("Rifle  /  $" + String.valueOf(currentStore.getPrice(2)));
-                storeShotsText.setText("Shots  /  $" + String.valueOf(currentStore.getPrice(4)));
-                storeWheelsText.setText("Wheels  /  $" + String.valueOf(currentStore.getPrice(6)));
-                storeAxlesText.setText("Axles  /  $" + String.valueOf(currentStore.getPrice(7)));
-                storeTonguesText.setText("Tongues  /  $" + String.valueOf(currentStore.getPrice(8)));
-                storeOxenText.setText("Oxen  /  $" + String.valueOf(currentStore.getPrice(5)));
-                storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
-                storeYourClothes.setText(String.valueOf(inventory.getInventoryValue("Clothes")) + "   /   None");
-                storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   1");
-                storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
-                storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   3");
-                storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel"))  + "   /   3");
-                storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   3");
-                storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   16");
-                storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
             }
         });
 
@@ -1286,7 +1300,7 @@ public class MainActivity extends AppCompatActivity {
         restButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter
@@ -1302,6 +1316,10 @@ public class MainActivity extends AppCompatActivity {
                 // Updates and displays food count
                 inventory.removeInventory("Food", 20);
                 foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                // Daily Output
+                String dailyOutput = time.outputDate() + "\nSpent the day lying around.";
+                gamePlayText.setText(dailyOutput);
 
                 // Update and Display the new date
                 dateTextChange.setText(time.outputDate());
@@ -1399,7 +1417,7 @@ public class MainActivity extends AppCompatActivity {
                 exitOptionsButton.setVisibility(View.GONE);
 
                 // Updates and displays changes to weather
-                weather.dailyWeather(time);
+                weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
 
                 // Makes Temp Type start with Uppercase letter

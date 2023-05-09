@@ -127,6 +127,7 @@ public class Map {
         if (location >= distanceToLandmark.peek()){
             location = distanceToLandmark.remove();
             currentLandmark = currentLandmarkQueue.remove();
+            this.updateZone();
             return true;
         }
         return false;
@@ -170,4 +171,13 @@ public class Map {
         if (paceType == "Grueling") { this.pace *= 2; }
     }
 
+    public void updateZone() {
+        if (this.currentLandmark.equals("Fort Laramie")) { this.zone = 2; }
+        if (this.currentLandmark.equals("Fort Bridger")) { this.zone = 3; }
+        if (this.currentLandmark.equals("Fort Boise")) { this.zone = 4; }
+     }
+
+    public int getZone() {
+        return zone;
+    }
 }
