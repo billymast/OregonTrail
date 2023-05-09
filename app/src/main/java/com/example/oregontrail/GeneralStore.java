@@ -130,9 +130,9 @@ public class GeneralStore {
             case  3:  name = "Shotgun"; break;
             case  4:  name = "Shots"; break;
             case  5:  name = "Oxen"; break;
-            case  6:  name = "Spare Wagon Wheel"; break;
-            case  7:  name = "Spare Wagon Axel"; break;
-            case  8:  name = "Spare Wagon Tongue"; break;
+            case  6:  name = "SpareWagonWheels"; break;
+            case  7:  name = "SpareWagonAxel"; break;
+            case  8:  name = "SpareWagonTongues"; break;
             case  9:  name = "Medical Supply Kit"; break;
             case 10:  name = "Sewing Kit"; break;
             case 11:  name = "Fire Start Kit"; break;
