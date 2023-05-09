@@ -811,7 +811,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Updates and displays changes to party's health
                 String dailyIllnessOutput = Illness.OutputIndividualIllness(health, inventory);
-                if (!dailyIllnessOutput.equals("")) {
+                if (!dailyIllnessOutput.equals(" ")) {
                     dailyOutput = dailyOutput + dailyIllnessOutput + "\n";
                 }
                 health.PartyUpdate(weather, inventory, map, false);
@@ -1042,23 +1042,33 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     // Updates Variables (Also contains text for Max Amount)
-                    storeFoodText.setText("Food  /  $" + String.valueOf(currentStore.getPrice(0)));
-                    storeClothesText.setText("Clothes  /  $" + String.valueOf(currentStore.getPrice(1)));
-                    storeRifleText.setText("Rifle  /  $" + String.valueOf(currentStore.getPrice(2)));
-                    storeShotsText.setText("Shots  /  $" + String.valueOf(currentStore.getPrice(4)));
-                    storeWheelsText.setText("Wheels  /  $" + String.valueOf(currentStore.getPrice(6)));
-                    storeAxlesText.setText("Axles  /  $" + String.valueOf(currentStore.getPrice(7)));
-                    storeTonguesText.setText("Tongues  /  $" + String.valueOf(currentStore.getPrice(8)));
-                    storeOxenText.setText("Oxen  /  $" + String.valueOf(currentStore.getPrice(5)));
-                    storeYourFood.setText(String.valueOf(inventory.getInventoryValue("Food")) + "   /   None");
-                    storeYourClothes.setText(String.valueOf(inventory.getInventoryValue("Clothes")) + "   /   None");
-                    storeYourRifle.setText(String.valueOf(inventory.getInventoryValue("Rifle")) + "   /   1");
-                    storeYourShots.setText(String.valueOf(inventory.getInventoryValue("Shots")) + "   /   None");
-                    storeYourWheels.setText(String.valueOf(inventory.getInventoryValue("SpareWagonWheels")) + "   /   3");
-                    storeYourAxles.setText(String.valueOf(inventory.getInventoryValue("SpareWagonAxel"))  + "   /   3");
-                    storeYourTongues.setText(String.valueOf(inventory.getInventoryValue("SpareWagonTongues")) + "   /   3");
-                    storeYourOxen.setText(String.valueOf(inventory.getInventoryValue("Oxen")) + "   /   16");
-                    storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
+                    String foodPrice = String.format("%.2f", currentStore.getPrice(0));
+                    storeFoodText.setText("Food  /  $" + foodPrice);
+                    String clothesPrice = String.format("%.2f", currentStore.getPrice(1));
+                    storeClothesText.setText("Clothes  /  $" + clothesPrice);
+                    String riflePrice = String.format("%.2f", currentStore.getPrice(2));
+                    storeRifleText.setText("Rifle  /  $" + riflePrice);
+                    String shotsPrice = String.format("%.2f", currentStore.getPrice(4));
+                    storeShotsText.setText("Shots  /  $" + shotsPrice);
+                    String wheelsPrice = String.format("%.2f", currentStore.getPrice(6));
+                    storeWheelsText.setText("Wheels  /  $" + wheelsPrice);
+                    String axlesPrice = String.format("%.2f", currentStore.getPrice(7));
+                    storeAxlesText.setText("Axles  /  $" + axlesPrice);
+                    String tonguesPrice = String.format("%.2f", currentStore.getPrice(8));
+                    storeTonguesText.setText("Tongues  /  $" + tonguesPrice);
+                    String oxenPrice = String.format("%.2f", currentStore.getPrice(5));
+                    storeOxenText.setText("Oxen  /  $" + oxenPrice);
+                    storeYourFood.setText(inventory.getInventoryValue("Food") + "   /   None");
+                    storeYourClothes.setText(inventory.getInventoryValue("Clothes") + "   /   None");
+                    storeYourRifle.setText(inventory.getInventoryValue("Rifle") + "   /   1");
+                    storeYourShots.setText(inventory.getInventoryValue("Shots") + "   /   None");
+                    storeYourWheels.setText(inventory.getInventoryValue("SpareWagonWheels") + "   /   3");
+                    storeYourAxles.setText(inventory.getInventoryValue("SpareWagonAxel")  + "   /   3");
+                    storeYourTongues.setText(inventory.getInventoryValue("SpareWagonTongues") + "   /   3");
+                    storeYourOxen.setText(inventory.getInventoryValue("Oxen") + "   /   16");
+
+                    String moneyAmount = String.format("%.2f", inventory.moneyAmount());
+                    storeYourMoney.setText("Your Money: $" + moneyAmount);
 
                 }
             }
@@ -1094,8 +1104,11 @@ public class MainActivity extends AppCompatActivity {
                 storeYourTongues.setText(inventory.getInventoryValue("SpareWagonTongues") + "   /   3");
                 storeYourOxen.setText(inventory.getInventoryValue("Oxen") + "   /   16");
                 foodText.setText("Food Left: " + inventory.getInventoryValue("Food"));
-                storeYourMoney.setText("Your Money: $" + String.valueOf(inventory.moneyAmount()));
-                storeTotalCost.setText("Total Cost: $" + String.valueOf(currentStore.getTotal()));
+
+                String moneyAmount = String.format("%.2f", inventory.moneyAmount());
+                storeYourMoney.setText("Your Money: $" + moneyAmount);
+
+                storeTotalCost.setText("Total Cost: $0.00");
             }
         });
 
@@ -1105,65 +1118,92 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(0,25);
                 storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
-                storeFoodCost.setText("$" + currentStore.getQuantity(0) * currentStore.getPrice(0));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(0) * currentStore.getPrice(0));
+                storeFoodCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);
             }
         });
         storeDecrementClothes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(1,1);
                 storeClothesAmount.setText(String.valueOf(currentStore.getQuantity(1)));
-                storeClothesCost.setText("$" + currentStore.getQuantity(1) * currentStore.getPrice(1));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(1) * currentStore.getPrice(1));
+                storeClothesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);
             }
         });
         storeDecrementRifle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(2,1);
                 storeRifleAmount.setText(String.valueOf(currentStore.getQuantity(2)));
-                storeRifleCost.setText("$" + currentStore.getQuantity(2) * currentStore.getPrice(2));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(2) * currentStore.getPrice(2));
+                storeRifleCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);
             }
         });
         storeDecrementShots.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(4,5);
                 storeShotsAmount.setText(String.valueOf(currentStore.getQuantity(4)));
-                storeShotsCost.setText("$" + currentStore.getQuantity(4) * currentStore.getPrice(4));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(4) * currentStore.getPrice(4));
+                storeShotsCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(6,1);
                 storeWheelsAmount.setText(String.valueOf(currentStore.getQuantity(6)));
-                storeWheelsCost.setText("$" + currentStore.getQuantity(6) * currentStore.getPrice(6));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(6) * currentStore.getPrice(6));
+                storeWheelsCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(7,1);
                 storeAxlesAmount.setText(String.valueOf(currentStore.getQuantity(7)));
-                storeAxlesCost.setText("$" + currentStore.getQuantity(7) * currentStore.getPrice(7));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(7) * currentStore.getPrice(7));
+                storeAxlesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(8,1);
                 storeTonguesAmount.setText(String.valueOf(currentStore.getQuantity(8)));
-                storeTonguesCost.setText("$" + currentStore.getQuantity(8) * currentStore.getPrice(8));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(8) * currentStore.getPrice(8));
+                storeTonguesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeDecrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.removeItemQuantity(5,2);
                 storeOxenAmount.setText(String.valueOf(currentStore.getQuantity(5)));
-                storeOxenCost.setText("$" + currentStore.getQuantity(5) * currentStore.getPrice(5));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(5) * currentStore.getPrice(5));
+                storeOxenCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
 
         // General Store Increment Buttons
@@ -1172,65 +1212,89 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 currentStore.addItem(0,25);
                 storeFoodAmount.setText(String.valueOf(currentStore.getQuantity(0)));
-                storeFoodCost.setText("$" + currentStore.getQuantity(0) * currentStore.getPrice(0));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(0) * currentStore.getPrice(0));
+                storeFoodCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementClothes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(1,1);
                 storeClothesAmount.setText(String.valueOf(currentStore.getQuantity(1)));
-                storeClothesCost.setText("$" + currentStore.getQuantity(1) * currentStore.getPrice(1));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(1) * currentStore.getPrice(1));
+                storeClothesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementRifle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(2,1);
                 storeRifleAmount.setText(String.valueOf(currentStore.getQuantity(2)));
-                storeRifleCost.setText("$" + currentStore.getQuantity(2) * currentStore.getPrice(2));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(2) * currentStore.getPrice(2));
+                storeRifleCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementShots.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(4,5);
                 storeShotsAmount.setText(String.valueOf(currentStore.getQuantity(4)));
-                storeShotsCost.setText("$" + currentStore.getQuantity(4) * currentStore.getPrice(4));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(4) * currentStore.getPrice(4));
+                storeShotsCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementWheels.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(6,1);
                 storeWheelsAmount.setText(String.valueOf(currentStore.getQuantity(6)));
-                storeWheelsCost.setText("$" + currentStore.getQuantity(6) * currentStore.getPrice(6));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(6) * currentStore.getPrice(6));
+                storeWheelsCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementAxles.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(7,1);
                 storeAxlesAmount.setText(String.valueOf(currentStore.getQuantity(7)));
-                storeAxlesCost.setText("$" + currentStore.getQuantity(7) * currentStore.getPrice(7));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(7) * currentStore.getPrice(7));
+                storeAxlesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementTongues.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(8,1);
                 storeTonguesAmount.setText(String.valueOf(currentStore.getQuantity(8)));
-                storeTonguesCost.setText("$" + currentStore.getQuantity(8) * currentStore.getPrice(8));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(8) * currentStore.getPrice(8));
+                storeTonguesCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
         storeIncrementOxen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentStore.addItem(5,2);
                 storeOxenAmount.setText(String.valueOf(currentStore.getQuantity(5)));
-                storeOxenCost.setText("$" + currentStore.getQuantity(5) * currentStore.getPrice(5));
-                storeTotalCost.setText("Total Cost: $" + currentStore.getTotal());
-            }
+
+                String currentCost = String.format("%.2f", currentStore.getQuantity(5) * currentStore.getPrice(5));
+                storeOxenCost.setText("$" + currentCost);
+
+                String totalCost = String.format("%.2f",currentStore.getTotal());
+                storeTotalCost.setText("Total Cost: $" + totalCost);            }
         });
 
         // When Status Button is Clicked
