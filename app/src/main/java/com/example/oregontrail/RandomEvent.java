@@ -208,6 +208,7 @@ public class RandomEvent {
             image.setImageResource(R.drawable.wagon);
             return "There was a fire in your wagon, some supplies are lost";
         }
+
         if (loseWagonPart(inventory)){
             image.setImageResource(R.drawable.wagon);
             switch (wagonCounter){
