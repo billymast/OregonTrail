@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     River currentRiver;
 
+    String modeSelected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -213,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
         startEasyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                modeSelected = "Easy";
                 inventory.addInventory("Money", 2000);
                 startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
@@ -236,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
         });
         startNormalButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                modeSelected = "Normal";
                 inventory.addInventory("Money", 1500);
                 startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
@@ -259,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
         });
         startHardButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                modeSelected = "Hard";
                 inventory.addInventory("Money", 1000);
                 startTitle.setVisibility(View.GONE);
                 startBackground11.setVisibility(View.GONE);
