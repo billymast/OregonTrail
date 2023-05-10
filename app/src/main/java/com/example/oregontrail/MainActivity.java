@@ -842,7 +842,7 @@ public class MainActivity extends AppCompatActivity {
                 // Otherwise check for any random events that may occur
                 else {
                     String randomEventText = randomEvent.Event(inventory, weather, time, mainScreenImage);
-                    if (!randomEventText.equals("no random event")) {
+                    if (!randomEventText.equals("")) {
                         dailyOutput = dailyOutput + randomEventText + ".\n";
                     }
                 }
@@ -954,6 +954,9 @@ public class MainActivity extends AppCompatActivity {
         // When Buy Options Button is Clicked
         buyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 if (map.isFort() || map.getCurrentLandmark().equals("Matt's Store")) {
 
                     // Displays Store Screen
@@ -1078,6 +1081,8 @@ public class MainActivity extends AppCompatActivity {
 
         storeBuyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+
                 currentStore.finishTransaction(inventory);
                 storeFoodAmount.setText("0");
                 storeClothesAmount.setText("0");
@@ -1300,6 +1305,9 @@ public class MainActivity extends AppCompatActivity {
         // When Status Button is Clicked
         statusButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 // Updates Inventory Value
                 inventoryFood.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
                 inventoryClothes.setText("Clothes: " + Integer.toString(inventory.getInventoryValue("Clothes")));
@@ -1330,6 +1338,9 @@ public class MainActivity extends AppCompatActivity {
         // When the Rations Button is Clicked
         rationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 nextDayButton.setVisibility(View.GONE);
                 optionsBackground.setVisibility(View.VISIBLE);
                 fillingRationsButton.setVisibility(View.VISIBLE);
@@ -1363,6 +1374,9 @@ public class MainActivity extends AppCompatActivity {
         // When the Rest Button is Clicked
         restButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 // Updates and displays changes to weather
                 weather.dailyWeather(time, map);
                 weatherConditionText.setText(weather.weatherTypeString());
@@ -1394,6 +1408,9 @@ public class MainActivity extends AppCompatActivity {
         // When the Pace button is clicked
         paceButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 nextDayButton.setVisibility(View.GONE);
                 optionsBackground.setVisibility(View.VISIBLE);
                 normalPaceButton.setVisibility(View.VISIBLE);
@@ -1428,6 +1445,9 @@ public class MainActivity extends AppCompatActivity {
         // When Hunt Button is Clicked
         huntButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                exitOptionsButton.performClick();
+
                 nextDayButton.setVisibility(View.GONE);
                 optionsBackground.setVisibility(View.VISIBLE);
                 huntText.setVisibility(View.VISIBLE);
@@ -1462,14 +1482,11 @@ public class MainActivity extends AppCompatActivity {
                 int shotValue = 0;
                 shotValue = inventory.getInventoryValue("Shots");
 
-
-                while (shotValue != 0) {
-                    Intent intent = new Intent(MainActivity.this, HuntActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("shot", shotValue);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(MainActivity.this, HuntActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("shot", shotValue);
+                intent.putExtras(bundle);
+                startActivity(intent);
 
                 if (inventory.getInventoryValue("Shots") != 0) {
                     inventory.removeInventory("Shots", 1);
