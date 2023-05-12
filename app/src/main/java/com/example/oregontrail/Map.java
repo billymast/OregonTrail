@@ -102,6 +102,7 @@ public class Map {
         this.currentLandmarkQueue.add("Fort Walla Walla");
         this.currentLandmarkQueue.add("The Dalles");
         this.currentLandmarkQueue.add("Willamette Valley");
+        this.currentLandmarkQueue.add("End Game");
 
         this.currentLandmark = "Matt's Store";
     }
@@ -152,6 +153,11 @@ public class Map {
     }
 
     public int distanceToNextLandmark(){
+
+        if (currentLandmarkQueue.peek().equals("End Game")) {
+            return 0;
+        }
+
         return distanceToLandmark.peek() - this.location;
     }
 

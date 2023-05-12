@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     // All Objects used in game
@@ -209,7 +211,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView huntText = findViewById(R.id.huntText);
         final Button huntYesButton = findViewById(R.id.huntYesButton);
 
-        // Start of Game Elements
+        // End of Game Elements
+        final ImageView endGameBackground1 = findViewById(R.id.endGameBackground1);
+        final ImageView endGameBackground2 = findViewById(R.id.endGameBackground2);
+        final TextView endGameText = findViewById(R.id.endGameText);
+        final TextView endGameScore = findViewById(R.id.endGameScore);
+        final TextView endGameCredits = findViewById(R.id.endGameCredits);
 
         // Phase 1 (Chooses Difficulty)
 
@@ -781,90 +788,118 @@ public class MainActivity extends AppCompatActivity {
         nextDayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                String hattiePicValue = health.HealthString();
+                // If everyone is Dead
+                if (Illness.isGameOver()) {
+                    // Make End Game Screen Visible
+                    endGameBackground1.setVisibility(View.VISIBLE);
+                    endGameBackground2.setVisibility(View.VISIBLE);
+                    endGameText.setVisibility(View.VISIBLE);
+                    endGameScore.setVisibility(View.VISIBLE);
+                    endGameCredits.setVisibility(View.VISIBLE);
 
-                switch (hattiePicValue) {
-                    case "Good Health":
-                        imageView.setImageResource(R.drawable.hattie_happy);
-                        break;
-                    case "Fair Health":
-                        imageView.setImageResource(R.drawable.hattie_normal);
-                        break;
-                    case "Poor Health":
-                        imageView.setImageResource(R.drawable.hattie_sad);
-                        break;
-                    case "Very Poor Health":
-                        imageView.setImageResource(R.drawable.hattie_sad);
-                        break;
-                    case "Death Imminent":
-                        imageView.setImageResource(R.drawable.hattie_injured);
-                        break;
-                    default:  imageView.setImageResource(R.drawable.hattie_normal);
-                }
+                    // Updates Text for End Game Screen
+                    endGameScore.setText("Your Score: " + EndCredits.calcFinalScore(inventory, Illness.getPeopleAlive(), modeSelected));
 
-                String dailyOutput = time.outputDate() + "\n";
-
-                // Updates and displays changes to weather
-                weather.dailyWeather(time, map);
-                weatherConditionText.setText(weather.weatherTypeString());
-
-                // Makes Temp Type start with Uppercase letter
-                String weatherText1 = weather.getTempType();
-                String weatherText2 = weatherText1.substring(0,1).toUpperCase();
-
-                weatherTempText.setText(weatherText2 + weatherText1.substring(1));
-
-                // Updates and displays changes to party's health
-                String dailyIllnessOutput = Illness.OutputIndividualIllness(health, inventory);
-                if (!dailyIllnessOutput.equals(" ")) {
-                    dailyOutput = dailyOutput + dailyIllnessOutput + "\n";
-                }
-                health.PartyUpdate(weather, inventory, map, false);
-                healthText.setText("Health: " + health.HealthString());
-
-                // Updates and displays location
-                if(map.updateLocation(map.getPace())){
-                    locationText.setText(map.getCurrentLandmark());
-                }
-                else {
-                    locationText.setText("On the Trail");
-                }
-                distanceTraveledText.setText("Traveled: " + map.getLocation());
-                distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
-
-                // Updates and displays food count
-                inventory.removeInventory("Food", 20);
-                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
-
-                // Checks whether a fort is reached
-                if (map.isFort()){
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Checks whether a river is reached
-                else if (map.isRiver()) {
-                    dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
-                }
-                // Otherwise check for any random events that may occur
-                else {
-                    String randomEventText = randomEvent.Event(inventory, weather, time, mainScreenImage);
-                    if (!randomEventText.equals("")) {
-                        dailyOutput = dailyOutput + randomEventText + ".\n";
-                    }
-                }
-
-                // Displays Text explaining what happened during the day
-                if(dailyOutput.equals(time.outputDate() + "\n")) {
-                    dailyOutput = time.outputDate() + "\nAnother long, boring day on the trail.";
-                }
-                gamePlayText.setText(dailyOutput);
-
-                // Update and Display the new date
-                dateTextChange.setText(time.outputDate());
-                time.updateDay(1);
-
-                if (map.isRiver()) {
-                    goToRiverEventButton.setVisibility(View.VISIBLE);
+                    // Disappear Buttons
                     nextDayButton.setVisibility(View.GONE);
+                    mapButton.setVisibility(View.GONE);
+                    statusButton.setVisibility(View.GONE);
+                    rationsButton.setVisibility(View.GONE);
+                    buyButton.setVisibility(View.GONE);
+                    tradeButton.setVisibility(View.GONE);
+                    talkButton.setVisibility(View.GONE);
+                    restButton.setVisibility(View.GONE);
+                    paceButton.setVisibility(View.GONE);
+                    huntButton.setVisibility(View.GONE);
+                }
+
+                // If the game is not over yet
+                else {
+                    String hattiePicValue = health.HealthString();
+
+                    switch (hattiePicValue) {
+                        case "Good Health":
+                            imageView.setImageResource(R.drawable.hattie_happy);
+                            break;
+                        case "Fair Health":
+                            imageView.setImageResource(R.drawable.hattie_normal);
+                            break;
+                        case "Poor Health":
+                            imageView.setImageResource(R.drawable.hattie_sad);
+                            break;
+                        case "Very Poor Health":
+                            imageView.setImageResource(R.drawable.hattie_sad);
+                            break;
+                        case "Death Imminent":
+                            imageView.setImageResource(R.drawable.hattie_injured);
+                            break;
+                        default:  imageView.setImageResource(R.drawable.hattie_normal);
+                    }
+
+                    String dailyOutput = time.outputDate() + "\n";
+
+                    // Updates and displays changes to weather
+                    weather.dailyWeather(time, map);
+                    weatherConditionText.setText(weather.weatherTypeString());
+
+                    // Makes Temp Type start with Uppercase letter
+                    String weatherText1 = weather.getTempType();
+                    String weatherText2 = weatherText1.substring(0,1).toUpperCase();
+
+                    weatherTempText.setText(weatherText2 + weatherText1.substring(1));
+
+                    // Updates and displays changes to party's health
+                    String dailyIllnessOutput = Illness.OutputIndividualIllness(health, inventory);
+                    if (!dailyIllnessOutput.equals(" ")) {
+                        dailyOutput = dailyOutput + dailyIllnessOutput + "\n";
+                    }
+                    health.PartyUpdate(weather, inventory, map, false);
+                    healthText.setText("Health: " + health.HealthString());
+
+                    // Updates and displays location
+                    if(map.updateLocation(map.getPace())){
+                        locationText.setText(map.getCurrentLandmark());
+                    }
+                    else {
+                        locationText.setText("On the Trail");
+                    }
+                    distanceTraveledText.setText("Traveled: " + map.getLocation());
+                    distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
+
+                    // Updates and displays food count
+                    inventory.removeInventory("Food", 20);
+                    foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
+
+                    // Checks whether a fort is reached
+                    if (map.isFort()){
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Checks whether a river is reached
+                    else if (map.isRiver()) {
+                        dailyOutput = dailyOutput + "You have reached " + map.getCurrentLandmark() + ".\n";
+                    }
+                    // Otherwise check for any random events that may occur
+                    else {
+                        String randomEventText = randomEvent.Event(inventory, weather, time, mainScreenImage);
+                        if (!randomEventText.equals("")) {
+                            dailyOutput = dailyOutput + randomEventText + ".\n";
+                        }
+                    }
+
+                    // Displays Text explaining what happened during the day
+                    if(dailyOutput.equals(time.outputDate() + "\n")) {
+                        dailyOutput = time.outputDate() + "\nAnother long, boring day on the trail.";
+                    }
+                    gamePlayText.setText(dailyOutput);
+
+                    // Update and Display the new date
+                    dateTextChange.setText(time.outputDate());
+                    time.updateDay(1);
+
+                    if (map.isRiver()) {
+                        goToRiverEventButton.setVisibility(View.VISIBLE);
+                        nextDayButton.setVisibility(View.GONE);
+                    }
                 }
             }
 

@@ -3,16 +3,16 @@ package com.example.oregontrail;
 
 public class Individual_Ilness {
     //Variables
-    int Hattie;                               //Logic checker for Hattie. 0 if healthy, 1 if sick, 2 -> 5 if dead. Goes to 5 so no more calculations are performed.
-    public int Husband;                              //""
-    public int Kid1;                                 //""
-    public int Kid2;                                 //""
-    public int Kid3;                                 //""
-    int sickcheck;                            //Logic checker to randomly see if someone will get sick or get healthy. 1 is for sick, 2 for healthy.
-    int daytodie = 0;                         //If general party health becomes too poor, the entire party dies in 5 days.
-    String Output;                            //Output to user based on who is sick or died.
-    int PeopleAlive;                          //Used for food removal at end of class. Used for main declutter.
-	boolean GameOver;
+    private int Hattie;                               //Logic checker for Hattie. 0 if healthy, 1 if sick, 2 -> 5 if dead. Goes to 5 so no more calculations are performed.
+    private int Husband;                              //""
+    private int Kid1;                                 //""
+    private int Kid2;                                 //""
+    private int Kid3;                                 //""
+    private int sickcheck;                            //Logic checker to randomly see if someone will get sick or get healthy. 1 is for sick, 2 for healthy.
+    private int daytodie = 0;                         //If general party health becomes too poor, the entire party dies in 5 days.
+    private String Output;                            //Output to user based on who is sick or died.
+    private int PeopleAlive;                          //Used for food removal at end of class. Used for main declutter.
+	private boolean GameOver;
 
     private String name1;                     //Always Hattie.
     private String name2;                     //Stores user inputted value for character name. Corresponds to Kid2.
@@ -195,11 +195,6 @@ public class Individual_Ilness {
     }
 
     // Getters and Setters
-
-	public boolean getGameOver() {
-		return GameOver;
-	}
-
     public String getName2() {
         return name2;
     }
@@ -231,5 +226,12 @@ public class Individual_Ilness {
     public void setName5(String name5) {
         this.name5 = name5;
     }
-}
 
+    public boolean isGameOver() {
+        return GameOver;
+    }
+
+    public int getPeopleAlive() {
+        return PeopleAlive;
+    }
+}
