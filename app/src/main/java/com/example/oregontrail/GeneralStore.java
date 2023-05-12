@@ -21,7 +21,7 @@ package com.example.oregontrail;
 public class GeneralStore {
 
     // Percent increase in price
-    final double[] percentAbove = {0.0, .25, .5, .75, 1.0, 1.25, .45};
+    final double[] percentAbove = {0.0, .25, .5, .75, 1.0, 1.25, 1.45};
 
     // Product Prices: Easier to reference back to variables than counting numbers in an array
     final double Food = 0.40;              // ID =  0   Made up value
