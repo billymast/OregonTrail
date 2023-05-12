@@ -69,6 +69,9 @@ public class Inventory implements Parcelable {
 
     }
 
+    /**
+     * @param in - puts all of the inventory values into a parcel
+     */
     protected Inventory(Parcel in) {
         Food = in.createStringArray();
         Clothes = in.createStringArray();
@@ -107,7 +110,6 @@ public class Inventory implements Parcelable {
      * @param Value the integer value that you are adding to the inventory
      * @return void
      */
-
     public void addInventory (String type, int Value){
         int tempValue = 0;
         //switch statement that checks the value that were input as 'Value'
@@ -384,9 +386,8 @@ public class Inventory implements Parcelable {
 
     /**
      * @param type the item name that you wish to get from inventory
-     * @return the integer value of that item
+     * @return int - the integer value of that item
      */
-
     public int getInventoryValue (String type) {
         String[] tempArr = {};
         int value = -1; //sets the default value to '-1' so we can detect if the code did not work
@@ -466,14 +467,16 @@ public class Inventory implements Parcelable {
     }
 
     /**
-     *
      * @return returns the entire inventory for display purposes
      */
     public LinkedList<String[]> getInventory () {
         return inventory;
     }
 
-
+    /**
+     * @param type - the item you wish to remove
+     * @param Value - the number you would wish to remove
+     */
     public void removeInventory (String type, double Value) {
         double tempValue = 0;
         //switch statement that checks the value that were input as 'Value'
@@ -490,6 +493,10 @@ public class Inventory implements Parcelable {
         }
     }
 
+    /**
+     *
+     * @return double - the money stored as a double
+     */
     public double moneyAmount() {
         String[] tempArr = {};
         double value = 0.0; //sets the default value to '-1' so we can detect if the code did not work

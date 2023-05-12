@@ -82,7 +82,44 @@ public class GeneralStore {
      *            int Quantity
      */
     public void addItem(int ItemID, int Quantity){
-        quantity[ItemID] = quantity[ItemID] + Quantity;
+        //quantity[ItemID] = quantity[ItemID] + Quantity;
+        switch (ItemID) {
+            case 0:
+            case 3:
+            case 1:
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+            case 2:
+                if (Quantity >= 1) {
+                    Quantity = 1;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+            case 4:
+                if (Quantity >= 3) {
+                    Quantity = 3;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+            case 5:
+                if (Quantity >= 16) {
+                    Quantity = 16;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+            case 6:
+                if (Quantity >= 3){
+                    Quantity = 3;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+            case 7:
+                if (Quantity >= 3){
+                    Quantity = 3;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+                break;
+        }
     }
 
     /**   getTotal()
@@ -100,8 +137,8 @@ public class GeneralStore {
 
     /**   getPrice(int ItemID)
      *   Given the Input of ItemID, this method will return the
-     *   @param:  int ItemID
-     *   @return: double Item Price
+     *   @param ItemID
+     *   @return StorePrice[]
      */
     public double getPrice(int ItemID){
         return StorePrice[ItemID];
@@ -147,17 +184,17 @@ public class GeneralStore {
 
     /**   removeItem(int ItemID, int Quantity)
      *   when invoked with an ItemID number and the quantity, it will add that to the quantity of that ID number
-     *   @param:  int ItemID
-     *            int Quantity
+     *   @param ItemID
+     *   @param Quantity
      */
     public void removeItemQuantity(int ItemID, int Quantity){
         quantity[ItemID] = quantity[ItemID] - Quantity;
     }
 
-    /*   finishTransaction(Inventory inventory)
+    /**   finishTransaction(Inventory inventory)
      *   when invoked, removes money from players inventory, adds purchased items to players inventory
      *   reset quantity to 0 for each item purchasable.
-     *   @paramINPUT Inventory inventory
+     *   @param inventory
      */
     public void finishTransaction(Inventory inventory){
         double temp = getTotal();

@@ -2,16 +2,13 @@ package com.example.oregontrail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.content.Intent;
 import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.LinkedList;
 
 
 public class HuntActivity extends AppCompatActivity {
@@ -30,13 +27,13 @@ public class HuntActivity extends AppCompatActivity {
         final Button shootFour = findViewById(R.id.button4);
         final TextView isShot = findViewById(R.id.isHit);
 
-        final ImageView imageView2 = (ImageView) findViewById (R.id.imageView2);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final ImageView imageView2 = (ImageView) findViewById (R.id.center);
         imageView2.setImageResource(R.drawable.deerhiding);
-        final ImageView imageView3 = (ImageView) findViewById (R.id.imageView3);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final ImageView imageView3 = (ImageView) findViewById (R.id.left_top);
         imageView3.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-        final ImageView imageView4 = (ImageView) findViewById (R.id.imageView4);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final ImageView imageView4 = (ImageView) findViewById (R.id.left_bottom);
         imageView4.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
-        final ImageView imageView5 = (ImageView) findViewById (R.id.imageView5);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final ImageView imageView5 = (ImageView) findViewById (R.id.right_bottom);
         imageView5.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.hunting);
@@ -53,16 +50,6 @@ public class HuntActivity extends AppCompatActivity {
         shootOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (location == 1){
-                    isShot.setText("HIT");
-                    //inventory.addInventory("Food", 25);
-                    //inventory.removeInventory("Shot", 1);
-
-                }
-                else{
-                    isShot.setText("MISS");
-                }
 
                 switch (location) {
                     case 1:
@@ -90,9 +77,15 @@ public class HuntActivity extends AppCompatActivity {
                         imageView2.setImageResource(R.drawable.craiyon_153058_bushes_and_woods);
                         break;
                 }
+                if (location == 1){
+                    isShot.setText("HIT");
+                    //inventory.addInventory("Food", 25);
+                    //inventory.removeInventory("Shot", 1);
 
-
-
+                }
+                else{
+                    isShot.setText("MISS");
+                }
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
