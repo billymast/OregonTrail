@@ -94,7 +94,7 @@ public class Individual_Ilness {
             } else if (Husband < 2) {
                 Husband = Husband + 1;
             } else if (Hattie < 2) {
-                Hattie = Hattie + 2;
+                Hattie = Hattie + 1;
             }
         }
 		else if (sickcheck == 2) {
