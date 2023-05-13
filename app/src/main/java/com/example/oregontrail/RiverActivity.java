@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -20,6 +21,8 @@ public class RiverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_river);
 
         // River Event Elements
+        final ImageView mainScreen = findViewById(R.id.mainScreenImage);
+        final Button backButton = findViewById(R.id.backButton);
         final TextView riverDepthText = findViewById(R.id.riverDepthText);
         final TextView riverWidthText = findViewById(R.id.riverWidthText);
         final Button riverFordButton = findViewById(R.id.riverFordButton);
@@ -38,46 +41,25 @@ public class RiverActivity extends AppCompatActivity {
 
         riverFordButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
+                backButton.performClick();
             }
         });
 
         riverFloatButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
+                backButton.performClick();
             }
         });
 
         riverFerryButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
+                backButton.performClick();
             }
         });
 
         riverWaitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                /**
-                // Updates and displays changes to weather
-                weather.dailyWeather(time);
-                weatherConditionText.setText(weather.weatherTypeString());
-                weatherTempText.setText(weather.getTempType());
-
-                // Updates and displays changes to party's health
-                health.PartyUpdate(weather, inventory, map, true);
-                healthText.setText("Health: " + health.getParty());
-
-                // Updates and displays food count
-                inventory.removeInventory("Food", 20);
-                foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
-
-                // Update and Display the new date
-                dateTextChange.setText(time.outputDate());
-                time.updateDay(1);
-                 */
+                backButton.performClick();
             }
         });
     }

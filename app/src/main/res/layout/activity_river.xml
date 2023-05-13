@@ -61,7 +61,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="61dp"
         android:layout_marginEnd="130dp"
-        android:text="Go Back" />
+        android:text="Go Back"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/riverWidthText"
@@ -73,7 +74,7 @@
         android:layout_marginTop="456dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="River Width: "
-        android:textSize="42sp" />
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/riverDepthText"
@@ -85,7 +86,7 @@
         android:layout_marginTop="560dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="River Depth:"
-        android:textSize="42sp" />
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/riverFordButton"
