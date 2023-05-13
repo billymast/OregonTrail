@@ -127,7 +127,7 @@ public class Individual_Ilness {
 		//Outputs based on health value
         if(daytodie < 5) {
 
-			//Kid3
+	    //Kid3
             if (Kid3 == 1) {
                 Output = name3 + " is sick with " + sickness + ".";
                 Kid3 = 5; }
@@ -148,7 +148,7 @@ public class Individual_Ilness {
 			//Hattie
 			if (Hattie == 1) {
                 Output = "Hattie is sick with " + sickness + ".";
-                Hattie = 5; }
+                }
             if (Hattie == 2) {
                 Output = "Hattie has died from " + sickness + ". Game over.";
                 Hattie = 5;
