@@ -19,6 +19,10 @@ public class River implements Parcelable {
     // Either Smooth, Muddy, or Rocky
     private String riverFloorType;
 
+    private double[] managedinv = new double[16];
+
+    private double money;
+
     public River() {
         this.depth = 0;
         this.width = 0;
@@ -76,7 +80,20 @@ public class River implements Parcelable {
                 if(Math.random() < 0.4) {
                     time.updateDay(1);
                     // If cold health affected
-                    if (weather.getTempType() == "cold" || weather.getTempType() == "very cold") { /** Health class needs way to increase */ }
+                    if (weather.getTempType() == "cold" || weather.getTempType() == "very cold") {
+                        /** Health class needs way to increase */
+                        /** Health class needs way to increase */
+                        double modifiedHealth = health.getParty();
+
+                        // The worse the current health the harder the party is hit
+                        // ie. if you're sick and end up in a freezing cold river you are much
+                        // worse off than if you weren't sick to begin with
+                        modifiedHealth *= 1.5;
+
+                        // Return the modified value to the health class
+                        health.setParty(modifiedHealth);
+
+                    }
                     // Stuck in mud, Lose a day
                     return 2;
                 }
@@ -86,7 +103,22 @@ public class River implements Parcelable {
             if (this.riverFloorType == "Rocky") {
                 // 16% chance of overturning
                 if (Math.random() < 0.16) {
-                    /** 10-40% of supplies lost, each person has 10% chance of injury, and random parts break */ return 4;
+                    /** 10-40% of supplies lost, each person has 10% chance of injury, and random parts break */
+
+                    // Losing supplies
+                    double suppliesLost = Math.random() / (1/.3) + .1;
+
+                    for (int i = 0; i <= 15; i++){
+                        if (i != 5){
+                            managedinv[i] *= 1-suppliesLost;
+                        }
+                    }
+
+                    // For injury
+
+
+
+                    return 4;
                 }
                 // Rough crossing, but you did not overturn
                 else { return 5; }
@@ -95,7 +127,28 @@ public class River implements Parcelable {
 
         // Depths between 2.5 and 5
         // Wagon swamps
-        else if (this.depth < 5) { /** 50-90% of supplies is lost, each ox has a 30% chance of drowning - Could use a binomial dist for that */ return 6; }
+        else if (this.depth < 5) {
+            /** 50-90% of supplies is lost, each ox has a 30% chance of drowning - Could use a binomial dist for that */
+            double suppliesLost = Math.random() / 2.5 + .5;
+            int oxboi = 0;
+
+            for (int i = 0; i <= 15; i++){
+                if (i != 5){
+                    managedinv[i] *= 1-suppliesLost;
+                } else {
+                    // Ox chance of death
+                    for (int z = 1; z <= managedinv[5]; z++){
+                        if (Math.random() <= .7){
+                            oxboi++;
+                        }
+                    }
+                    managedinv[5] = oxboi;
+                }
+            }
+
+
+            return 6;
+        }
 
         // Depths greater than 5
         else { /** Wagon and oxen are swept away, each person has 30% of drowning */ return 7; }
