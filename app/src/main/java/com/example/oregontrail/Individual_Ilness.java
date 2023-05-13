@@ -57,7 +57,7 @@ public class Individual_Ilness {
             daytodie = 0;
             //15% chance
             double chance = .15;
-            if (Math.random() < chance) {
+            if (Math.random() < chance //OrIfRiverDeath) {
                 sickcheck = 1;
             }
         } else if (Party <= 104) {
