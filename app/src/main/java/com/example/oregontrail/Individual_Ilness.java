@@ -98,18 +98,24 @@ public class Individual_Ilness {
             }
         }
 		else if (sickcheck == 2) {
-            if (Kid3 == 1) {
+            if (Kid3 = 1) {
+		Output = name3 + " is healthy again.";
                 Kid3 = 0;
-            } else if (Kid2 == 1) {
+            } else if (Kid2 = 1) {
+		Output = name2 + " is healthy again.";
                 Kid2 = 0;
-            } else if (Kid1 == 1) {
+            } else if (Kid1 = 1) {
+		Output = name4 + " is healthy again.";
                 Kid1 = 0;
-            } else if (Husband == 1) {
+            } else if (Husband = 1) {
+		Output = name5 + " is healthy again.";
                 Husband = 0;
-            } else if (Hattie == 1) {
+            } else if (Hattie = 1) {
+		Output = "Hattie feels better.";
                 Hattie = 0;
             }
         }
+
 
 
         String sickness = "";
