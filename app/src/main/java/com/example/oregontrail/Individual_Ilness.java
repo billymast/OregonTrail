@@ -98,15 +98,15 @@ public class Individual_Ilness {
             }
         }
 		else if (sickcheck == 2) {
-            if (Kid3 = 1) {
+            if (Kid3 == 1) {
                 Kid3 = 0;
-            } else if (Kid2 = 1) {
+            } else if (Kid2 == 1) {
                 Kid2 = 0;
-            } else if (Kid1 = 1) {
+            } else if (Kid1 == 1) {
                 Kid1 = 0;
-            } else if (Husband = 1) {
+            } else if (Husband == 1) {
                 Husband = 0;
-            } else if (Hattie = 1) {
+            } else if (Hattie == 1) {
                 Hattie = 0;
             }
         }

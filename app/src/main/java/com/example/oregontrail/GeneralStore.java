@@ -119,6 +119,12 @@ public class GeneralStore {
                 }
                 quantity[ItemID] = quantity[ItemID] + Quantity;
                 break;
+            case 8:
+                if (Quantity >= 3) {
+                    Quantity = 3;
+                }
+                quantity[ItemID] = quantity[ItemID] + Quantity;
+
         }
     }
 

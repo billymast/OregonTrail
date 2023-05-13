@@ -867,7 +867,6 @@ public class MainActivity extends AppCompatActivity {
                     distanceLandmarkText.setText("To Landmark: " + map.distanceToNextLandmark());
 
                     // Updates and displays food count
-                    inventory.removeInventory("Food", 20);
                     foodText.setText("Food: " + Integer.toString(inventory.getInventoryValue("Food")));
 
                     // Checks whether a fort is reached
