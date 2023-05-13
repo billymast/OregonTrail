@@ -21,7 +21,7 @@ public class RiverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_river);
 
         // River Event Elements
-        final ImageView mainScreen = findViewById(R.id.mainScreenImage);
+        final ImageView mainScreen = findViewById(R.id.riverMainScreen);
         final Button backButton = findViewById(R.id.backButton);
         final TextView riverDepthText = findViewById(R.id.riverDepthText);
         final TextView riverWidthText = findViewById(R.id.riverWidthText);
@@ -29,6 +29,8 @@ public class RiverActivity extends AppCompatActivity {
         final Button riverFloatButton = findViewById(R.id.riverFloatButton);
         final Button riverFerryButton = findViewById(R.id.riverFerryButton);
         final Button riverWaitButton = findViewById(R.id.riverWaitButton);
+        final ImageView afterRiverBackground = findViewById(R.id.afterRiverBackground);
+        final TextView afterRiverText = findViewById(R.id.afterRiverText);
 
         River currentRiver = getIntent().getExtras().getParcelable("currentRiver");
 
@@ -37,11 +39,20 @@ public class RiverActivity extends AppCompatActivity {
         riverDepthText.setText("River Depth: " + currentRiver.getDepth());
         riverWidthText.setText("River Width: " + currentRiver.getWidth());
 
+        mainScreen.setImageResource(R.drawable.riverpicture);
+
         // Buttons For River Event
 
         riverFordButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                backButton.performClick();
+                mainScreen.setImageResource(R.drawable.riverfordsuccessful);
+                afterRiverBackground.setVisibility(View.VISIBLE);
+                afterRiverText.setVisibility(View.VISIBLE);
+                backButton.setVisibility(View.VISIBLE);
+                riverFerryButton.setVisibility(View.GONE);
+                riverFordButton.setVisibility(View.GONE);
+                riverFloatButton.setVisibility(View.GONE);
+                riverWaitButton.setVisibility(View.GONE);
             }
         });
 
